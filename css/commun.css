@@ -1,0 +1,56 @@
+/* ===== COMMUN.CSS ===== */
+/* Modifié uniquement par : Mamadou Diagne */
+
+body {
+  margin: 0;
+  font-family: var(--police-texte);
+  color: var(--couleur-texte);
+  background-color: var(--couleur-fond);
+}
+
+header {
+  background-color: var(--couleur-charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+header img {
+  height: 40px;
+}
+
+nav a {
+  color: var(--couleur-blanc);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-family: var(--police-titre);
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--couleur-vert);
+}
+
+footer {
+  background-color: var(--couleur-noir);
+  color: var(--couleur-blanc);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--police-titre);
+  font-weight: var(--poids-titre);
+  color: var(--couleur-charcoal);
+}
+
+/* Élément graphique signature de la marque : trait vert sous un titre */
+.accent-line {
+  display: inline-block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--couleur-vert);
+  margin-top: 0.5rem;
+}
