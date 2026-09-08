@@ -30,7 +30,7 @@ body {
     align-items: center;
     gap: 0.3rem;
     cursor: pointer;
-    color: var(--couleur-bleu-profond, #1a4d7a);
+    color: var(--couleur-bleu-profond, #C8A77A);
     font-weight: 600;
 }
 
@@ -47,7 +47,7 @@ body {
     align-items: center;
     gap: 0.4rem;
     text-decoration: none;
-    color: var(--couleur-bleu-profond, #1a4d7a);
+    color: var(--couleur-bleu-profond, #C8A77A);
 }
 
 .topbar-contact:hover {
@@ -74,7 +74,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0;
+    gap: 1.8rem;
     flex: 1;
     min-width: 0;
 }
@@ -87,27 +87,23 @@ body {
 .main-nav > a,
 .main-nav .dropdown > a {
     text-decoration: none;
-    color: var(--couleur-charcoal, #1c2b36);
+    color: var(--couleur-charcoal, #333);
     font-weight: 700;
     font-size: 0.8rem;
     letter-spacing: 0.02em;
     white-space: nowrap;
-    padding: 0 0.9rem;
+    padding: 0;
 }
 
 .main-nav > a:hover,
-.main-nav .dropdown > a:hover {
-    color: var(--couleur-bleu-profond, #1a4d7a);
+.main-nav .dropdown > a:hover,
+.main-nav > a.active {
+    color: var(--couleur-sable, #C8A77A);
 }
 
-.nav-sep {
-    color: #c3d6dd;
-    font-weight: 300;
-    margin: 0;
-}
 
 .btn-reserver {
-    background-color: var(--couleur-bleu-profond, #1a4d7a);
+    background-color: var(--couleur-sable, #C8A77A);
     color: #fff;
     text-decoration: none;
     padding: 0.65rem 1.4rem;
@@ -118,7 +114,7 @@ body {
 }
 
 .btn-reserver:hover {
-    background-color: #123a5c;
+    background-color: #977f5b;
 }
 
 /* ===== Dropdown (avec le fix du survol) ===== */
