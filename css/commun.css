@@ -223,3 +223,49 @@ h1, h2, h3 {
     height: 2px;
     background-color: var(--couleur-sable, #C8A77A);
 }
+
+/* ===== Corrections d'affichage du header (priorité forcée) ===== */
+.logo img {
+    height: 40px !important;
+    width: auto !important;
+    max-width: none;
+    display: block;
+}
+
+.mainbar {
+    gap: 1.4rem;
+    flex-wrap: nowrap;
+}
+
+.main-nav {
+    gap: 1.1rem;
+}
+
+.btn-reserver {
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+}
+
+/* ===== Correction alignement vertical du menu ===== */
+.main-nav {
+    align-items: center;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav > a,
+.main-nav .dropdown > a {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.nav-sep {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    transform: translateY(-1px);
+}
