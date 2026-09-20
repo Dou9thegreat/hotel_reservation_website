@@ -1,0 +1,623 @@
+/* ============================================================= */
+/* CONTACT.CSS — Page Contact Pullman Dakar Teranga               */
+/* ============================================================= */
+
+.container-cards,
+.container-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ============================================================= */
+/* HERO SECTION                                                  */
+/* ============================================================= */
+.hero {
+    position: relative;
+    height: 440px;
+    /* IMAGE DE FOND 1 : BANIÈRE HERO */
+    background-image: url('../images/hero3.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+        rgba(11, 60, 77, 0.92) 0%,
+        rgba(15, 80, 100, 0.75) 45%,
+        rgba(15, 80, 100, 0.15) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
+    color: #fff;
+}
+
+.breadcrumb {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: #fff;
+}
+
+.breadcrumb span {
+    margin: 0 6px;
+    opacity: 0.7;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 500px;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* ============================================================= */
+/* CARTES DE CONTACT OVERLAY                                     */
+/* ============================================================= */
+.contact-cards-section {
+    margin-top: -50px;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 60px;
+}
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.card-icon {
+    font-size: 22px;
+    color: var(--couleur-bleu-profond);
+}
+
+.card h3 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--couleur-bleu-profond);
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.card-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #fff;
+    padding: 11px 20px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    width: fit-content;
+    transition: background-color 0.3s;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-green {
+    background-color: var(--couleur-vert);
+}
+.btn-green:hover {
+    background-color: #2ec87b;
+}
+
+.btn-sand {
+    background-color: var(--couleur-sable);
+}
+.btn-sand:hover {
+    background-color: #b39265;
+}
+
+.card-btn .arrow {
+    font-size: 14px;
+    margin-left: 2px;
+}
+
+/* ============================================================= */
+/* CARTE & INFOS PRATIQUES                                       */
+/* ============================================================= */
+.map-info-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-bottom: 70px;
+}
+
+.map-container {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 420px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    background-color: #e5e3df;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.map-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--couleur-vert);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.map-btn:hover {
+    background-color: #2ec87b;
+}
+
+.info-pratiques h3 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--couleur-bleu-profond);
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #E8E3D9;
+    display: inline-block;
+}
+
+.info-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.info-item i {
+    color: var(--couleur-bleu-profond);
+    font-size: 18px;
+    margin-top: 2px;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.info-item h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--couleur-bleu-profond);
+}
+
+.info-item p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ============================================================= */
+/* FORMULAIRE DE CONTACT                                         */
+/* ============================================================= */
+.contact-form-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    margin-bottom: 70px;
+    padding-top: 50px;
+    border-top: 1px solid #E8E3D9;
+}
+
+.contact-text h2 {
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    line-height: 1.2;
+    color: var(--couleur-bleu-profond);
+}
+
+.contact-text p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    margin-bottom: 14px;
+    color: var(--couleur-bleu-profond);
+    font-weight: 600;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--couleur-bleu-profond);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 14px;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--couleur-vert);
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-top: 2px;
+    accent-color: var(--couleur-vert);
+}
+
+.checkbox-group label {
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-size: 12px;
+    color: #666;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn-submit, .btn-secondary {
+    height: 48px;
+    padding: 0 30px;
+    border-radius: 3px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-submit {
+    background-color: var(--couleur-vert);
+}
+.btn-submit:hover {
+    background-color: #2ec87b;
+}
+
+.btn-secondary {
+    background-color: var(--couleur-sable);
+}
+.btn-secondary:hover {
+    background-color: #b39265;
+}
+
+/* ============================================================= */
+/* BANDEAU DE RÉSERVATION                                       */
+/* ============================================================= */
+.booking-bar {
+    background-color: var(--couleur-bleu-profond);
+    padding: 24px 0;
+    color: #fff;
+}
+
+.booking-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.booking-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.booking-title i {
+    font-size: 30px;
+    color: #fff;
+}
+
+.booking-title h3 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 2px;
+}
+
+.booking-title p {
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+.booking-form {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.booking-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border-radius: 3px;
+    padding: 8px 12px;
+    min-width: 135px;
+}
+
+.booking-field i {
+    color: var(--couleur-bleu-profond);
+    font-size: 14px;
+}
+
+.booking-field-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.booking-field-content span {
+    font-size: 9px;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.booking-input {
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    outline: none;
+    width: 100%;
+}
+
+.btn-check {
+    background-color: var(--couleur-vert);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 3px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-check:hover {
+    background-color: #2ec87b;
+}
+
+/* ============================================================= */
+/* PLAYGROUND SECTION                                            */
+/* ============================================================= */
+.playground-section {
+    padding: 60px 0;
+}
+
+.playground-header {
+    margin-bottom: 30px;
+}
+
+.playground-header h2 {
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    color: var(--couleur-bleu-profond);
+}
+
+.playground-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+.playground-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.playground-card {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 320px;
+    display: flex;
+    align-items: flex-end;
+    background-color: #E5E3DF;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.playground-card:hover {
+    transform: translateY(-4px);
+}
+
+/* IMAGES DE FOND PLAYGROUND */
+.card-bg-1 { background-image: url('../images/playground-lobby.jpg'); }
+.card-bg-2 { background-image: url('../images/playground-terrasse.jpg'); }
+.card-bg-3 { background-image: url('../images/playground-lobby.jpg'); }
+
+.playground-overlay {
+    position: relative;
+    width: 100%;
+    padding: 50px 20px 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+    color: #fff;
+}
+
+.playground-overlay h3 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* ============================================================= */
+/* RESPONSIVE DESIGN                                             */
+/* ============================================================= */
+@media (max-width: 1100px) {
+    .hero h1 { font-size: 40px; }
+    .contact-cards { grid-template-columns: repeat(2, 1fr); }
+    .map-info-section { grid-template-columns: 1fr; }
+    .playground-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+    .contact-form-section {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    .booking-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .booking-form {
+        width: 100%;
+    }
+    .booking-field {
+        flex: 1 1 calc(50% - 8px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero { height: 350px; }
+    .hero h1 { font-size: 30px; }
+    .contact-cards { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full-width { grid-column: span 1; }
+    .form-actions { flex-direction: column; }
+    .btn-submit, .btn-secondary { width: 100%; }
+    .playground-grid { grid-template-columns: 1fr; }
+}

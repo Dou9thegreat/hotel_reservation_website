@@ -1,0 +1,26 @@
+/* ===== VARIABLES.CSS ===== */
+/* Modifié uniquement par : Mamadou Diagne */
+/* Charte graphique officielle "Pullman Hotels and Resorts" */
+
+:root {
+  /* Couleurs de la marque */
+  --couleur-charcoal: #333F48;
+  --couleur-noir: #1A1A1A;
+  --couleur-blanc: #FFFFFF;
+  --couleur-sable: #C8A77A;
+  --couleur-bleu-profond: #155E75;
+  --couleur-vert: #38E28F;
+
+  /* Rôles (utilisés dans commun.css et les CSS de chaque page) */
+  --couleur-principale: var(--couleur-charcoal);
+  --couleur-accent: var(--couleur-vert);
+  --couleur-secondaire: var(--couleur-bleu-profond);
+  --couleur-fond: var(--couleur-blanc);
+  --couleur-texte: var(--couleur-noir);
+
+  /* Typographie */
+  --police-titre: 'Montserrat', sans-serif;
+  --police-texte: 'Montserrat', sans-serif;
+  --poids-titre: 700;
+  --poids-corps: 400;
+}
