@@ -118,26 +118,16 @@
     border-radius: 4px;
     text-decoration: none;
     white-space: nowrap;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.discover:hover {
-    background: var(--accent-green);
-    transform: translateY(-2px);
 }
 
 .discover .chevron-right {
     font-size: 18px;
     line-height: 1;
-    transition: transform 0.3s ease;
-}
-
-.discover:hover .chevron-right {
-    transform: translateX(4px);
 }
 
 .arrow {
     position: absolute;
+    right: 28px;
     top: 42%;
     transform: translateY(-50%);
     z-index: 3;
@@ -152,19 +142,6 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background 0.3s;
-}
-
-.arrow:hover {
-    background: rgba(255, 255, 255, 0.25);
-}
-
-.arrow-next {
-    right: 28px;
-}
-
-.arrow-prev {
-    left: 28px;
 }
 
 /* ============================================================= */
@@ -215,26 +192,16 @@
 }
 
 .field-icon-badge {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 50% !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    flex-shrink: 0 !important;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 10px;
-}
-
-.field-icon-badge i, .field-icon-badge svg {
-    display: block !important;
-    margin: auto !important;
-    width: 18px !important;
-    height: 18px !important;
-    max-width: 18px !important;
-    max-height: 18px !important;
-    color: #00C65B !important;
-    fill: #00C65B !important;
+    flex-shrink: 0;
 }
 
 .field-content {
@@ -300,12 +267,11 @@
     cursor: pointer;
     white-space: nowrap;
     flex-shrink: 0;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.2s;
 }
 
 .submit-btn:hover {
     background-color: #00a84d;
-    transform: scale(1.02);
 }
 
 /* ============================================================= */
@@ -326,7 +292,6 @@
     margin: 0;
     padding: 0;
     display: flex;
-    overflow: hidden;
 }
 
 .about-image img {
@@ -335,11 +300,6 @@
     object-fit: cover;
     object-position: center;
     display: block;
-    transition: transform 0.8s ease-out;
-}
-
-.about-section:hover .about-image img {
-    transform: scale(1.05);
 }
 
 .about-content {
@@ -398,7 +358,6 @@
 .about-btn:hover {
     background-color: var(--primary-blue);
     color: #ffffff;
-    box-shadow: 0 4px 12px rgba(14, 90, 112, 0.25);
 }
 
 /* ============================================================= */
@@ -452,26 +411,12 @@
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    cursor: pointer;
-}
-
-.feature-icon-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
 }
 
 .feature-icon {
     width: 80px;
     height: 80px;
     object-fit: contain;
-    transition: filter 0.3s ease;
-}
-
-.feature-item:hover .feature-icon-wrapper {
-    transform: translateY(-6px) scale(1.08);
 }
 
 .features-bar .feature-item span {
@@ -481,11 +426,6 @@
     letter-spacing: 0.8px;
     text-transform: uppercase;
     color: #ffffff;
-    transition: color 0.3s ease;
-}
-
-.feature-item:hover span {
-    color: var(--primary-green);
 }
 
 /* ============================================================= */
@@ -555,15 +495,6 @@
     display: flex;
     align-items: center;
     gap: 60px;
-    padding: 20px;
-    border-radius: 24px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.room-card:hover {
-    background-color: #fcfcfc;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-    transform: translateY(-4px);
 }
 
 .room-card--reverse {
@@ -583,11 +514,6 @@
     height: 360px;
     object-fit: cover;
     display: block;
-    transition: transform 0.6s ease;
-}
-
-.room-card:hover .room-image img {
-    transform: scale(1.06);
 }
 
 .room-content {
@@ -685,11 +611,6 @@
     height: 70px;
     object-fit: contain;
     filter: brightness(0) saturate(100%) invert(20%) sepia(15%) saturate(1600%) hue-rotate(155deg) brightness(85%) contrast(95%);
-    transition: transform 0.2s ease;
-}
-
-.room-icon:hover {
-    transform: scale(1.15);
 }
 
 .room-btn {
@@ -705,13 +626,12 @@
     letter-spacing: 0.5px;
     text-decoration: none;
     box-shadow: 0 4px 12px rgba(6, 198, 91, 0.3);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .room-btn:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 6px 16px rgba(6, 198, 91, 0.4);
-    background-color: var(--accent-green);
 }
 
 /* BANNIÈRE EXPÉRIENCE */
@@ -765,12 +685,11 @@
     border-radius: 6px;
     text-decoration: none;
     box-shadow: 0 4px 12px rgba(6, 198, 91, 0.35);
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .banner-btn:hover {
-    transform: translateY(-2px);
-    background-color: var(--accent-green);
+    transform: translateY(-1px);
 }
 
 /* ============================================================= */
@@ -835,23 +754,11 @@
     align-items: flex-start;
 }
 
-.exp-img-wrapper {
-    width: 100%;
-    height: 210px;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 16px;
-}
-
 .exp-img {
     width: 100%;
-    height: 100%;
+    height: 210px;
     object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.exp-card:hover .exp-img {
-    transform: scale(1.08);
+    margin-bottom: 16px;
 }
 
 .exp-title {
@@ -888,21 +795,11 @@
     background: transparent;
 }
 
-.exp-btn--outline:hover {
-    background-color: var(--accent-green);
-    color: #ffffff;
-}
-
 .exp-btn--filled {
     background-color: var(--accent-green);
     color: #ffffff;
     border: none;
     box-shadow: 0 4px 10px rgba(0, 214, 125, 0.3);
-}
-
-.exp-btn--filled:hover {
-    background-color: #00b86b;
-    transform: translateY(-2px);
 }
 
 /* ============================================================= */
@@ -966,16 +863,11 @@
 }
 
 .gal-card {
-    position: relative;
-    display: block;
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
     background-color: #e0e0e0;
     width: 100%;
-    cursor: pointer;
-    text-decoration: none;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
 }
 
 .gal-card img {
@@ -983,44 +875,6 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
-}
-
-.gal-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.45);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-}
-
-.gal-insta-icon {
-    color: #ffffff;
-    font-size: 2.2rem;
-    transform: scale(0.6);
-    opacity: 0;
-    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.35s ease;
-}
-
-.gal-card:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-}
-
-.gal-card:hover img {
-    transform: scale(1.08);
-}
-
-.gal-card:hover .gal-overlay {
-    opacity: 1;
-}
-
-.gal-card:hover .gal-insta-icon {
-    opacity: 1;
-    transform: scale(1);
 }
 
 .gal-pos-1 {
@@ -1161,12 +1015,8 @@
 
 .reviews-section .reviews-grid {
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: calc((100% - 40px) / 3);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
     width: 100%;
 }
 
@@ -1179,13 +1029,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    scroll-snap-align: start;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.reviews-section .review-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .reviews-section .review-header {
@@ -1285,12 +1128,6 @@
     justify-content: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     flex-shrink: 0;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-.reviews-section .nav-btn:hover {
-    background-color: var(--dark-blue);
-    color: #ffffff;
 }
 
 .reviews-section .certifications {
@@ -1343,7 +1180,7 @@
     margin: 0 0 6px 0;
 }
 
-.booking-section p.subtitle {
+.booking-section p {
     font-size: 13px;
     color: #A0AEC0;
     margin: 0 0 30px 0;
@@ -1357,7 +1194,6 @@
     align-items: center;
     padding: 6px;
     margin-bottom: 30px;
-    gap: 8px;
 }
 
 .booking-section .widget-field {
@@ -1381,43 +1217,10 @@
     font-weight: 700;
     color: var(--text-muted);
     letter-spacing: 0.5px;
-    text-transform: uppercase;
 }
 
-.booking-section .cta-date-input {
-    border: none;
-    background: transparent;
-    outline: none;
-    padding: 0;
-    width: 100%;
-    font-family: inherit;
+.booking-section .widget-field span {
     font-size: 13px;
-    font-weight: 600;
-    color: #0D2834;
-    cursor: pointer;
-    text-transform: capitalize;
-}
-
-.booking-section .widget-field select {
-    appearance: none;
-    -webkit-appearance: none;
-    border: none;
-    background-color: transparent;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%230D2834' opacity='0.6' d='M0 0l5 5 5-5z'/></svg>");
-    background-repeat: no-repeat;
-    background-position: right 2px center;
-    padding-right: 18px;
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 600;
-    color: #0D2834;
-    cursor: pointer;
-    outline: none;
-}
-
-.booking-section .widget-field select option {
-    background-color: #ffffff;
-    color: #0D2834;
     font-weight: 600;
 }
 
@@ -1426,20 +1229,12 @@
     color: #ffffff;
     border: none;
     padding: 18px 28px;
-    border-radius: 8px;
+    border-radius: 6px;
     font-weight: 700;
     font-size: 12px;
     letter-spacing: 1px;
     cursor: pointer;
     white-space: nowrap;
-    text-transform: uppercase;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-    transition: background-color 0.2s, transform 0.2s;
-}
-
-.booking-section .btn-submit:hover {
-    background-color: #b88d52;
-    transform: scale(1.02);
 }
 
 .booking-section .booking-features {
@@ -1455,7 +1250,6 @@
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 1px;
-    text-transform: uppercase;
 }
 
 .booking-section .icon-circle {
@@ -1495,14 +1289,6 @@
     padding-bottom: 40px;
 }
 
-.main-footer .footer-title {
-    color: var(--accent-green);
-    font-size: 12px;
-    letter-spacing: 1.5px;
-    margin: 0 0 20px 0;
-    font-weight: 700;
-}
-
 .main-footer .footer-col h4 {
     color: #ffffff;
     font-size: 12px;
@@ -1530,23 +1316,28 @@
 .main-footer .footer-col ul a:hover {
     color: #ffffff;
 }
+.img-manual-logo {
+        margin-top: -20px; /* Ajustez la valeur négative selon le besoin */
 
+    }
 .main-footer .img-manual-logo {
-    width: 240px;
+    width: 240px; /* Ajustez la valeur (ex: entre 210px et 240px) pour correspondre exactement au logo du menu */
     max-width: 100%;
     height: auto;
     display: block;
-    margin-top: -20px;
     margin-bottom: 20px;
-    margin-left: -70px;
+    margin-left: -70px; /* Ajustez la valeur négative selon le besoin */
 }
 
+
 .main-footer .contact-details p {
-    margin: 0 0 10px -10px;
+    margin: 0 0 10px 0;
     display: flex;
     align-items: flex-start;
     gap: 10px;
     line-height: 1.6;
+    margin-left: -10px; /* Ajustez la valeur négative selon le besoin */
+
 }
 
 .main-footer .icon-contact {
@@ -1571,13 +1362,12 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    transition: border-color 0.2s, color 0.2s;
 }
 
 .main-footer .social-links a:hover {
     border-color: var(--accent-green);
     color: var(--accent-green);
-    transform: translateY(-2px);
 }
 
 .main-footer .engagement-block {
@@ -1609,11 +1399,9 @@
 .main-footer .footer-bottom p {
     margin: 0;
 }
-
-.footer-logo {
+.footer-logo{
     width: 100%;
 }
-
 /* ============================================================= */
 /* 11. MEDIA QUERIES (RESPONSIVE)                                 */
 /* ============================================================= */
@@ -1630,13 +1418,13 @@
     .gal-pos-1, .gal-pos-2, .gal-pos-3, .gal-pos-4, .gal-pos-5, .gal-pos-6 {
         grid-column: auto;
         grid-row: auto;
-        transform: none !important;
+        transform: none;
         margin-top: 0;
         height: 200px;
     }
 
     .reviews-section .reviews-grid {
-        grid-auto-columns: 100%;
+        grid-template-columns: 1fr;
     }
 
     .booking-section .booking-widget {
@@ -1682,59 +1470,108 @@
         grid-template-columns: 1fr;
     }
 
-    .booking-section .booking-features {
-        flex-direction: column;
-        gap: 15px;
-    }
-
     .main-footer .footer-grid {
         grid-template-columns: 1fr;
     }
 }
-/* Conteneur principal du carrousel pour positionner les boutons */
-.reviews-carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden; /* Empêche tout débordement indésirable */
+
+
+/* ============================================================= */
+/* CORRECTIONS — flèche précédent hero + carrousel avis fonctionnel */
+/* ============================================================= */
+.arrow-prev {
+    left: 28px;
+    right: auto;
 }
 
-/* La grille d'avis avec défilement fluide */
 .reviews-section .reviews-grid {
-    display: flex; /* Flexbox est plus prévisible pour un défilement horizontal continu */
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 40px) / 3);
     gap: 20px;
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    width: 100%;
-    padding: 10px 0;
-    
-    /* Masquer la barre de défilement (Scrollbar) */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE et Edge */
 }
 
-/* Masquer la barre de défilement sur Chrome, Safari, Opera */
-.reviews-section .reviews-grid::-webkit-scrollbar {
-    display: none;
-}
-
-/* Formatage des cartes d'avis */
 .reviews-section .review-card {
-    flex: 0 0 calc((100% - 40px) / 3); /* 3 cartes visibles sur desktop */
-    min-width: 280px; /* Largeur minimale pour le responsive */
     scroll-snap-align: start;
-    box-sizing: border-box;
 }
 
-/* Adaptation Responsive (Tablettes & Mobiles) */
 @media (max-width: 992px) {
-    .reviews-section .review-card {
-        flex: 0 0 calc((100% - 20px) / 2); /* 2 cartes visibles */
+    .reviews-section .reviews-grid {
+        grid-auto-columns: 100%;
     }
 }
 
-@media (max-width: 576px) {
-    .reviews-section .review-card {
-        flex: 0 0 100%; /* 1 seule carte sur mobile */
-    }
+
+/* ============================================================= */
+/* CORRECTIONS — CTA "Prêt pour votre prochaine évasion ?"        */
+/* ============================================================= */
+.booking-section .widget-field label {
+    text-transform: uppercase;
+}
+
+.booking-section .btn-submit {
+    text-transform: uppercase;
+}
+
+.booking-section .feature-item {
+    text-transform: uppercase;
+}
+
+.booking-section .cta-date-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0D2834;
+    cursor: pointer;
+    text-transform: capitalize; /* "08 sept. 2026" -> "08 Sept. 2026" */
+}
+
+
+/* ============================================================= */
+/* CORRECTIONS — style des menus déroulants (Chambres / Voyageurs)*/
+/* Attention : la liste ouverte du <select> reste partiellement   */
+/* contrôlée par le navigateur (surlignage au survol notamment).  */
+/* ============================================================= */
+.booking-section .widget-field select {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%230D2834' opacity='0.6' d='M0 0l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 2px center;
+    padding-right: 18px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0D2834;
+    cursor: pointer;
+    outline: none;
+}
+
+.booking-section .widget-field select option {
+    background-color: #ffffff;
+    color: #0D2834;
+    font-weight: 600;
+}
+
+
+/* ============================================================= */
+/* CORRECTIONS — détachement du bouton "Réserver maintenant"      */
+/* ============================================================= */
+.booking-section .booking-widget {
+    gap: 8px;
+}
+
+.booking-section .btn-submit {
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
 }
