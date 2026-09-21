@@ -531,13 +531,6 @@ document.addEventListener('DOMContentLoaded', () => {
        POP-UP : TOUS LES TARIFS
        Déclenchée au clic sur les boutons [data-open-tariffs]
        ============================================================ */
-    
-
-
-        /* ============================================================
-       POP-UP : TOUS LES TARIFS (version robuste)
-       Déclenchée uniquement au clic sur [data-open-tariffs]
-       ============================================================ */
     (function initTariffsModal() {
         var TARIFS_DATA = {
             'deluxe-ocean': {
@@ -583,22 +576,13 @@ document.addEventListener('DOMContentLoaded', () => {
         var modalDesc  = document.getElementById('tariffsModalDesc');
         var modalList  = document.getElementById('tariffsModalList');
 
-        console.log('[TariffsModal] modal =', modal);
-        console.log('[TariffsModal] boutons =', document.querySelectorAll('[data-open-tariffs]').length);
-
-        if (!modal) {
-            console.error('[TariffsModal] #tariffsModal introuvable dans le DOM');
-            return;
-        }
+        if (!modal) return; // sécurité si le HTML n'a pas été inséré
 
         function renderTariffs(roomId) {
             var room = TARIFS_DATA[roomId];
-            if (!room) {
-                console.warn('[TariffsModal] Aucune donnée pour', roomId);
-                return;
-            }
+            if (!room) return;
 
-            modalType.textContent  = room.type;
+            modalType.textContent = room.type;
             modalTitle.textContent = room.title;
             modalDesc.textContent  = room.desc;
 
@@ -624,11 +608,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function openModal(roomId) {
-            console.log('[TariffsModal] Ouverture pour', roomId);
-            if (!TARIFS_DATA[roomId]) {
-                console.warn('[TariffsModal] roomId inconnu:', roomId);
-                return;
-            }
+            if (!TARIFS_DATA[roomId]) return;
             renderTariffs(roomId);
             modal.classList.add('is-open');
             modal.setAttribute('aria-hidden', 'false');
@@ -641,26 +621,24 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = '';
         }
 
-        /* Attacher les listeners sur chaque bouton "VOIR TOUS LES TARIFS" */
-        var openBtns = document.querySelectorAll('[data-open-tariffs]');
-        openBtns.forEach(function (btn) {
+        /* Boutons "VOIR TOUS LES TARIFS" */
+        document.querySelectorAll('[data-open-tariffs]').forEach(function (btn) {
             btn.addEventListener('click', function (e) {
                 e.preventDefault();
-                e.stopPropagation();
-                openModal(btn.dataset.openTariffs || btn.getAttribute('data-open-tariffs'));
+                openModal(btn.dataset.openTariffs);
             });
         });
 
-        /* Clic sur "Choisir" → redirection directe vers reservation.html */
+        /* Clic sur "Choisir" dans la pop-up → redirection réservation */
         modalList.addEventListener('click', function (e) {
             var btn = e.target.closest('[data-book-room]');
             if (!btn) return;
-            e.preventDefault();
-            e.stopPropagation();
-            var roomId = btn.getAttribute('data-book-room');
-            var tariff = btn.getAttribute('data-book-tariff') || 0;
-            console.log('[TariffsModal] Redirection vers reservation.html?room=' + roomId + '&tariff=' + tariff);
-            window.location.href = 'reservation.html?room=' + encodeURIComponent(roomId) + '&tariff=' + encodeURIComponent(tariff);
+            if (typeof window.goToBooking === 'function') {
+                window.goToBooking({
+                    room: btn.dataset.bookRoom,
+                    tariff: btn.dataset.bookTariff || 0
+                });
+            }
         });
 
         /* Fermeture */
@@ -671,9 +649,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
         });
-
-        console.log('[TariffsModal] Initialisé avec succès');
     })();
+
 
     // ================= PARALLAX HERO =================
     const heroBg = document.getElementById('heroBg');

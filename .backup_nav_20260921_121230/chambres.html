@@ -88,19 +88,19 @@
     <!-- BARRE DE RECHERCHE -->
     <div class="search-bar-container">
         <div class="search-bar">
-            <a href="#cta-reservation" class="search-item">
+            <div class="search-item">
                 <i class="fa-regular fa-calendar"></i>
                 <span>6 mars &rarr; 7 mars</span>
-            </a>
-            <a href="#cta-reservation" class="search-item">
+            </div>
+            <div class="search-item">
                 <i class="fa-solid fa-user-group"></i>
                 <span>1 chambre, 1 adulte</span>
-            </a>
-            <a href="#cta-reservation" class="search-item">
+            </div>
+            <div class="search-item">
                 <i class="fa-solid fa-tag"></i>
                 <span>CODE PROMO</span>
-            </a>
-            <a href="#cta-reservation" class="btn-modifier">MODIFIER LA RECHERCHE</a>
+            </div>
+            <button class="btn-modifier" type="button">MODIFIER LA RECHERCHE</button>
         </div>
     </div>
 
@@ -165,9 +165,7 @@
 
                 <div class="action-buttons">
                     <button class="btn-reserver-room" type="button" data-book-room="deluxe-ocean" data-book-tariff="0">RÉSERVER</button>
-                    <button type="button" class="btn-tarifs" data-open-tariffs="deluxe-ocean">
-                        VOIR TOUS LES TARIFS <i class="fa-solid fa-chevron-right"></i>
-                    </button>
+                    <a href="#" class="btn-tarifs">VOIR TOUS LES TARIFS <i class="fa-solid fa-chevron-right"></i></a>
                 </div>
             </div>
         </article>
@@ -223,9 +221,7 @@
 
                 <div class="action-buttons">
                     <button class="btn-reserver-room" type="button" data-book-room="suite-ambassadeur" data-book-tariff="0">RÉSERVER</button>
-                    <button type="button" class="btn-tarifs" data-open-tariffs="suite-ambassadeur">
-                        VOIR TOUS LES TARIFS <i class="fa-solid fa-chevron-right"></i>
-                    </button>
+                    <a href="#" class="btn-tarifs">VOIR TOUS LES TARIFS <i class="fa-solid fa-chevron-right"></i></a>
                 </div>
             </div>
         </article>
@@ -281,9 +277,7 @@
 
                 <div class="action-buttons">
                     <button class="btn-reserver-room" type="button" data-book-room="superieure-ocean" data-book-tariff="0">RÉSERVER</button>
-                    <button type="button" class="btn-tarifs" data-open-tariffs="superieure-ocean">
-                        VOIR TOUS LES TARIFS <i class="fa-solid fa-chevron-right"></i>
-                    </button>
+                    <a href="#" class="btn-tarifs">VOIR TOUS LES TARIFS <i class="fa-solid fa-chevron-right"></i></a>
                 </div>
             </div>
         </article>
@@ -299,39 +293,11 @@
     </div>
 
     <!-- MODALE DE RÉSERVATION -->
-        <!-- ========================================================= -->
-    <!-- POP-UP : TOUS LES TARIFS                                  -->
-    <!-- Déclenchée par [data-open-tariffs] uniquement             -->
-    <!-- ========================================================= -->
-    <div class="tariffs-modal-overlay" id="tariffsModal" aria-hidden="true">
-        <div class="tariffs-modal" role="dialog" aria-modal="true" aria-labelledby="tariffsModalTitle">
-            <button type="button" class="tariffs-modal-close" id="tariffsModalClose" aria-label="Fermer">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <div class="tariffs-modal-header">
-                <span class="tariffs-modal-eyebrow" id="tariffsModalType">CHAMBRE</span>
-                <h3 id="tariffsModalTitle">Tous les tarifs</h3>
-                <p id="tariffsModalDesc" class="tariffs-modal-desc"></p>
-            </div>
-
-            <div class="tariffs-modal-list" id="tariffsModalList">
-                <!-- Rempli dynamiquement par le script -->
-            </div>
-
-            <div class="tariffs-modal-footer">
-                <span><i class="fa-solid fa-shield-halved"></i> Meilleur tarif garanti sur le site officiel</span>
-            </div>
-        </div>
-    </div>
-    <!-- ======================== /POP-UP ======================== -->
-
-
-</div><!-- /.chambres-page -->
+    </div><!-- /.chambres-page -->
 </main>
 
 <!-- ============================== CTA SITE ============================== -->
-<section class="booking-section" id="cta-reservation">
+<section class="booking-section">
     <div class="container">
         <h2>PRÊT POUR VOTRE PROCHAINE <span class="highlight">ÉVASION</span> ?</h2>
         <p class="subtitle">Réservez maintenant et vivez l'expérience Pullman Dakar Teranga.</p>
@@ -525,155 +491,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', check);
         setTimeout(() => reveals.forEach(el => el.classList.add('active')), 1500);
     }
-
-    
-    /* ============================================================
-       POP-UP : TOUS LES TARIFS
-       Déclenchée au clic sur les boutons [data-open-tariffs]
-       ============================================================ */
-    
-
-
-        /* ============================================================
-       POP-UP : TOUS LES TARIFS (version robuste)
-       Déclenchée uniquement au clic sur [data-open-tariffs]
-       ============================================================ */
-    (function initTariffsModal() {
-        var TARIFS_DATA = {
-            'deluxe-ocean': {
-                type: 'CHAMBRE DELUXE',
-                title: 'Chambre Deluxe Vue Océan',
-                desc: "Balcon privé et vue imprenable sur l'Atlantique depuis votre lit King Size.",
-                tariffs: [
-                    { name: 'Tarif Flexible', sub: "Annulation gratuite jusqu'à 48h avant l'arrivée", price: 185000 },
-                    { name: 'Tarif Non-remboursable', sub: 'Paiement immédiat, −15%', price: 157250, old: 185000 },
-                    { name: 'Petit-déjeuner inclus', sub: 'Buffet Teranga Lounge chaque matin', price: 212750 }
-                ]
-            },
-            'superieure-ocean': {
-                type: 'CHAMBRE SUPÉRIEURE',
-                title: 'Chambre Supérieure Vue Océan',
-                desc: "Terrasse privative et lumière naturelle généreuse, face à l'île de Gorée.",
-                tariffs: [
-                    { name: 'Tarif Flexible', sub: "Annulation gratuite jusqu'à 48h avant l'arrivée", price: 155000 },
-                    { name: 'Tarif Non-remboursable', sub: 'Paiement immédiat, −15%', price: 131750, old: 155000 },
-                    { name: 'Petit-déjeuner inclus', sub: 'Buffet Teranga Lounge chaque matin', price: 178250 }
-                ]
-            },
-            'suite-ambassadeur': {
-                type: 'SUITE AMBASSADEUR',
-                title: 'Suite Ambassadeur Pullman',
-                desc: "Salon séparé, volumes généreux et services exclusifs pour un séjour d'exception.",
-                tariffs: [
-                    { name: 'Tarif Flexible', sub: "Annulation gratuite jusqu'à 48h avant l'arrivée", price: 350000 },
-                    { name: 'Tarif Non-remboursable', sub: 'Paiement immédiat, −15%', price: 297500, old: 350000 },
-                    { name: 'Petit-déjeuner inclus', sub: 'Buffet Teranga Lounge + service en chambre', price: 402500 }
-                ]
-            }
-        };
-
-        function fmtFCFA(n) {
-            return n.toLocaleString('fr-FR').replace(/,/g, ' ') + ' FCFA';
-        }
-
-        var modal      = document.getElementById('tariffsModal');
-        var modalClose = document.getElementById('tariffsModalClose');
-        var modalType  = document.getElementById('tariffsModalType');
-        var modalTitle = document.getElementById('tariffsModalTitle');
-        var modalDesc  = document.getElementById('tariffsModalDesc');
-        var modalList  = document.getElementById('tariffsModalList');
-
-        console.log('[TariffsModal] modal =', modal);
-        console.log('[TariffsModal] boutons =', document.querySelectorAll('[data-open-tariffs]').length);
-
-        if (!modal) {
-            console.error('[TariffsModal] #tariffsModal introuvable dans le DOM');
-            return;
-        }
-
-        function renderTariffs(roomId) {
-            var room = TARIFS_DATA[roomId];
-            if (!room) {
-                console.warn('[TariffsModal] Aucune donnée pour', roomId);
-                return;
-            }
-
-            modalType.textContent  = room.type;
-            modalTitle.textContent = room.title;
-            modalDesc.textContent  = room.desc;
-
-            modalList.innerHTML = room.tariffs.map(function (t, i) {
-                var badge = t.old
-                    ? '<span class="tariff-badge">-' + Math.round((1 - t.price / t.old) * 100) + '%</span>'
-                    : '';
-                var oldPrice = t.old ? '<span class="tariff-old">' + fmtFCFA(t.old) + '</span>' : '';
-                return '' +
-                    '<div class="tariff-row">' +
-                        '<div class="tariff-row-info">' +
-                            '<div class="tariff-row-name">' + t.name + badge + '</div>' +
-                            '<div class="tariff-row-sub"><i class="fa-solid fa-check"></i> ' + t.sub + '</div>' +
-                        '</div>' +
-                        '<div class="tariff-row-price">' +
-                            oldPrice +
-                            '<span class="tariff-amt">' + fmtFCFA(t.price) + '</span>' +
-                            '<span class="tariff-unit">par nuit</span>' +
-                        '</div>' +
-                        '<button type="button" class="tariff-row-btn" data-book-room="' + roomId + '" data-book-tariff="' + i + '">Choisir</button>' +
-                    '</div>';
-            }).join('');
-        }
-
-        function openModal(roomId) {
-            console.log('[TariffsModal] Ouverture pour', roomId);
-            if (!TARIFS_DATA[roomId]) {
-                console.warn('[TariffsModal] roomId inconnu:', roomId);
-                return;
-            }
-            renderTariffs(roomId);
-            modal.classList.add('is-open');
-            modal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            modal.classList.remove('is-open');
-            modal.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
-        }
-
-        /* Attacher les listeners sur chaque bouton "VOIR TOUS LES TARIFS" */
-        var openBtns = document.querySelectorAll('[data-open-tariffs]');
-        openBtns.forEach(function (btn) {
-            btn.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                openModal(btn.dataset.openTariffs || btn.getAttribute('data-open-tariffs'));
-            });
-        });
-
-        /* Clic sur "Choisir" → redirection directe vers reservation.html */
-        modalList.addEventListener('click', function (e) {
-            var btn = e.target.closest('[data-book-room]');
-            if (!btn) return;
-            e.preventDefault();
-            e.stopPropagation();
-            var roomId = btn.getAttribute('data-book-room');
-            var tariff = btn.getAttribute('data-book-tariff') || 0;
-            console.log('[TariffsModal] Redirection vers reservation.html?room=' + roomId + '&tariff=' + tariff);
-            window.location.href = 'reservation.html?room=' + encodeURIComponent(roomId) + '&tariff=' + encodeURIComponent(tariff);
-        });
-
-        /* Fermeture */
-        if (modalClose) modalClose.addEventListener('click', closeModal);
-        modal.addEventListener('click', function (e) {
-            if (e.target === modal) closeModal();
-        });
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
-        });
-
-        console.log('[TariffsModal] Initialisé avec succès');
-    })();
 
     // ================= PARALLAX HERO =================
     const heroBg = document.getElementById('heroBg');

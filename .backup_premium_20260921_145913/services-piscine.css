@@ -1,0 +1,650 @@
+/* ============================================================= */
+/* SERVICES-PISCINE.CSS — Page Piscine & Spa                     */
+/* Responsable : Rock Melvin                                     */
+/* Tous les sélecteurs sont scopés sous .piscine-page            */
+/* Couleurs alignées sur la charte Pullman (variables.css)       */
+/* ============================================================= */
+
+.piscine-page {
+    --vert-pullman: var(--couleur-vert, #38E28F);
+    --bleu-pullman: var(--couleur-bleu-profond, #155E75);
+    --sable-pullman: var(--couleur-sable, #C8A77A);
+    --texte-sombre: #1A2B3C;
+    --texte-gris: #6A7580;
+    --ligne-grise: #E8ECEF;
+}
+
+/* ================= HERO ================= */
+.piscine-page .hero-spa {
+    position: relative;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+}
+.piscine-page .hero-spa-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/piscinehorizon.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    transform: scale(1.05);
+}
+.piscine-page .hero-spa-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+        rgba(10, 30, 45, 0.85) 0%,
+        rgba(10, 30, 45, 0.55) 45%,
+        rgba(10, 30, 45, 0.15) 100%);
+    z-index: 2;
+}
+.piscine-page .hero-spa-content {
+    position: relative;
+    z-index: 3;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    width: 100%;
+}
+.piscine-page .breadcrumb {
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    opacity: 0.85;
+}
+.piscine-page .breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.piscine-page .breadcrumb a:hover {
+    color: var(--vert-pullman);
+}
+.piscine-page .breadcrumb span {
+    opacity: 0.7;
+}
+.piscine-page .hero-spa h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    max-width: 650px;
+    color: #ffffff;
+}
+.piscine-page .trait-vert {
+    display: block;
+    width: 65px;
+    height: 4px;
+    background: var(--vert-pullman);
+    border-radius: 2px;
+    margin-bottom: 25px;
+}
+.piscine-page .hero-spa-texte {
+    font-size: 1rem;
+    line-height: 1.85;
+    max-width: 560px;
+    margin-bottom: 35px;
+    opacity: 0.95;
+}
+
+/* ================= SECTIONS ================= */
+.piscine-page .section {
+    padding: 100px 0;
+}
+.piscine-page .section-blanche {
+    background: #ffffff;
+}
+.piscine-page .section-grise {
+    background: #F5F7F6;
+}
+.piscine-page .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.piscine-page .section-subtitle {
+    color: var(--vert-pullman);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.piscine-page .section-subtitle-blanc {
+    color: #A8E6CF;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.piscine-page .titre-souligne {
+    position: relative;
+    display: inline-block;
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--texte-sombre);
+    padding-bottom: 22px;
+    line-height: 1.3;
+    text-align: left;
+}
+.piscine-page .titre-souligne::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--vert-pullman);
+    border-radius: 2px;
+}
+
+/* ================= BIENFAITS ================= */
+.piscine-page .section-bienfaits {
+    padding: 70px 0;
+    background: #fff;
+}
+.piscine-page .bienfaits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+.piscine-page .bienfaits-texte .titre-souligne {
+    font-size: 1.6rem;
+    padding-bottom: 16px;
+    margin-bottom: 25px;
+}
+.piscine-page .bienfaits-texte .titre-souligne::after {
+    width: 50px;
+    height: 3px;
+}
+.piscine-page .bienfaits-desc {
+    font-size: 0.9rem;
+    color: var(--texte-gris);
+    line-height: 1.75;
+    margin-bottom: 35px;
+    max-width: 480px;
+}
+.piscine-page .icones-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.piscine-page .icone-item {
+    text-align: center;
+    min-width: 70px;
+}
+.piscine-page .icone-cercle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(56, 226, 143, 0.12);
+    color: var(--vert-pullman);
+    font-size: 18px;
+    margin-bottom: 10px;
+    transition: transform 0.3s, background 0.3s;
+}
+.piscine-page .icone-item:hover .icone-cercle {
+    transform: translateY(-3px);
+    background: rgba(56, 226, 143, 0.2);
+}
+.piscine-page .icone-item p {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--texte-sombre);
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+.piscine-page .bienfaits-image img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ================= ART DU SPA ================= */
+.piscine-page .section-art-spa {
+    padding: 80px 0;
+    background: #F5F7F6;
+}
+.piscine-page .art-spa-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 60px;
+    align-items: center;
+}
+.piscine-page .art-spa-texte .titre-souligne {
+    font-size: 1.6rem;
+    padding-bottom: 16px;
+    margin-bottom: 22px;
+}
+.piscine-page .art-spa-texte .titre-souligne::after {
+    width: 50px;
+    height: 3px;
+}
+.piscine-page .art-spa-desc {
+    font-size: 0.9rem;
+    color: var(--texte-gris);
+    line-height: 1.75;
+    margin-bottom: 35px;
+    max-width: 480px;
+}
+.piscine-page .services-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+.piscine-page .service-ligne {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+.piscine-page .service-icone {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(21, 94, 117, 0.08);
+    color: var(--bleu-pullman);
+    font-size: 16px;
+    flex-shrink: 0;
+}
+.piscine-page .service-ligne h4 {
+    color: var(--texte-sombre);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.piscine-page .service-ligne p {
+    font-size: 0.83rem;
+    color: var(--texte-gris);
+    line-height: 1.5;
+    margin: 0;
+}
+.piscine-page .art-spa-images {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.piscine-page .image-principale img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.piscine-page .images-secondaires {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+.piscine-page .images-secondaires img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+.piscine-page .images-secondaires img:hover {
+    transform: scale(1.03);
+}
+
+/* ================= PRESTATIONS ================= */
+.piscine-page .section-prestations {
+    padding: 80px 0;
+    background: #fff;
+}
+.piscine-page .prestations-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2.2fr;
+    gap: 60px;
+    align-items: center;
+}
+.piscine-page .prestations-intro .titre-souligne {
+    font-size: 1.6rem;
+    padding-bottom: 16px;
+    margin-bottom: 25px;
+}
+.piscine-page .prestations-intro .titre-souligne::after {
+    width: 50px;
+    height: 3px;
+}
+.piscine-page .prestations-desc {
+    font-size: 0.9rem;
+    color: var(--texte-gris);
+    line-height: 1.75;
+    margin-bottom: 28px;
+    max-width: 380px;
+}
+.piscine-page .btn-contour {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1.5px solid var(--bleu-pullman);
+    border-radius: 30px;
+    color: var(--bleu-pullman);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+}
+.piscine-page .btn-contour:hover {
+    background: var(--bleu-pullman);
+    color: #fff;
+}
+.piscine-page .prestations-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+.piscine-page .card-pullman {
+    background: #fff;
+    border: 1px solid var(--ligne-grise);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+.piscine-page .card-pullman:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border-color: var(--vert-pullman);
+}
+.piscine-page .card-img {
+    overflow: hidden;
+    height: 150px;
+}
+.piscine-page .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+    display: block;
+}
+.piscine-page .card-pullman:hover .card-img img {
+    transform: scale(1.06);
+}
+.piscine-page .card-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.piscine-page .card-body h3 {
+    color: var(--texte-sombre);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.piscine-page .card-body p {
+    font-size: 0.78rem;
+    color: var(--texte-gris);
+    line-height: 1.55;
+    margin-bottom: 14px;
+    flex: 1;
+}
+.piscine-page .prix {
+    display: inline-block;
+    color: var(--vert-pullman);
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-top: auto;
+    transition: transform 0.3s;
+}
+.piscine-page .card-pullman:hover .prix {
+    transform: translateX(4px);
+}
+
+/* ================= BANNIÈRE VERTE ================= */
+.piscine-page .banniere-verte {
+    padding: 40px 40px;
+}
+.piscine-page .banniere-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 55px 50px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0A8F66 0%, #007A54 100%);
+    color: #fff;
+}
+.piscine-page .banniere-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 20% 40%, rgba(255,255,255,0.06) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05) 0%, transparent 35%),
+        radial-gradient(circle at 50% 100%, rgba(0,0,0,0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+.piscine-page .banniere-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1.3fr 0.9fr;
+    gap: 50px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.piscine-page .banniere-texte h2 {
+    font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+    font-weight: 700;
+    margin: 8px 0 15px;
+    line-height: 1.2;
+    color: #fff;
+}
+.piscine-page .banniere-texte p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    opacity: 0.92;
+}
+.piscine-page .banniere-liste {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.piscine-page .banniere-liste li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    opacity: 0.95;
+}
+.piscine-page .liste-icone {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    color: #fff;
+}
+.piscine-page .banniere-prix {
+    text-align: center;
+    padding-left: 40px;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+}
+.piscine-page .prix-label,
+.piscine-page .prix-ttc {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    opacity: 0.85;
+    font-weight: 600;
+}
+.piscine-page .prix-valeur {
+    display: block;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 800;
+    margin: 8px 0;
+    line-height: 1;
+    color: #fff;
+}
+.piscine-page .btn-blanc {
+    display: inline-block;
+    background: #fff;
+    color: #007A54;
+    text-decoration: none;
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 18px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.piscine-page .btn-blanc:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= HORAIRES ================= */
+.piscine-page .section-horaires {
+    padding: 70px 0;
+    background: #fff;
+}
+.piscine-page .horaires-wrapper {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    align-items: center;
+}
+.piscine-page .horaires-titre .titre-souligne {
+    font-size: 1.8rem;
+    padding-bottom: 18px;
+    line-height: 1.2;
+}
+.piscine-page .horaires-titre .titre-souligne::after {
+    width: 50px;
+    height: 3px;
+}
+.piscine-page .horaires-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.piscine-page .horaire-item {
+    text-align: left;
+    padding: 0 25px;
+    border-left: 1px solid var(--ligne-grise);
+}
+.piscine-page .horaire-item:first-child {
+    border-left: none;
+    padding-left: 0;
+}
+.piscine-page .horaire-item:last-child {
+    padding-right: 0;
+}
+.piscine-page .horaire-icone {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid var(--ligne-grise);
+    color: var(--bleu-pullman);
+    font-size: 16px;
+    margin-bottom: 18px;
+    transition: all 0.3s;
+}
+.piscine-page .horaire-item:hover .horaire-icone {
+    border-color: var(--vert-pullman);
+    background: rgba(56, 226, 143, 0.08);
+    color: var(--vert-pullman);
+}
+.piscine-page .horaire-item h4 {
+    color: var(--texte-sombre);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: none;
+}
+.piscine-page .horaire-item p {
+    font-size: 0.85rem;
+    color: var(--texte-gris);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .piscine-page .container { padding: 0 25px; }
+    .piscine-page .section { padding: 60px 0; }
+    .piscine-page .bienfaits-grid,
+    .piscine-page .art-spa-grid,
+    .piscine-page .prestations-wrapper,
+    .piscine-page .horaires-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .piscine-page .bienfaits-image img { height: 300px; }
+    .piscine-page .image-principale img { height: 240px; }
+    .piscine-page .images-secondaires img { height: 90px; }
+    .piscine-page .prestations-desc { max-width: 600px; }
+    .piscine-page .horaires-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 40px;
+    }
+    .piscine-page .horaire-item:nth-child(3) {
+        border-left: none;
+        padding-left: 0;
+    }
+    .piscine-page .banniere-verte { padding: 20px; }
+    .piscine-page .banniere-container { padding: 40px 30px; }
+    .piscine-page .banniere-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    .piscine-page .banniere-prix {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+        padding: 30px 0 0;
+    }
+    .piscine-page .banniere-liste li {
+        justify-content: center;
+    }
+}
+@media (max-width: 768px) {
+    .piscine-page .prestations-cards {
+        grid-template-columns: 1fr;
+    }
+    .piscine-page .card-img { height: 200px; }
+}
+@media (max-width: 576px) {
+    .piscine-page .hero-spa { min-height: 520px; }
+    .piscine-page .hero-spa-content { padding: 40px 20px; }
+    .piscine-page .hero-spa h1 { font-size: 2rem; }
+    .piscine-page .icones-grid { gap: 20px; }
+    .piscine-page .icone-cercle { width: 44px; height: 44px; }
+    .piscine-page .bienfaits-texte .titre-souligne { font-size: 1.35rem; }
+    .piscine-page .images-secondaires { gap: 8px; }
+    .piscine-page .images-secondaires img { height: 70px; }
+    .piscine-page .horaires-grid { grid-template-columns: 1fr; }
+}
