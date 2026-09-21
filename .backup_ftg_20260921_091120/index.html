@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hôtel Pullman — Accueil</title>
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/commun.css">
+    <link rel="stylesheet" href="css/footer-cta.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="body">
+
+    <!-- HEADER -->
+    <header class="site-header">
+    <div class="topbar">
+        <div class="lang-switch">Français <span class="chevron">▾</span></div>
+        <span class="separator">|</span>
+        <a href="contact.html" class="topbar-contact">
+            <span class="icon-mail">✉</span> Nous contacter
+        </a>
+    </div>
+
+    <div class="mainbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Logo Pullman Dakar Teranga">
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html" class="active">ACCUEIL</a>
+            <span class="nav-sep">|</span>
+
+            <a href="chambres.html">CHAMBRES</a>
+            <span class="nav-sep">|</span>
+
+            <div class="dropdown">
+                <a>EXPÉRIENCES</a>
+                <div class="dropdown-content">
+                    <a href="experiences-piscine.html">Piscine + Spa</a>
+                    <a href="experiences-restaurant.html">Restaurant + Wifi</a>
+                </div>
+            </div>
+            <span class="nav-sep">|</span>
+
+            <a href="galerie.html">GALERIE</a>
+            <span class="nav-sep">|</span>
+
+            <a href="evenements.html">MEETING &amp; EVENTS</a>
+            <span class="nav-sep">|</span>
+
+            <a href="contact.html">CONTACT</a>
+        </nav>
+
+        <a href="reservation.html" class="btn-reserver">Réserver maintenant</a>
+    </div>
+</header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-slider">
+                <img src="images/hero.png" class="slide active" alt="Pullman Hotel 1">
+                <img src="images/hero2.png" class="slide" alt="Pullman Hotel 2">
+                <img src="images/hero3.png" class="slide" alt="Pullman Hotel 3">
+            </div>
+
+            <div class="overlay"></div>
+            <div class="bottom-gradient"></div>
+
+            <div class="hero-content">
+                <h1>VOTRE SÉJOUR, AU CŒUR<br>DE DAKAR</h1>
+                <p>Une expérience cinq étoiles entre élégance<br>contemporaine, hospitalité sénégalaise et vue<br>sur l'océan.</p>
+                <div class="stars">★★★★★</div>
+                <a href="#" class="discover">DÉCOUVRIR L'HÔTEL <span class="chevron-right">›</span></a>
+            </div>
+
+            <button class="arrow arrow-prev" id="prevSlide" aria-label="précédent">
+                <span>‹</span>
+            </button>
+
+            <button class="arrow arrow-next" id="nextSlide" aria-label="suivant">
+                <span>›</span>
+            </button>
+
+            <!-- Barre de réservation -->
+            <div class="booking-container">
+                <form class="booking-bar" action="reservation.html" method="get">
+                    <div class="booking-field">
+                        <div class="field-icon-badge">
+                            <i class="fa-solid fa-bed"></i>
+                        </div>
+                        <div class="field-content">
+                            <span class="field-label">CHAMBRE</span>
+                            <select class="field-select">
+                                <option>1 chambre</option>
+                                <option>2 chambres</option>
+                                <option>3 chambres</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="booking-field">
+                        <div class="field-icon-badge">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <div class="field-content">
+                            <span class="field-label">ARRIVÉE</span>
+                            <input type="text" id="checkin" class="field-input" placeholder="Sélectionner" readonly>
+                        </div>
+                    </div>
+
+                    <div class="booking-field">
+                        <div class="field-icon-badge">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <div class="field-content">
+                            <span class="field-label">DÉPART</span>
+                            <input type="text" id="checkout" class="field-input" placeholder="Sélectionner" readonly>
+                        </div>
+                    </div>
+
+                    <div class="booking-field">
+                        <div class="field-icon-badge">
+                            <i class="fa-solid fa-user-group"></i>
+                        </div>
+                        <div class="field-content">
+                            <span class="field-label">HÔTES</span>
+                            <select class="field-select">
+                                <option>1 personne</option>
+                                <option>2 personnes</option>
+                                <option>3 personnes</option>
+                                <option>4 personnes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        VÉRIFIER LES<br>DISPONIBILITÉS
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECTION BIENVENUE -->
+        <section class="about-section gsap-reveal">
+            <div class="about-image">
+                <img src="images/about.jpg" alt="Pullman Dakar Teranga">
+            </div>
+
+            <div class="about-content">
+                <span class="about-subtitle">DAKAR · TERANGA · ART</span>
+                <h2>BIENVENUE AU PULLMAN<br>DAKAR TERANGA</h2>
+                <p>
+                    Au cœur du Plateau, face à l'Atlantique, Pullman Dakar Teranga
+                    réinvente l'hospitalité contemporaine. Un lieu où l'énergie de Dakar
+                    rencontre l'art, le design et l'esprit Teranga, pour créer une
+                    expérience aussi locale qu'inspirante.
+                </p>
+                <a href="#" class="about-btn">DÉCOUVRIR L'HÔTEL &gt;</a>
+            </div>
+        </section>
+
+        <!-- BANDEAU FEATURES -->
+        <section class="features-bar">
+            <div class="features-container">
+                <h3 class="features-title">Our World Is Your Playground</h3>
+
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <img src="images/icon-confort.png" alt="Confort Absolu" class="feature-icon">
+                        </div>
+                        <span>CONFORT<br>ABSOLU</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <img src="images/icon-vue.png" alt="Vue Panoramique" class="feature-icon">
+                        </div>
+                        <span>VUE<br>PANORAMIQUE</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <img src="images/icon-saveurs.png" alt="Saveurs d'Exception" class="feature-icon">
+                        </div>
+                        <span>SAVEURS<br>D'EXCEPTION</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <img src="images/icon-services.png" alt="Services Premium" class="feature-icon">
+                        </div>
+                        <span>SERVICES<br>PREMIUM</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <img src="images/icon-hospitalite.png" alt="Hospitalité Sénégalaise" class="feature-icon">
+                        </div>
+                        <span>HOSPITALITÉ<br>SÉNÉGALAISE</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <img src="images/icon-evenements.png" alt="Événements & Séminaires" class="feature-icon">
+                        </div>
+                        <span>ÉVÉNEMENTS &<br>SÉMINAIRES</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION NOS CHAMBRES -->
+        <section class="rooms-section">
+            <div class="rooms-container">
+                <div class="rooms-header gsap-reveal">
+                    <span class="section-tag">NOS CHAMBRES</span>
+                    <h2 class="section-title">L’élégance commence ici</h2>
+                    <p class="section-subtitle">
+                        Découvrez des chambres pensées pour le confort, la lumière<br>et l’art de vivre face à l’Atlantique.
+                    </p>
+                </div>
+
+                <div class="rooms-list">
+                    <!-- 01 DELUXE -->
+                    <article class="room-card gsap-reveal">
+                        <div class="room-image">
+                            <img src="images/room-deluxe.png" alt="Chambre Deluxe Vue Océan">
+                        </div>
+                        <div class="room-content">
+                            <div class="room-category">
+                                <span class="room-number">01</span>
+                                <span class="category-name">DELUXE</span>
+                            </div>
+                            <h3 class="room-name">Chambre Deluxe Vue Océan</h3>
+                            <p class="room-desc">Pour les voyageurs qui veulent se réveiller avec l’horizon de l’Atlantique.</p>
+
+                            <div class="room-price">
+                                <span class="price-label">À partir de</span>
+                                <div class="price-value">155 000 <span class="currency">FCFA</span></div>
+                            </div>
+
+                            <div class="room-icons">
+                                <img src="images/icon-bed2.png" alt="Lit" class="room-icon">
+                                <img src="images/icon-shower.png" alt="Douche" class="room-icon">
+                                <img src="images/icon-sea.png" alt="Vue mer" class="room-icon">
+                                <img src="images/icon-coffee.png" alt="Café" class="room-icon">
+                                <img src="images/icon-time.png" alt="Service 24/7" class="room-icon">
+                            </div>
+                            <a href="#" class="room-btn">DÉCOUVRIR CETTE CHAMBRE &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- 02 SUITE -->
+                    <article class="room-card room-card--reverse gsap-reveal">
+                        <div class="room-image">
+                            <img src="images/room-suite.png" alt="Suite Ambassadeur Pullman">
+                        </div>
+                        <div class="room-content">
+                            <div class="room-category">
+                                <span class="room-number">02</span>
+                                <span class="category-name">SUITE</span>
+                            </div>
+                            <h3 class="room-name">Suite Ambassadeur Pullman</h3>
+                            <p class="room-desc">Un salon séparé, des volumes généreux et des services exclusifs pour les séjours d’exception.</p>
+
+                            <div class="room-price">
+                                <span class="price-label">À partir de</span>
+                                <div class="price-value">355 000 <span class="currency">FCFA</span></div>
+                            </div>
+
+                            <div class="room-icons">
+                                <img src="images/icon-bed3.png" alt="Grand lit" class="room-icon">
+                                <img src="images/icon-vip.png" alt="Accès VIP" class="room-icon">
+                                <img src="images/icon-bath.png" alt="Baignoire" class="room-icon">
+                                <img src="images/icon-service.png" alt="Service personnalisé" class="room-icon">
+                                <img src="images/icon-sparkle.png" alt="Prestation premium" class="room-icon">
+                            </div>
+                            <a href="#" class="room-btn">DÉCOUVRIR CETTE CHAMBRE &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- 03 SUPÉRIEURE -->
+                    <article class="room-card gsap-reveal">
+                        <div class="room-image">
+                            <img src="images/room-superior.png" alt="Chambre Supérieure Urbaine">
+                        </div>
+                        <div class="room-content">
+                            <div class="room-category">
+                                <span class="room-number">03</span>
+                                <span class="category-name">SUPÉRIEURE</span>
+                            </div>
+                            <h3 class="room-name">Chambre Supérieure Urbaine</h3>
+                            <p class="room-desc">L’équilibre parfait entre design contemporain, fonctionnalité et vue sur le cœur de Dakar.</p>
+
+                            <div class="room-price">
+                                <span class="price-label">À partir de</span>
+                                <div class="price-value">115 000 <span class="currency">FCFA</span></div>
+                            </div>
+
+                            <div class="room-icons">
+                                <img src="images/icon-bed2.png" alt="Lit confort" class="room-icon">
+                                <img src="images/icon-shower.png" alt="Douche" class="room-icon">
+                                <img src="images/icon-services.png" alt="Services" class="room-icon">
+                                <img src="images/icon-ac.png" alt="Climatisation" class="room-icon">
+                                <img src="images/icon-coffee.png" alt="Machine à café" class="room-icon">
+                            </div>
+                            <a href="#" class="room-btn">DÉCOUVRIR CETTE CHAMBRE &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Bannière d'expérience -->
+                <div class="experience-banner gsap-reveal">
+                    <div class="banner-content">
+                        <span class="banner-sub">PULLMAN DAKAR TERANGA</span>
+                        <h3 class="banner-title">Trouvez la chambre qui<br>vous ressemble</h3>
+                    </div>
+                    <a href="#" class="banner-btn">RÉSERVER UNE EXPÉRIENCE &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION EXPÉRIENCES -->
+        <section class="experiences-section">
+            <div class="experiences-container">
+                <div class="experiences-header gsap-reveal">
+                    <span class="section-tag-light">L'ART DE VIVRE PULLMAN</span>
+                    <h2 class="experiences-title">AU-delà de la <span>chambre</span></h2>
+                    <p class="experiences-subtitle">Des expériences pensées pour éveiller vos sens et célébrer l'âme de Dakar.</p>
+                </div>
+
+                <div class="experiences-grid">
+                    <article class="exp-card gsap-reveal">
+                        <div class="exp-img-wrapper">
+                            <img src="images/exp-piscine.jpeg" alt="Piscine & Plage Privée" class="exp-img">
+                        </div>
+                        <h3 class="exp-title">Piscine &amp; Plage Privée</h3>
+                        <p class="exp-desc">Détendez-vous entre piscine à débordement et plage privée, face à l'océan Atlantique.</p>
+                        <a href="#" class="exp-btn exp-btn--outline">RÉSERVER UNE EXPÉRIENCE</a>
+                    </article>
+
+                    <article class="exp-card gsap-reveal">
+                        <div class="exp-img-wrapper">
+                            <img src="images/exp-spa.jpeg" alt="Pullman Spa" class="exp-img">
+                        </div>
+                        <h3 class="exp-title">Pullman Spa</h3>
+                        <p class="exp-desc">Un sanctuaire de bien-être pour se ressourcer : soins, hammam, sauna et rituels sur-mesure.</p>
+                        <a href="#" class="exp-btn exp-btn--outline">DÉCOUVRIR LE SPA</a>
+                    </article>
+
+                    <article class="exp-card gsap-reveal">
+                        <div class="exp-img-wrapper">
+                            <img src="images/exp-beachclub.jpeg" alt="Teranga Beach Club" class="exp-img">
+                        </div>
+                        <h3 class="exp-title">Teranga Beach Club</h3>
+                        <p class="exp-desc">Vivez l'esprit Teranga les pieds dans le sable, entre musique, cuisine et coucher de soleil.</p>
+                        <a href="#" class="exp-btn exp-btn--outline">VOIR LE BEACH CLUB</a>
+                    </article>
+
+                    <article class="exp-card gsap-reveal">
+                        <div class="exp-img-wrapper">
+                            <img src="images/exp-lounge.jpeg" alt="Teranga Lounge" class="exp-img">
+                        </div>
+                        <h3 class="exp-title">Teranga Lounge</h3>
+                        <p class="exp-desc">Un lieu chaleureux pour siroter, partager et se retrouver dans une ambiance élégante.</p>
+                        <a href="#" class="exp-btn exp-btn--outline">DÉCOUVRIR LE LOUNGE</a>
+                    </article>
+
+                    <article class="exp-card gsap-reveal">
+                        <div class="exp-img-wrapper">
+                            <img src="images/exp-art.jpeg" alt="Art & Culture" class="exp-img">
+                        </div>
+                        <h3 class="exp-title">Art &amp; Culture</h3>
+                        <p class="exp-desc">Plongez dans la richesse artistique de Dakar à travers expositions et rencontres inspirantes.</p>
+                        <a href="#" class="exp-btn exp-btn--outline">DÉCOUVRIR LA CULTURE</a>
+                    </article>
+
+                    <article class="exp-card gsap-reveal">
+                        <div class="exp-img-wrapper">
+                            <img src="images/exp-events.jpeg" alt="Meeting & Events" class="exp-img">
+                        </div>
+                        <h3 class="exp-title">Meeting &amp; Events</h3>
+                        <p class="exp-desc">Des espaces modulables et équipés pour des événements professionnels réussis.</p>
+                        <a href="#" class="exp-btn exp-btn--filled">ORGANISER UN ÉVÉNEMENT</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION GALERIE MOSAÏQUE -->
+        <section class="gallery-section">
+            <div class="gallery-bg-split">
+                <div class="bg-dark"></div>
+                <div class="bg-light"></div>
+            </div>
+
+            <div class="gallery-container">
+                <div class="gallery-grid">
+                    <div class="gallery-brand">
+                        <img src="images/logo pullman blanc.png" alt="Logo Pullman" class="gallery-logo">
+                    </div>
+
+                    <a href="https://www.instagram.com/pullmandakarteranga/?hl=fr" target="_blank" rel="noopener noreferrer" class="gal-card gal-pos-1 gal-parallax-down">
+                        <img src="images/gal-terrasse.jpeg" alt="Terrasse">
+                        <div class="gal-overlay">
+                            <i class="fa-brands fa-instagram gal-insta-icon"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://www.instagram.com/pullmandakarteranga/?hl=fr" target="_blank" rel="noopener noreferrer" class="gal-card gal-pos-2 gal-parallax-up">
+                        <img src="images/gal-piscine.jpeg" alt="Piscine">
+                        <div class="gal-overlay">
+                            <i class="fa-brands fa-instagram gal-insta-icon"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://www.instagram.com/pullmandakarteranga/?hl=fr" target="_blank" rel="noopener noreferrer" class="gal-card gal-pos-3 gal-parallax-up">
+                        <img src="images/gal-chef.jpeg" alt="Chef">
+                        <div class="gal-overlay">
+                            <i class="fa-brands fa-instagram gal-insta-icon"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://www.instagram.com/pullmandakarteranga/?hl=fr" target="_blank" rel="noopener noreferrer" class="gal-card gal-pos-4 gal-parallax-down">
+                        <img src="images/gal-barman.jpeg" alt="Barman">
+                        <div class="gal-overlay">
+                            <i class="fa-brands fa-instagram gal-insta-icon"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://www.instagram.com/pullmandakarteranga/?hl=fr" target="_blank" rel="noopener noreferrer" class="gal-card gal-pos-5 gal-parallax-down">
+                        <img src="images/gal-lounge.jpeg" alt="Lounge">
+                        <div class="gal-overlay">
+                            <i class="fa-brands fa-instagram gal-insta-icon"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://www.instagram.com/pullmandakarteranga/?hl=fr" target="_blank" rel="noopener noreferrer" class="gal-card gal-pos-6 gal-parallax-up">
+                        <img src="images/gal-vuemer.jpeg" alt="Vue Mer">
+                        <div class="gal-overlay">
+                            <i class="fa-brands fa-instagram gal-insta-icon"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="gallery-action">
+                    <a href="https://www.instagram.com/pullmandakarteranga/?hl=fr" target="_blank" rel="noopener noreferrer" class="btn-gallery">VOIR SUR INSTAGRAM</a>
+                </div>
+            </div>
+        </section>
+
+<!-- SECTION AVIS CLIENTS -->
+<section class="reviews-section gsap-reveal">
+    <div class="container">
+        <span class="section-subtitle">ILS ONT VÉCU L'EXPÉRIENCE</span>
+        <h2 class="section-title">Ce que nos clients disent de nous</h2>
+
+        <div class="rating-header">
+            <span class="rating-score">4.4<small>/5</small></span>
+            <div class="stars-gold-main">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+        </div>
+        <p class="rating-count">Basé sur 749 avis vérifiés</p>
+
+        <!-- Carrousel Avis avec Défilement Automatique -->
+        <div class="reviews-carousel">
+            <button class="nav-btn prev-btn" aria-label="Précédent">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="reviews-grid" id="reviewsGrid">
+                <!-- Amadou B. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Amadou B.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </span>
+                                <span class="card-score">5.0/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Une expérience véritablement mémorable ! Je tiens à remercier chaleureusement Mme GUEYE Magatte DIAGNE ainsi que toute son équipe pour leur accueil et l’excellente qualité de service. Un établissement qui reflète cette belle Teranga sénégalaise.
+                    </p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-users"></i> En famille</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 13/09/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Cody M. N. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Cody M. N.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                                </span>
+                                <span class="card-score">4.0/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Le personnel est accueillant et très disponible.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-users"></i> En famille</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 13/09/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Aziz L. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Aziz L.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </span>
+                                <span class="card-score">4.5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Très satisfait.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-briefcase"></i> Professionnel</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 13/09/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Habiba S. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Habiba S.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </span>
+                                <span class="card-score">4.5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Très bon séjour au Pullman Teranga, l’accueil chaleureux des équipes a été très appréciable. La chambre avec vue sur mer est magnifique.
+                    </p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-heart"></i> En couple</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 11/09/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Boubacar S. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Boubacar S.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </span>
+                                <span class="card-score">4.5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Bon accueil, la teranga. Service restaurant peut mieux faire.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-briefcase"></i> Professionnel</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 11/09/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Samba D. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Samba D.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                </span>
+                                <span class="card-score">0.5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Déçu du séjour, attente trop longue au room service et bruit près des ascenseurs.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-heart"></i> En couple</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 07/09/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Ibrahima S. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Ibrahima S.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </span>
+                                <span class="card-score">5.0/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Je suis très satisfait.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-users"></i> En famille</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 31/08/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Naminata D. F. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Naminata D. F.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </span>
+                                <span class="card-score">4.5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Équipe disponible. Équipements de sport adaptés aux enfants à revoir.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-users"></i> En famille</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 31/08/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Henri L. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Henri L.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </span>
+                                <span class="card-score">4.5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Belle expérience, le personnel était aux petits soins.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-users"></i> En famille</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 27/08/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Delphine M. K. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Delphine M. K.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </span>
+                                <span class="card-score">5.0/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Un personnel au petit soin, une propreté impeccable de ma chambre, une literie TOPISSIME 👍 Je conseille VIVEMENT cet hôtel !
+                    </p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-regular fa-user"></i> Voyage solo</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 26/08/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Anta D. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Anta D.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </span>
+                                <span class="card-score">4.5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Très satisfaite du séjour ! Le personnel est accueillant et ouvert. Propre, calme et ouvert sur l'océan.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-users"></i> En famille</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 26/08/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Papa F. N. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Papa F. N.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                                </span>
+                                <span class="card-score">4.0/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Réactivité du personnel appréciée et excellent accueil de M. SOW malgré quelques désagréments techniques.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-regular fa-user"></i> Voyage solo</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 18/08/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Papa S. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Papa S.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                                </span>
+                                <span class="card-score">4.0/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Équipe accueillante et disponible.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-briefcase"></i> Professionnel</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 15/08/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Semy K. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Semy K.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </span>
+                                <span class="card-score">4.5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Nous avons passé un très agréable séjour avec un personnel formidable.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-heart"></i> En couple</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 14/08/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Aziz L. (Entre amis) -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Aziz L.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </span>
+                                <span class="card-score">4.5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Une bonne expérience !</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-user-group"></i> Entre amis</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 08/08/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Anonyme -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Client Diamond</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </span>
+                                <span class="card-score">5.0/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">J'ai été bien traitée en tant que Cliente Diamond. J'ai beaucoup apprécié les petits amuse-bouche du soir.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-briefcase"></i> Professionnel</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 03/08/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Marthe K. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Marthe K.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </span>
+                                <span class="card-score">4.5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Mon séjour s'est très bien passé ! Je recommande cet hôtel pour un premier séjour ou en famille.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-regular fa-user"></i> Voyage solo</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 24/07/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Aminata C. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Aminata C.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </span>
+                                <span class="card-score">5.0/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Hôtel très agréable, avec un personnel aux petits soins. Buffet délicieux et cadre magnifique.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-heart"></i> En couple</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 23/07/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Olivier J. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Olivier J.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                </span>
+                                <span class="card-score">2.5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Bien situé, séjour confortable. Cependant le buffet et la minutie du ménage peuvent être améliorés.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-briefcase"></i> Professionnel</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 22/07/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+
+                <!-- Donald K. -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Donald K.</h4>
+                            <div class="card-stars">
+                                <span class="stars-gold">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </span>
+                                <span class="card-score">5.0/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">Très bon accueil, mention spéciale à Mr BOKOUM, très serviable et accueillant.</p>
+                    <div class="review-footer">
+                        <span class="meta-item"><i class="fa-solid fa-briefcase"></i> Professionnel</span>
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> 20/07/2026</span>
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Avis confirmé ALL</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="nav-btn next-btn" aria-label="Suivant">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Certifications -->
+        <div class="certifications">
+            <div class="cert-item">
+                <img src="images/logo-safe-hotels.png" alt="Safe Hotels Premium" class="img-manual-cert">
+            </div>
+            <div class="cert-divider"></div>
+            <div class="cert-item">
+                <img src="images/logo-green-key.png" alt="Green Key" class="img-manual-cert">
+            </div>
+            <div class="cert-divider"></div>
+            <div class="cert-item">
+                <img src="images/logo-all-accor.png" alt="ALL Accor Live Limitless" class="img-manual-cert">
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- SECTION RÉSERVATION BOTTOM (CTA) -->
+        <section class="booking-section">
+            <div class="container">
+                <h2>PRÊT POUR VOTRE PROCHAINE ÉVASION ?</h2>
+                <p class="subtitle">Réservez maintenant et vivez l'expérience Pullman Dakar Teranga.</p>
+
+                <div class="booking-widget">
+                    <div class="widget-field">
+                        <span class="icon-field"><i class="far fa-calendar-alt"></i></span>
+                        <div class="field-info">
+                            <label>Arrivée</label>
+                            <input type="text" id="cta-checkin" class="cta-date-input" placeholder="Sélectionner">
+                        </div>
+                    </div>
+
+                    <div class="widget-field">
+                        <span class="icon-field"><i class="far fa-calendar-alt"></i></span>
+                        <div class="field-info">
+                            <label>Départ</label>
+                            <input type="text" id="cta-checkout" class="cta-date-input" placeholder="Sélectionner">
+                        </div>
+                    </div>
+
+                    <div class="widget-field">
+                        <span class="icon-field"><i class="fas fa-bed"></i></span>
+                        <div class="field-info">
+                            <label>Chambres</label>
+                            <select>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="widget-field">
+                        <span class="icon-field"><i class="far fa-user"></i></span>
+                        <div class="field-info">
+                            <label>Voyageurs</label>
+                            <select>
+                                <option value="2">2 adultes</option>
+                                <option value="1">1 adulte</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Réserver maintenant</button>
+                </div>
+
+                <div class="booking-features">
+                    <div class="feature-item">
+                        <span class="icon-circle"><i class="fas fa-certificate"></i></span>
+                        <span>Meilleur tarif garanti</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon-circle"><i class="fas fa-calendar-check"></i></span>
+                        <span>Annulation flexible</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon-circle"><i class="fas fa-lock"></i></span>
+                        <span>Paiement sécurisé</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">
+                        <img src="images/logo-pullman-white.png" alt="Pullman Hotels and Resorts" class="img-manual-logo">
+                    </div>
+                    <div class="contact-details">
+                        <p><i class="fa-solid fa-location-dot icon-contact"></i> Pullman Dakar Teranga<br>Route de la Corniche Ouest<br>BP 8181, Dakar, Sénégal</p>
+                        <p><i class="fa-solid fa-phone icon-contact"></i> +221 33 869 66 66</p>
+                        <p><i class="fa-regular fa-envelope icon-contact"></i> HB076@accor.com</p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">LIENS UTILES</h4>
+                    <ul>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Conditions générales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Accessibilité</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">DÉCOUVRIR</h4>
+                    <ul>
+                        <li><a href="#">Nos chambres</a></li>
+                        <li><a href="#">Expériences</a></li>
+                        <li><a href="#">Offres spéciales</a></li>
+                        <li><a href="#">Galerie</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">SUIVEZ-NOUS</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-solid fa-globe"></i></a>
+                    </div>
+
+                    <div class="engagement-block">
+                        <h4>NOTRE ENGAGEMENT</h4>
+                        <p class="slogan">Our World Is<br>Your Playground</p>
+                        <div class="slogan-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Pullman Dakar Teranga - Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- Scripts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        // 1. Animation d'entrée Hero avec GSAP
+        window.addEventListener('DOMContentLoaded', () => {
+            gsap.from([
+                '.hero-content h1',
+                '.hero-content p',
+                '.hero-content .stars',
+                '.hero-content .discover'
+            ], {
+                opacity: 0,
+                y: 15,
+                duration: 1.2,
+                stagger: 0.2,
+                ease: "power2.out",
+                delay: 0.2
+            });
+        });
+
+        // 2. Gestion du Slider Hero
+        const slides = document.querySelectorAll('.hero-slider .slide');
+        const nextBtn = document.getElementById('nextSlide');
+        const prevBtn = document.getElementById('prevSlide');
+        let currentSlide = 0;
+        const slideInterval = 5000;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            if (slides[index]) {
+                slides[index].classList.add('active');
+            }
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        let autoSlide = setInterval(nextSlide, slideInterval);
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                clearInterval(autoSlide);
+                nextSlide();
+                autoSlide = setInterval(nextSlide, slideInterval);
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                clearInterval(autoSlide);
+                prevSlide();
+                autoSlide = setInterval(nextSlide, slideInterval);
+            });
+        }
+
+        // 3. Animations au survol / scroll (GSAP ScrollTrigger)
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('.gsap-reveal').forEach((elem) => {
+            gsap.fromTo(elem, 
+                { opacity: 0, y: 40 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        });
+
+        gsap.to('.gal-parallax-up', {
+            y: -30,
+            ease: "none",
+            scrollTrigger: {
+                trigger: '.gallery-section',
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.2
+            }
+        });
+
+        gsap.to('.gal-parallax-down', {
+            y: 30,
+            ease: "none",
+            scrollTrigger: {
+                trigger: '.gallery-section',
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.2
+            }
+        });
+
+        // 4. Carrousel des Avis Clients (Auto-scroll + Boutons Précédent/Suivant)
+        const reviewsGrid = document.getElementById('reviewsGrid');
+        const reviewPrevBtn = document.querySelector('.reviews-section .prev-btn');
+        const reviewNextBtn = document.querySelector('.reviews-section .next-btn');
+
+        if (reviewsGrid && reviewPrevBtn && reviewNextBtn) {
+            const getScrollAmount = () => {
+                const card = reviewsGrid.querySelector('.review-card');
+                return card ? card.offsetWidth + 20 : 320;
+            };
+
+            const autoScroll = () => {
+                if (reviewsGrid.scrollLeft + reviewsGrid.clientWidth >= reviewsGrid.scrollWidth - 10) {
+                    reviewsGrid.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    reviewsGrid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+                }
+            };
+
+            let autoScrollTimer = setInterval(autoScroll, 3500);
+
+            reviewNextBtn.addEventListener('click', () => {
+                clearInterval(autoScrollTimer);
+                autoScroll();
+                autoScrollTimer = setInterval(autoScroll, 3500);
+            });
+
+            reviewPrevBtn.addEventListener('click', () => {
+                clearInterval(autoScrollTimer);
+                reviewsGrid.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+                autoScrollTimer = setInterval(autoScroll, 3500);
+            });
+
+            reviewsGrid.addEventListener('mouseenter', () => clearInterval(autoScrollTimer));
+            reviewsGrid.addEventListener('mouseleave', () => {
+                clearInterval(autoScrollTimer);
+                autoScrollTimer = setInterval(autoScroll, 3500);
+            });
+        }
+
+        // 5. Initialisation des Sélecteurs de Dates (Flatpickr)
+        const flatpickrConfig = {
+            locale: "fr",
+            dateFormat: "d M. Y",
+            minDate: "today"
+        };
+
+        const checkinPicker = flatpickr("#checkin", {
+            ...flatpickrConfig,
+            defaultDate: "2026-09-09",
+            onChange: function(selectedDates) {
+                if (checkoutPicker && selectedDates[0]) {
+                    checkoutPicker.set("minDate", selectedDates[0]);
+                }
+            }
+        });
+
+        const checkoutPicker = flatpickr("#checkout", {
+            ...flatpickrConfig,
+            defaultDate: "2026-09-30",
+            minDate: "2026-09-09"
+        });
+
+        flatpickr("#cta-checkin", { ...flatpickrConfig, defaultDate: "2026-09-09" });
+        flatpickr("#cta-checkout", { ...flatpickrConfig, defaultDate: "2026-09-30" });
+    </script>
+    <script src="js/booking-bridge.js"></script>
+</body>
+</html>
+    <!-- SCRIPT DU CARROUSEL ET DU DÉFILEMENT AUTOMATIQUE (À placer juste avant </body>) -->
+</body>
+</html>
