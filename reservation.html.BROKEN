@@ -130,7 +130,9 @@
                     <h3>Votre sélection</h3>
                     <div id="selContent"><p class="sel-empty">Choisissez une chambre et un tarif dans la liste pour voir apparaître ici le détail de votre réservation.</p></div>
                     
-                <!-- BANDEAU EXTRAS -->
+                
+
+                
                 <div id="exbBanner" class="exb-banner" style="display:none;">
                     <div class="exb-head">
                         <span class="exb-icon"><i class="fa-solid fa-gift"></i></span>
@@ -599,10 +601,10 @@ flatpickr("#cta-checkout", { locale: "fr", dateFormat: "d M. Y", minDate: "today
 </footer>
 
     <script src="js/extras.js"></script>
-    <script src="js/booking-bridge.js"></script>
+<script src="js/booking-bridge.js"></script>
     <script src="js/i18n.js"></script>
 
-<!-- MODAL EXTRAS -->
+
 <div class="exb-modal-overlay" id="exbModal" aria-hidden="true">
     <div class="exb-modal" role="dialog" aria-modal="true" aria-labelledby="exbModalTitle">
         <button type="button" class="exb-modal-close" id="exbModalClose" aria-label="Fermer">
@@ -641,6 +643,57 @@ flatpickr("#cta-checkout", { locale: "fr", dateFormat: "d M. Y", minDate: "today
         </div>
     </div>
 </div>
+
+
+
+<script>
+/* PATCH - Recalcul du total avec les extras */
+(function () {
+    'use strict';
+
+    // Fonction appelee par extras.js apres chaque changement
+    window.updateTotalWithExtras = function () {
+        // Trouver le prix total actuel
+        var totalEl = document.querySelector('#selContent .price-total .amt');
+        if (!totalEl) return;
+
+        // Recuperer le total affiche actuel
+        var currentText = totalEl.textContent || '0';
+        var current = parseInt(currentText.replace(/[^0-9]/g, ''), 10) || 0;
+
+        // Verifier qu'on a pas deja ajoute un sous-total extras
+        var oldSubtotalLine = document.querySelector('#selContent .extras-subtotal-line');
+        if (oldSubtotalLine) oldSubtotalLine.remove();
+
+        // Calculer le sous-total extras
+        if (window.Extras && typeof window.Extras.getSubtotal === 'function') {
+            var extrasTotal = window.Extras.getSubtotal();
+            if (extrasTotal > 0) {
+                // Inserer une ligne "Extras" avant le total
+                var totalRow = document.querySelector('#selContent .price-total');
+                if (totalRow) {
+                    var line = document.createElement('div');
+                    line.className = 'extras-subtotal-line';
+                    line.style.cssText = 'display:flex;justify-content:space-between;padding:6px 0;font-size:0.8rem;color:#A47B3E;font-weight:700;border-top:1px dashed #E3E8EA;margin-top:8px;';
+                    line.innerHTML = '<span>Extras (' + window.Extras.getSelected().length + ')</span><b>+' + extrasTotal.toLocaleString('fr-FR').replace(/,/g, ' ') + ' FCFA</b>';
+                    totalRow.parentNode.insertBefore(line, totalRow);
+
+                    // Mettre a jour le total
+                    var newTotal = current + extrasTotal;
+                    totalEl.textContent = newTotal.toLocaleString('fr-FR').replace(/,/g, ' ') + ' FCFA';
+                }
+            }
+        }
+    };
+
+    // Re-render apres chaque changement d'etape
+    document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+            if (window.updateTotalWithExtras) window.updateTotalWithExtras();
+        }, 500);
+    });
+})();
+</script>
 
 </body>
 </html>
