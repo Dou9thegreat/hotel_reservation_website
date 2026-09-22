@@ -273,8 +273,6 @@
     });
 
     window.Extras = {
-        refreshSelectionPanel: function () { renderSelectionPanel(); },
-
         list: EXTRAS,
         getSelected: function () { return selectedIds.slice(); },
         getSubtotal: subtotal,

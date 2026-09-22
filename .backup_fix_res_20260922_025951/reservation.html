@@ -242,7 +242,7 @@
                     <h3>Total à régler</h3>
                     <div class="price-detail" id="finalPriceDetail"></div>
                     <div class="price-total"><span class="lbl">TOTAL</span><span class="amt" id="finalTotal">0 FCFA</span></div>
-                    <button type="button" class="btn-continue" onclick="confirmAndPay()">Payer et confirmer</button>
+                    <button type="button" class="btn-continue" onclick="goStep(4)">Payer et confirmer</button>
                     <div class="reassure"><span>✓ Meilleur tarif garanti</span><span>✓ Annulation flexible</span></div>
                 </aside>
             </div>
@@ -414,15 +414,13 @@ function renderSelection(){
   if (!selected){
     el.innerHTML = '<p class="sel-empty">Choisissez une chambre et un tarif dans la liste pour voir apparaître ici le détail de votre réservation.</p>';
     btn.disabled = true;
-    if (window.Extras && typeof window.Extras.refreshSelectionPanel === 'function') window.Extras.refreshSelectionPanel();
     return;
   }
   const n = nights(), g = guestsCount();
   const room = selected.room, tariff = selected.tariff;
   const sousTotal = tariff.price * n;
   const taxe = TAXE_NUIT_PERS * g * n;
-  const extrasTotal = getExtrasTotal();
-  const total = sousTotal + taxe + extrasTotal;
+  const total = sousTotal + taxe;
   el.innerHTML =
     '<div class="sel-room"><div class="ph">Photo</div>' +
       '<div><div class="sel-room-name">' + room.name + '</div><div class="sel-room-tariff">' + tariff.name + '</div></div>' +
@@ -436,16 +434,10 @@ function renderSelection(){
     '<div class="price-detail">' +
       '<div><span>' + fmt(tariff.price) + ' × ' + n + ' nuit' + (n > 1 ? 's' : '') + '</span><b>' + fmt(sousTotal) + '</b></div>' +
       '<div class="sub"><span>Taxe de promotion touristique</span><b>' + fmt(taxe) + '</b></div>' +
-      (extrasTotal > 0 ? '<div><span>Extras</span><b>' + fmt(extrasTotal) + '</b></div>' : '') +
       '<div><span>TVA</span><b>incluse</b></div>' +
     '</div>' +
     '<div class="price-total"><span class="lbl">TOTAL SÉJOUR</span><span class="amt">' + fmt(total) + '</span></div>';
   btn.disabled = false;
-
-  /* Réinjecter le panneau extras après le nouveau innerHTML */
-  if (window.Extras && typeof window.Extras.refreshSelectionPanel === 'function') {
-    window.Extras.refreshSelectionPanel();
-  }
 }
 
 function doSearch(){
@@ -492,44 +484,19 @@ document.querySelectorAll('input[name="pay"]').forEach(function(r){
   });
 });
 
-/* ===== HELPERS EXTRAS ===== */
-function getExtrasTotal() {
-  return (window.Extras && typeof window.Extras.getSubtotal === 'function')
-    ? window.Extras.getSubtotal() : 0;
-}
-function getExtrasObjects() {
-  return (window.Extras && typeof window.Extras.getSelectedObjects === 'function')
-    ? window.Extras.getSelectedObjects() : [];
-}
-
-window.updateTotalWithExtras = function () {
-  if (selected) {
-    renderSelection();
-    var p3 = document.getElementById('panel-3');
-    if (p3 && p3.classList.contains('active')) renderRecap();
-  }
-};
-
 function renderRecap(){
   if (!selected) return;
   const n = nights(), g = guestsCount();
   const room = selected.room, tariff = selected.tariff;
   const sousTotal = tariff.price * n;
   const taxe = TAXE_NUIT_PERS * g * n;
-  const extrasTotal = getExtrasTotal();
-  const extrasList = getExtrasObjects();
-  const total = sousTotal + taxe + extrasTotal;
-
+  const total = sousTotal + taxe;
   document.getElementById('recapStay').innerHTML =
     '<div class="recap-line"><span>Chambre</span><b>' + room.name + '</b></div>' +
     '<div class="recap-line"><span>Tarif</span><b>' + tariff.name + '</b></div>' +
     '<div class="recap-line"><span>Arrivée</span><b>' + fmtDate(document.getElementById('dArrivee').value) + '</b></div>' +
     '<div class="recap-line"><span>Départ</span><b>' + fmtDate(document.getElementById('dDepart').value) + '</b></div>' +
-    '<div class="recap-line"><span>Voyageurs</span><b>' + document.getElementById('dVoy').value + '</b></div>' +
-    (extrasList.length > 0
-      ? '<div class="recap-line"><span>Extras</span><b>' + extrasList.map(function(e){return e.name;}).join(', ') + '</b></div>'
-      : '');
-
+    '<div class="recap-line"><span>Voyageurs</span><b>' + document.getElementById('dVoy').value + '</b></div>';
   const form = document.getElementById('coordForm');
   const inputs = form.querySelectorAll('input[type=text],input[type=email],input[type=tel]');
   const prenom = (inputs[0] && inputs[0].value) || '—';
@@ -539,43 +506,28 @@ function renderRecap(){
   document.getElementById('recapCoord').innerHTML =
     '<div class="recap-line"><span>Nom</span><b>' + prenom + ' ' + nom + '</b></div>' +
     '<div class="recap-line"><span>E-mail</span><b>' + email + '</b></div>';
-
   document.getElementById('finalPriceDetail').innerHTML =
     '<div><span>' + fmt(tariff.price) + ' × ' + n + ' nuit' + (n > 1 ? 's' : '') + '</span><b>' + fmt(sousTotal) + '</b></div>' +
     '<div class="sub"><span>Taxe de promotion touristique</span><b>' + fmt(taxe) + '</b></div>' +
-    (extrasTotal > 0 ? '<div><span>Extras (' + extrasList.length + ')</span><b>' + fmt(extrasTotal) + '</b></div>' : '') +
     '<div><span>TVA</span><b>incluse</b></div>';
-
   document.getElementById('finalTotal').textContent = fmt(total);
 
   const arr = new Date(document.getElementById('dArrivee').value);
   arr.setDate(arr.getDate() - 2);
-  document.getElementById('policyDate').textContent =
-    arr.toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'}) + ', 18h00';
+  document.getElementById('policyDate').textContent = arr.toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'}) + ', 18h00';
 
   document.getElementById('confSummary').innerHTML =
     '<div class="recap-line"><span>Chambre</span><b>' + room.name + ' — ' + tariff.name + '</b></div>' +
     '<div class="recap-line"><span>Séjour</span><b>' + fmtDate(document.getElementById('dArrivee').value) + ' → ' + fmtDate(document.getElementById('dDepart').value) + '</b></div>' +
     '<div class="recap-line"><span>Voyageur</span><b>' + prenom + ' ' + nom + '</b></div>' +
-    (extrasList.length > 0
-      ? '<div class="recap-line"><span>Extras</span><b>' + extrasList.map(function(e){return e.name + ' (' + fmt(e.price) + ')';}).join(' · ') + '</b></div>'
-      : '') +
     '<div class="recap-line"><span>Total réglé</span><b>' + fmt(total) + '</b></div>';
 }
-
-window.confirmAndPay = function(){
-  if (!selected) { alert('Veuillez sélectionner une chambre.'); return; }
-  var ref = 'PDT-' + Math.floor(100000 + Math.random() * 900000);
-  var refEl = document.getElementById('bookingRef');
-  if (refEl) refEl.textContent = ref;
-  renderRecap();
-  goStep(4);
-};
 
 renderRooms();
 renderSelection();
 
-/* Flatpickr géré par booking-bridge.js */
+flatpickr("#cta-checkin",  { locale: "fr", dateFormat: "d M. Y", minDate: "today" });
+flatpickr("#cta-checkout", { locale: "fr", dateFormat: "d M. Y", minDate: "today" });
 </script>
 
 <footer class="main-footer">
