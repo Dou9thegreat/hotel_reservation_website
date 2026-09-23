@@ -1585,3 +1585,137 @@
         flex: 0 0 100%; /* 1 seule carte sur mobile */
     }
 }
+/* ============================================================= */
+/* 12. AMÉLIORATIONS PAGE D'ACCUEIL (badges + boutons)           */
+/* ============================================================= */
+
+/* Badges sur les cartes chambres */
+.room-image {
+    position: relative;
+}
+.room-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+.room-badge--popular {
+    background: linear-gradient(135deg, #FF7A3D 0%, #E85D2C 100%);
+}
+.room-badge--premium {
+    background: linear-gradient(135deg, #C59A67 0%, #A47B3E 100%);
+}
+.room-badge--value {
+    background: linear-gradient(135deg, #38E28F 0%, #28B876 100%);
+    color: #0A1E2D;
+}
+.room-badge::before {
+    content: "★";
+    margin-right: 6px;
+    font-size: 9px;
+}
+
+/* Groupe de boutons sur les cartes chambres */
+.room-content .room-btn {
+    margin-right: 10px;
+    margin-top: 8px;
+}
+.room-btn--book {
+    background: transparent;
+    border: 1.5px solid #C59A67;
+    color: #C59A67;
+    box-shadow: none;
+}
+.room-btn--book:hover {
+    background: #C59A67;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(197, 154, 103, 0.4);
+}
+.room-btn--book i {
+    font-size: 10px;
+    transition: transform 0.25s ease;
+}
+.room-btn--book:hover i {
+    transform: translateX(3px);
+}
+
+/* Ajustement mobile */
+@media (max-width: 768px) {
+    .room-content .room-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Amélioration des cartes expériences */
+.exp-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    padding: 0 0 20px;
+}
+.exp-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+.exp-img-wrapper {
+    position: relative;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.exp-img-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.3));
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.exp-card:hover .exp-img-wrapper::after {
+    opacity: 1;
+}
+.exp-title,
+.exp-desc,
+.exp-btn {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* Badges "populaire" sur certaines cartes expériences */
+.exp-card--popular {
+    position: relative;
+}
+.exp-card--popular::before {
+    content: "★ POPULAIRE";
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 3;
+    background: linear-gradient(135deg, #FF7A3D, #E85D2C);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(232, 93, 44, 0.35);
+}
