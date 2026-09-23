@@ -69,10 +69,6 @@
     <!-- ============================================================
          HERO 50/50 — 2 photos symétriques + logos restaurants
          ============================================================ -->
-
-    <!-- ============================================================
-         HERO 50/50 — 2 photos symétriques + logos restaurants
-         ============================================================ -->
     <section class="hero-resto">
 
         <!-- MOITIÉ GAUCHE — JOUR -->
@@ -80,10 +76,9 @@
             <div class="hero-resto-bg"></div>
             <div class="hero-resto-overlay"></div>
 
+            <!-- Logo restaurant dans le coin supérieur gauche -->
             <div class="hero-resto-logo hero-resto-logo--left">
-                <img src="images/logo-teranga-beach-club.png"
-                     alt="Teranga Beach Club"
-                     class="hero-resto-logo-img">
+                <img src="images/logo-teranga-beach-club.png" alt="Teranga Beach Club" class="hero-resto-logo-img">
             </div>
 
             <div class="hero-resto-half-label">De jour · Au feu de bois</div>
@@ -94,10 +89,9 @@
             <div class="hero-resto-bg"></div>
             <div class="hero-resto-overlay"></div>
 
+            <!-- Logo restaurant dans le coin supérieur droit -->
             <div class="hero-resto-logo hero-resto-logo--right">
-                <img src="images/logo-teranga-lounge.png"
-                     alt="Teranga Lounge"
-                     class="hero-resto-logo-img">
+                <img src="images/logo-teranga-lounge.png" alt="Teranga Lounge" class="hero-resto-logo-img">
             </div>
 
             <div class="hero-resto-half-label">Le soir · Artsy &amp; cosmopolite</div>
@@ -112,8 +106,8 @@
             </span>
 
             <h1 class="hero-resto-title">
-                Le feu de bois<br> <em>le jour</em>.<br>
-                Les néons du bar<br> <em>la nuit</em>.
+                Le feu de bois <em>le jour</em>.<br>
+                Les néons du bar <em>la nuit</em>.
             </h1>
 
             <p class="hero-resto-sub">
@@ -141,6 +135,10 @@
             <i class="fa-solid fa-chevron-down"></i>
         </a>
     </section>
+
+    <!-- ============================================================
+         INTRO — Deux restaurants, deux ambiances
+         ============================================================ -->
     <section class="intro-resto" id="intro">
         <div class="container">
             <div class="intro-resto-header reveal">

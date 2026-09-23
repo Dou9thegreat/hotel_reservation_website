@@ -70,10 +70,6 @@
 
 <main class="reservation-page">
 
-    <!-- ============================================================
-         HERO — L'image de fond est définie dans css/reservation.css
-         Cherchez : .reservation-page .hero .ph { background-image: ... }
-         ============================================================ -->
     <section class="hero">
         <div class="ph" aria-hidden="true"></div>
         <div class="hero-text">
@@ -134,17 +130,17 @@
                     <h3>Votre sélection</h3>
                     <div id="selContent"><p class="sel-empty">Choisissez une chambre et un tarif dans la liste pour voir apparaître ici le détail de votre réservation.</p></div>
                     
-                <!-- BANDEAU EXTRAS -->
-                <div id="exbBanner" class="exb-banner" style="display:none;">
-                    <div class="exb-head">
-                        <span class="exb-icon"><i class="fa-solid fa-gift"></i></span>
-                        <div class="exb-head-text">
+                <!-- BANDEAU EXTRAS - Enrichissez votre sejour -->
+                <div id="extrasBanner" class="extras-banner" style="display:none;">
+                    <div class="extras-banner-head">
+                        <span class="extras-banner-icon"><i class="fa-solid fa-gift"></i></span>
+                        <div>
                             <strong>Enrichissez votre sejour</strong>
                             <span>Ajoutez une experience a votre reservation</span>
                         </div>
                     </div>
-                    <div class="exb-quick-grid" id="exbQuickGrid"></div>
-                    <button type="button" class="exb-link" id="exbOpenModal">
+                    <div class="extras-banner-grid" id="extrasQuickGrid"></div>
+                    <button type="button" class="extras-banner-link" id="extrasOpenModal">
                         Voir tous les extras <i class="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
@@ -246,7 +242,7 @@
                     <h3>Total à régler</h3>
                     <div class="price-detail" id="finalPriceDetail"></div>
                     <div class="price-total"><span class="lbl">TOTAL</span><span class="amt" id="finalTotal">0 FCFA</span></div>
-                    <button type="button" class="btn-continue" onclick="confirmAndPay()">Payer et confirmer</button>
+                    <button type="button" class="btn-continue" onclick="goStep(4)">Payer et confirmer</button>
                     <div class="reassure"><span>✓ Meilleur tarif garanti</span><span>✓ Annulation flexible</span></div>
                 </aside>
             </div>
@@ -305,23 +301,6 @@
 <script>
 /* ========== SYSTÈME DE RÉSERVATION ========== */
 const TAXE_NUIT_PERS = 1000;
-
-/* ============================================================= */
-/* ROOM PHOTOS CONFIG                                            */
-/* ============================================================= */
-/* ⬇️ MODIFIEZ ICI : photos des chambres sur la page Réservation */
-/*    Chemins relatifs au fichier HTML : images/...              */
-/*    Laissez '' (chaîne vide) pour masquer la photo.            */
-/* ============================================================= */
-var ROOM_PHOTOS = {
-  'classique-ville':   'images/imageluxe1.jpg',
-  'classique-twin':    'images/imageluxe2.jpg.jpg',
-  'superieure-ocean':  'images/imagesuperieur1.jpg.jpg',
-  'deluxe-ocean':      'images/imageluxe1.jpg',
-  'suite-ambassadeur': 'images/imagesambassadeur-1.jpg (2).jpg'
-};
-/* ============================================================= */
-
 const ROOMS = [
  {id:'classique-ville',name:'Chambre Classique Vue Ville',vue:'ville',lit:'king',surface:30,cap:2,
   desc:"Élégante et confortable, pensée pour un séjour urbain pratique au cœur de Dakar.",
@@ -386,17 +365,6 @@ function fmtDate(str){
   return d.toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'});
 }
 
-/* ============================================================= */
-/* Helper : génère l'attribut style avec l'image si disponible.  */
-/* Si aucune photo n'est configurée → '' (le CSS par défaut du   */
-/* .ph s'applique : dégradé gris). Pas d'icône cassée.           */
-/* ============================================================= */
-function getRoomPhotoStyle(roomId) {
-  var url = (typeof ROOM_PHOTOS !== 'undefined' && ROOM_PHOTOS[roomId]) ? ROOM_PHOTOS[roomId] : '';
-  if (!url) return '';
-  return 'style="background-image:url(\'' + url + '\');background-size:cover;background-position:center;font-size:0;"';
-}
-
 function renderRooms(){
   const list = document.getElementById('roomList');
   const filtered = ROOMS.filter(r =>
@@ -408,7 +376,7 @@ function renderRooms(){
     const isSel = selected && selected.room.id === r.id;
     return '<div class="room-card ' + (isSel ? 'selected' : '') + '">' +
       '<span class="check">✓</span>' +
-      '<div class="rc-gallery"><div class="ph" ' + getRoomPhotoStyle(r.id) + '>Photo —<br>' + r.name + '</div></div>' +
+      '<div class="rc-gallery"><div class="ph">Photo —<br>' + r.name + '</div></div>' +
       '<div class="rc-body">' +
         '<div class="rc-top"><div><span class="rc-tag">' + (r.vue === 'ocean' ? 'Vue Océan' : 'Vue Ville') + '</span>' +
         '<h3 class="rc-name">' + r.name + '</h3></div></div>' +
@@ -446,17 +414,15 @@ function renderSelection(){
   if (!selected){
     el.innerHTML = '<p class="sel-empty">Choisissez une chambre et un tarif dans la liste pour voir apparaître ici le détail de votre réservation.</p>';
     btn.disabled = true;
-    if (window.Extras && typeof window.Extras.refreshSelectionPanel === 'function') window.Extras.refreshSelectionPanel();
     return;
   }
   const n = nights(), g = guestsCount();
   const room = selected.room, tariff = selected.tariff;
   const sousTotal = tariff.price * n;
   const taxe = TAXE_NUIT_PERS * g * n;
-  const extrasTotal = getExtrasTotal();
-  const total = sousTotal + taxe + extrasTotal;
+  const total = sousTotal + taxe;
   el.innerHTML =
-    '<div class="sel-room"><div class="ph" ' + getRoomPhotoStyle(room.id) + '>Photo</div>' +
+    '<div class="sel-room"><div class="ph">Photo</div>' +
       '<div><div class="sel-room-name">' + room.name + '</div><div class="sel-room-tariff">' + tariff.name + '</div></div>' +
     '</div>' +
     '<div class="sel-meta">' +
@@ -468,16 +434,10 @@ function renderSelection(){
     '<div class="price-detail">' +
       '<div><span>' + fmt(tariff.price) + ' × ' + n + ' nuit' + (n > 1 ? 's' : '') + '</span><b>' + fmt(sousTotal) + '</b></div>' +
       '<div class="sub"><span>Taxe de promotion touristique</span><b>' + fmt(taxe) + '</b></div>' +
-      (extrasTotal > 0 ? '<div><span>Extras</span><b>' + fmt(extrasTotal) + '</b></div>' : '') +
       '<div><span>TVA</span><b>incluse</b></div>' +
     '</div>' +
     '<div class="price-total"><span class="lbl">TOTAL SÉJOUR</span><span class="amt">' + fmt(total) + '</span></div>';
   btn.disabled = false;
-
-  /* Réinjecter le panneau extras après le nouveau innerHTML */
-  if (window.Extras && typeof window.Extras.refreshSelectionPanel === 'function') {
-    window.Extras.refreshSelectionPanel();
-  }
 }
 
 function doSearch(){
@@ -524,44 +484,19 @@ document.querySelectorAll('input[name="pay"]').forEach(function(r){
   });
 });
 
-/* ===== HELPERS EXTRAS ===== */
-function getExtrasTotal() {
-  return (window.Extras && typeof window.Extras.getSubtotal === 'function')
-    ? window.Extras.getSubtotal() : 0;
-}
-function getExtrasObjects() {
-  return (window.Extras && typeof window.Extras.getSelectedObjects === 'function')
-    ? window.Extras.getSelectedObjects() : [];
-}
-
-window.updateTotalWithExtras = function () {
-  if (selected) {
-    renderSelection();
-    var p3 = document.getElementById('panel-3');
-    if (p3 && p3.classList.contains('active')) renderRecap();
-  }
-};
-
 function renderRecap(){
   if (!selected) return;
   const n = nights(), g = guestsCount();
   const room = selected.room, tariff = selected.tariff;
   const sousTotal = tariff.price * n;
   const taxe = TAXE_NUIT_PERS * g * n;
-  const extrasTotal = getExtrasTotal();
-  const extrasList = getExtrasObjects();
-  const total = sousTotal + taxe + extrasTotal;
-
+  const total = sousTotal + taxe;
   document.getElementById('recapStay').innerHTML =
     '<div class="recap-line"><span>Chambre</span><b>' + room.name + '</b></div>' +
     '<div class="recap-line"><span>Tarif</span><b>' + tariff.name + '</b></div>' +
     '<div class="recap-line"><span>Arrivée</span><b>' + fmtDate(document.getElementById('dArrivee').value) + '</b></div>' +
     '<div class="recap-line"><span>Départ</span><b>' + fmtDate(document.getElementById('dDepart').value) + '</b></div>' +
-    '<div class="recap-line"><span>Voyageurs</span><b>' + document.getElementById('dVoy').value + '</b></div>' +
-    (extrasList.length > 0
-      ? '<div class="recap-line"><span>Extras</span><b>' + extrasList.map(function(e){return e.name;}).join(', ') + '</b></div>'
-      : '');
-
+    '<div class="recap-line"><span>Voyageurs</span><b>' + document.getElementById('dVoy').value + '</b></div>';
   const form = document.getElementById('coordForm');
   const inputs = form.querySelectorAll('input[type=text],input[type=email],input[type=tel]');
   const prenom = (inputs[0] && inputs[0].value) || '—';
@@ -571,43 +506,28 @@ function renderRecap(){
   document.getElementById('recapCoord').innerHTML =
     '<div class="recap-line"><span>Nom</span><b>' + prenom + ' ' + nom + '</b></div>' +
     '<div class="recap-line"><span>E-mail</span><b>' + email + '</b></div>';
-
   document.getElementById('finalPriceDetail').innerHTML =
     '<div><span>' + fmt(tariff.price) + ' × ' + n + ' nuit' + (n > 1 ? 's' : '') + '</span><b>' + fmt(sousTotal) + '</b></div>' +
     '<div class="sub"><span>Taxe de promotion touristique</span><b>' + fmt(taxe) + '</b></div>' +
-    (extrasTotal > 0 ? '<div><span>Extras (' + extrasList.length + ')</span><b>' + fmt(extrasTotal) + '</b></div>' : '') +
     '<div><span>TVA</span><b>incluse</b></div>';
-
   document.getElementById('finalTotal').textContent = fmt(total);
 
   const arr = new Date(document.getElementById('dArrivee').value);
   arr.setDate(arr.getDate() - 2);
-  document.getElementById('policyDate').textContent =
-    arr.toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'}) + ', 18h00';
+  document.getElementById('policyDate').textContent = arr.toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'}) + ', 18h00';
 
   document.getElementById('confSummary').innerHTML =
     '<div class="recap-line"><span>Chambre</span><b>' + room.name + ' — ' + tariff.name + '</b></div>' +
     '<div class="recap-line"><span>Séjour</span><b>' + fmtDate(document.getElementById('dArrivee').value) + ' → ' + fmtDate(document.getElementById('dDepart').value) + '</b></div>' +
     '<div class="recap-line"><span>Voyageur</span><b>' + prenom + ' ' + nom + '</b></div>' +
-    (extrasList.length > 0
-      ? '<div class="recap-line"><span>Extras</span><b>' + extrasList.map(function(e){return e.name + ' (' + fmt(e.price) + ')';}).join(' · ') + '</b></div>'
-      : '') +
     '<div class="recap-line"><span>Total réglé</span><b>' + fmt(total) + '</b></div>';
 }
-
-window.confirmAndPay = function(){
-  if (!selected) { alert('Veuillez sélectionner une chambre.'); return; }
-  var ref = 'PDT-' + Math.floor(100000 + Math.random() * 900000);
-  var refEl = document.getElementById('bookingRef');
-  if (refEl) refEl.textContent = ref;
-  renderRecap();
-  goStep(4);
-};
 
 renderRooms();
 renderSelection();
 
-/* Flatpickr géré par booking-bridge.js */
+flatpickr("#cta-checkin",  { locale: "fr", dateFormat: "d M. Y", minDate: "today" });
+flatpickr("#cta-checkout", { locale: "fr", dateFormat: "d M. Y", minDate: "today" });
 </script>
 
 <footer class="main-footer">
@@ -679,48 +599,104 @@ renderSelection();
 </footer>
 
     <script src="js/extras.js"></script>
-    <script src="js/booking-bridge.js"></script>
+<script src="js/booking-bridge.js"></script>
     <script src="js/i18n.js"></script>
 
-<!-- MODAL EXTRAS -->
-<div class="exb-modal-overlay" id="exbModal" aria-hidden="true">
-    <div class="exb-modal" role="dialog" aria-modal="true" aria-labelledby="exbModalTitle">
-        <button type="button" class="exb-modal-close" id="exbModalClose" aria-label="Fermer">
+<!-- MODAL EXTRAS - Enrichissez votre sejour -->
+<div class="extras-modal-overlay" id="extrasModal" aria-hidden="true">
+    <div class="extras-modal" role="dialog" aria-modal="true" aria-labelledby="extrasModalTitle">
+
+        <button type="button" class="extras-modal-close" id="extrasModalClose" aria-label="Fermer">
             <i class="fa-solid fa-xmark"></i>
         </button>
-        <div class="exb-modal-header">
-            <span class="exb-eyebrow"><i class="fa-solid fa-gift"></i> Extras &amp; Experiences</span>
-            <h2 id="exbModalTitle">Enrichissez votre sejour</h2>
+
+        <div class="extras-modal-header">
+            <span class="extras-modal-eyebrow"><i class="fa-solid fa-gift"></i> Extras &amp; Experiences</span>
+            <h2 id="extrasModalTitle">Enrichissez votre sejour</h2>
             <p>Selectionnez les experiences que vous souhaitez ajouter a votre reservation.</p>
         </div>
-        <div class="exb-tabs" role="tablist">
-            <button type="button" class="exb-tab active" data-cat="all">Tous</button>
-            <button type="button" class="exb-tab" data-cat="spa">Spa &amp; Bien-etre</button>
-            <button type="button" class="exb-tab" data-cat="resto">Restaurants</button>
-            <button type="button" class="exb-tab" data-cat="bar">Bars</button>
-            <button type="button" class="exb-tab" data-cat="service">Services</button>
+
+        <div class="extras-modal-tabs" role="tablist">
+            <button type="button" class="extras-tab active" data-cat="all">Tous</button>
+            <button type="button" class="extras-tab" data-cat="spa">Spa &amp; Bien-etre</button>
+            <button type="button" class="extras-tab" data-cat="resto">Restaurants</button>
+            <button type="button" class="extras-tab" data-cat="bar">Bars</button>
+            <button type="button" class="extras-tab" data-cat="service">Services</button>
         </div>
-        <div class="exb-modal-body">
-            <div class="exb-cat-banner" id="exbCategoryBanner" style="display:none;">
-                <span class="exb-banner-title">Spa &amp; Bien-etre</span>
-                <span class="exb-banner-subtitle">Ressourcez-vous face a l'Atlantique</span>
+
+        <div class="extras-modal-body">
+            <div class="extras-modal-banner" id="extrasCategoryBanner" style="display:none;">
+                <span class="extras-modal-banner-title">Spa &amp; Bien-etre</span>
+                <span class="extras-modal-banner-subtitle">Ressourcez-vous face a l'Atlantique</span>
             </div>
-            <div class="exb-list" id="exbList"></div>
+            <div class="extras-list" id="extrasList"></div>
         </div>
-        <div class="exb-modal-footer">
-            <div class="exb-subtotal">
+
+        <div class="extras-modal-footer">
+            <div class="extras-modal-subtotal">
                 <span>Sous-total extras</span>
-                <strong id="exbSubtotal">0 FCFA</strong>
+                <strong id="extrasSubtotal">0 FCFA</strong>
             </div>
-            <div class="exb-actions">
-                <button type="button" class="exb-btn exb-btn--ghost" id="exbCancel">Annuler</button>
-                <button type="button" class="exb-btn exb-btn--primary" id="exbConfirm">
+            <div class="extras-modal-actions">
+                <button type="button" class="extras-btn extras-btn--ghost" id="extrasCancel">Annuler</button>
+                <button type="button" class="extras-btn extras-btn--primary" id="extrasConfirm">
                     Ajouter a mon sejour <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
         </div>
+
     </div>
 </div>
+
+
+<script>
+/* PATCH - Recalcul du total avec les extras */
+(function () {
+    'use strict';
+
+    // Fonction appelee par extras.js apres chaque changement
+    window.updateTotalWithExtras = function () {
+        // Trouver le prix total actuel
+        var totalEl = document.querySelector('#selContent .price-total .amt');
+        if (!totalEl) return;
+
+        // Recuperer le total affiche actuel
+        var currentText = totalEl.textContent || '0';
+        var current = parseInt(currentText.replace(/[^0-9]/g, ''), 10) || 0;
+
+        // Verifier qu'on a pas deja ajoute un sous-total extras
+        var oldSubtotalLine = document.querySelector('#selContent .extras-subtotal-line');
+        if (oldSubtotalLine) oldSubtotalLine.remove();
+
+        // Calculer le sous-total extras
+        if (window.Extras && typeof window.Extras.getSubtotal === 'function') {
+            var extrasTotal = window.Extras.getSubtotal();
+            if (extrasTotal > 0) {
+                // Inserer une ligne "Extras" avant le total
+                var totalRow = document.querySelector('#selContent .price-total');
+                if (totalRow) {
+                    var line = document.createElement('div');
+                    line.className = 'extras-subtotal-line';
+                    line.style.cssText = 'display:flex;justify-content:space-between;padding:6px 0;font-size:0.8rem;color:#A47B3E;font-weight:700;border-top:1px dashed #E3E8EA;margin-top:8px;';
+                    line.innerHTML = '<span>Extras (' + window.Extras.getSelected().length + ')</span><b>+' + extrasTotal.toLocaleString('fr-FR').replace(/,/g, ' ') + ' FCFA</b>';
+                    totalRow.parentNode.insertBefore(line, totalRow);
+
+                    // Mettre a jour le total
+                    var newTotal = current + extrasTotal;
+                    totalEl.textContent = newTotal.toLocaleString('fr-FR').replace(/,/g, ' ') + ' FCFA';
+                }
+            }
+        }
+    };
+
+    // Re-render apres chaque changement d'etape
+    document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+            if (window.updateTotalWithExtras) window.updateTotalWithExtras();
+        }, 500);
+    });
+})();
+</script>
 
 </body>
 </html>
