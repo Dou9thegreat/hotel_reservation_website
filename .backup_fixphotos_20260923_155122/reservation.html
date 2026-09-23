@@ -70,10 +70,6 @@
 
 <main class="reservation-page">
 
-    <!-- ============================================================
-         HERO — L'image de fond est définie dans css/reservation.css
-         Cherchez : .reservation-page .hero .ph { background-image: ... }
-         ============================================================ -->
     <section class="hero">
         <div class="ph" aria-hidden="true"></div>
         <div class="hero-text">
@@ -305,23 +301,6 @@
 <script>
 /* ========== SYSTÈME DE RÉSERVATION ========== */
 const TAXE_NUIT_PERS = 1000;
-
-/* ============================================================= */
-/* ROOM PHOTOS CONFIG                                            */
-/* ============================================================= */
-/* ⬇️ MODIFIEZ ICI : photos des chambres sur la page Réservation */
-/*    Chemins relatifs au fichier HTML : images/...              */
-/*    Laissez '' (chaîne vide) pour masquer la photo.            */
-/* ============================================================= */
-var ROOM_PHOTOS = {
-  'classique-ville':   'images/imageluxe1.jpg',
-  'classique-twin':    'images/imageluxe2.jpg.jpg',
-  'superieure-ocean':  'images/imagesuperieur1.jpg.jpg',
-  'deluxe-ocean':      'images/imageluxe1.jpg',
-  'suite-ambassadeur': 'images/imagesambassadeur-1.jpg (2).jpg'
-};
-/* ============================================================= */
-
 const ROOMS = [
  {id:'classique-ville',name:'Chambre Classique Vue Ville',vue:'ville',lit:'king',surface:30,cap:2,
   desc:"Élégante et confortable, pensée pour un séjour urbain pratique au cœur de Dakar.",
@@ -386,17 +365,6 @@ function fmtDate(str){
   return d.toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'});
 }
 
-/* ============================================================= */
-/* Helper : génère l'attribut style avec l'image si disponible.  */
-/* Si aucune photo n'est configurée → '' (le CSS par défaut du   */
-/* .ph s'applique : dégradé gris). Pas d'icône cassée.           */
-/* ============================================================= */
-function getRoomPhotoStyle(roomId) {
-  var url = (typeof ROOM_PHOTOS !== 'undefined' && ROOM_PHOTOS[roomId]) ? ROOM_PHOTOS[roomId] : '';
-  if (!url) return '';
-  return 'style="background-image:url(\'' + url + '\');background-size:cover;background-position:center;font-size:0;"';
-}
-
 function renderRooms(){
   const list = document.getElementById('roomList');
   const filtered = ROOMS.filter(r =>
@@ -408,7 +376,7 @@ function renderRooms(){
     const isSel = selected && selected.room.id === r.id;
     return '<div class="room-card ' + (isSel ? 'selected' : '') + '">' +
       '<span class="check">✓</span>' +
-      '<div class="rc-gallery"><div class="ph" ' + getRoomPhotoStyle(r.id) + '>Photo —<br>' + r.name + '</div></div>' +
+      '<div class="rc-gallery"><div class="ph">Photo —<br>' + r.name + '</div></div>' +
       '<div class="rc-body">' +
         '<div class="rc-top"><div><span class="rc-tag">' + (r.vue === 'ocean' ? 'Vue Océan' : 'Vue Ville') + '</span>' +
         '<h3 class="rc-name">' + r.name + '</h3></div></div>' +
@@ -456,7 +424,7 @@ function renderSelection(){
   const extrasTotal = getExtrasTotal();
   const total = sousTotal + taxe + extrasTotal;
   el.innerHTML =
-    '<div class="sel-room"><div class="ph" ' + getRoomPhotoStyle(room.id) + '>Photo</div>' +
+    '<div class="sel-room"><div class="ph">Photo</div>' +
       '<div><div class="sel-room-name">' + room.name + '</div><div class="sel-room-tariff">' + tariff.name + '</div></div>' +
     '</div>' +
     '<div class="sel-meta">' +
