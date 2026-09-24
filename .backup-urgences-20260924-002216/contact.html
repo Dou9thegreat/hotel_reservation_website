@@ -93,7 +93,7 @@
                 <div class="card" id="adresse">
                     <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <h3>ADRESSE</h3>
-                    <p>Route de la Corniche Ouest,<br>BP 8181 Dakar, Sénégal</p>
+                    <p>10, Rue Colbert, Place de l'Indépendance,<br>BP 3380 Dakar, Sénégal</p>
                     <a href="https://maps.app.goo.gl/2uu55H5CXRcZfDeWA" target="_blank" class="card-btn btn-green">
                         <i class="fas fa-route"></i> Itinéraire <span class="arrow">›</span>
                     </a>
@@ -102,7 +102,7 @@
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-phone-alt"></i></div>
                     <h3>TÉLÉPHONE</h3>
-                    <p>+221 33 869 66 66 (réservations)<br>+221 33 869 66 66 (standard)</p>
+                    <p>+221 33 889 22 00 (réservations)<br>+221 33 823 50 01 (standard)</p>
                     <button class="card-btn btn-sand">
                         <i class="fas fa-copy"></i> Copier <span class="arrow">›</span>
                     </button>
@@ -176,7 +176,7 @@
             <h2>UNE QUESTION ?<br>CONTACTEZ-NOUS</h2>
             <p>Notre équipe est à votre écoute pour répondre<br>à toutes vos demandes.</p>
             <div class="contact-detail">
-                <i class="fas fa-phone-alt"></i> +221 33 869 66 66
+                <i class="fas fa-phone-alt"></i> +221 33 889 22 00
             </div>
             <div class="contact-detail">
                 <i class="fas fa-envelope"></i> dakar.reservation@accor.com
@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!card) return;
             var text = '';
             var title = (card.querySelector('h3') || {}).textContent || '';
-            if (/TÉLÉPHONE/i.test(title)) text = '+221 33 869 66 66';
+            if (/TÉLÉPHONE/i.test(title)) text = '+221 33 889 22 00';
             else if (/EMAIL/i.test(title)) text = 'dakar.reservation@accor.com';
             if (!text) return;
             if (navigator.clipboard && navigator.clipboard.writeText) {

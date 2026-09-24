@@ -648,19 +648,3 @@
     .tariff-row-price { text-align: left; min-width: 0; }
     .tariff-row-btn { width: 100%; }
 }
-
-/* ============================================================= */
-/* SCROLL ANCRES CHAMBRES — Compense le header fixe (88px)       */
-/* Empêche que le titre de la chambre soit masqué après clic     */
-/* depuis #chambre-deluxe, #suite, #chambre-superieure           */
-/* ============================================================= */
-.chambres-page .room-card {
-    scroll-margin-top: 110px;
-}
-
-/* Sur mobile, header plus court (68px) → marge réduite */
-@media (max-width: 768px) {
-    .chambres-page .room-card {
-        scroll-margin-top: 90px;
-    }
-}
