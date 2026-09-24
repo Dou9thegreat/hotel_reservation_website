@@ -2102,3 +2102,94 @@
 /* ============================================================= */
 
 /* ============================================================= */
+/* SNAP ENTRY GALLERY — Entrées brusques multidirectionnelles    */
+/* ============================================================= */
+
+.gallery-section .gal-card {
+    will-change: transform, opacity;
+    transition:
+        opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-section .gal-card.gal-pos-1 { transform: translateX(-80px) scale(0.92); }
+.gallery-section .gal-card.gal-pos-2 { transform: translateY(-80px) scale(0.92); }
+.gallery-section .gal-card.gal-pos-3 { transform: translateX(80px) scale(0.92); }
+.gallery-section .gal-card.gal-pos-4 { transform: translateY(80px) scale(0.92); }
+.gallery-section .gal-card.gal-pos-5 { transform: translateX(-80px) scale(0.92); }
+.gallery-section .gal-card.gal-pos-6 { transform: translateX(80px) scale(0.92); }
+
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+
+.gallery-section .gal-card:hover { transition-delay: 0s !important; }
+.gallery-section .gal-card:hover img { transform: scale(1.05); }
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-section .gal-card,
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-section .gal-card.gal-pos-1,
+    .gallery-section .gal-card.gal-pos-5 { transform: translateX(-40px) scale(0.95); }
+    .gallery-section .gal-card.gal-pos-2 { transform: translateY(-40px) scale(0.95); }
+    .gallery-section .gal-card.gal-pos-3,
+    .gallery-section .gal-card.gal-pos-6 { transform: translateX(40px) scale(0.95); }
+    .gallery-section .gal-card.gal-pos-4 { transform: translateY(40px) scale(0.95); }
+}
+
+/* ============================================================= */
+/* GALERIE — ANIMATION SÛRE                                       */
+/* La base reste VISIBLE. L'animation est ajoutée via .gal-anim.  */
+/* Si le JS ne tourne pas → aucune animation, galerie visible.    */
+/* ============================================================= */
+
+@keyframes galInLeft {
+    from { transform: translateX(-80px) scale(0.92); opacity: 0; }
+    to   { transform: translateX(0)     scale(1);    opacity: 1; }
+}
+@keyframes galInTop {
+    from { transform: translateY(-80px) scale(0.92); opacity: 0; }
+    to   { transform: translateY(0)     scale(1);    opacity: 1; }
+}
+@keyframes galInRight {
+    from { transform: translateX(80px) scale(0.92); opacity: 0; }
+    to   { transform: translateX(0)    scale(1);    opacity: 1; }
+}
+@keyframes galInBottom {
+    from { transform: translateY(80px) scale(0.92); opacity: 0; }
+    to   { transform: translateY(0)    scale(1);    opacity: 1; }
+}
+
+/* Animation déclenchée UNIQUEMENT quand .gal-anim est présent */
+.gallery-section .gal-card.gal-anim.gal-pos-1 {
+    animation: galInLeft   0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.00s both;
+}
+.gallery-section .gal-card.gal-anim.gal-pos-2 {
+    animation: galInTop    0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+.gallery-section .gal-card.gal-anim.gal-pos-3 {
+    animation: galInRight  0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both;
+}
+.gallery-section .gal-card.gal-anim.gal-pos-4 {
+    animation: galInBottom 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
+}
+.gallery-section .gal-card.gal-anim.gal-pos-5 {
+    animation: galInLeft   0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
+}
+.gallery-section .gal-card.gal-anim.gal-pos-6 {
+    animation: galInRight  0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.40s both;
+}
+
+/* Accessibilité */
+@media (prefers-reduced-motion: reduce) {
+    .gallery-section .gal-card.gal-anim {
+        animation: none !important;
+    }
+}

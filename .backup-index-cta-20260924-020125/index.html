@@ -1166,6 +1166,31 @@
             });
         }
 
+        // 5. Initialisation des Sélecteurs de Dates (Flatpickr)
+        const flatpickrConfig = {
+            locale: "fr",
+            dateFormat: "d M. Y",
+            minDate: "today"
+        };
+
+        const checkinPicker = flatpickr("#checkin", {
+            ...flatpickrConfig,
+            defaultDate: "2026-09-09",
+            onChange: function(selectedDates) {
+                if (checkoutPicker && selectedDates[0]) {
+                    checkoutPicker.set("minDate", selectedDates[0]);
+                }
+            }
+        });
+
+        const checkoutPicker = flatpickr("#checkout", {
+            ...flatpickrConfig,
+            defaultDate: "2026-09-30",
+            minDate: "2026-09-09"
+        });
+
+        flatpickr("#cta-checkin", { ...flatpickrConfig, defaultDate: "2026-09-09" });
+        flatpickr("#cta-checkout", { ...flatpickrConfig, defaultDate: "2026-09-30" });
     </script>
     <footer class="main-footer">
     <div class="container">
@@ -1240,6 +1265,3 @@
     <script src="js/fix-datepicker.js"></script>
 <script>
 /* ============================================================ */
-
-</body>
-</html>

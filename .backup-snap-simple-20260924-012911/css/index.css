@@ -1967,24 +1967,6 @@
 }
 
 /* ============================================================= */
-/* ============================================================= */
-
-/* ============================================================= */
-/* ============================================================= */
-
-/* ============================================================= */
-/* ============================================================= */
-
-/* ============================================================= */
-
-/* ============================================================= */
-/* ============================================================= */
-
-/* ============================================================= */
-
-/* ============================================================= */
-
-/* ============================================================= */
 /* GALERIE MOSAÏQUE — AGRANDISSEMENT PROPORTIONNEL (+17%)        */
 /* Ne touche QUE le bloc galerie                                 */
 /* ============================================================= */
@@ -2101,4 +2083,100 @@
 /* FIN GALERIE MOSAÏQUE — AGRANDISSEMENT                         */
 /* ============================================================= */
 
+/* ============================================================= */
+/* ============================================================= */
+
+/* ============================================================= */
+/* SNAP ENTRY GALLERY — Entrées brusques multidirectionnelles    */
+/* ============================================================= */
+
+/* ---------- État initial : chaque carte est décalée ---------- */
+.gallery-section .gal-card {
+    opacity: 0;
+    will-change: transform, opacity;
+    transition:
+        opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Direction par position (avant l'entrée) */
+
+/* 01 — bas-gauche : vient de GAUCHE */
+.gallery-section .gal-card.gal-pos-1 {
+    transform: translateX(-80px) scale(0.92);
+}
+
+/* 02 — haut : vient du HAUT */
+.gallery-section .gal-card.gal-pos-2 {
+    transform: translateY(-80px) scale(0.92);
+}
+
+/* 03 — bas-milieu : vient de DROITE */
+.gallery-section .gal-card.gal-pos-3 {
+    transform: translateX(80px) scale(0.92);
+}
+
+/* 04 — haut-droite : vient du BAS */
+.gallery-section .gal-card.gal-pos-4 {
+    transform: translateY(80px) scale(0.92);
+}
+
+/* 05 — bas-droite : vient de GAUCHE */
+.gallery-section .gal-card.gal-pos-5 {
+    transform: translateX(-80px) scale(0.92);
+}
+
+/* 06 — grande droite : vient de DROITE */
+.gallery-section .gal-card.gal-pos-6 {
+    transform: translateX(80px) scale(0.92);
+}
+
+/* ---------- État final : en place, invisible → visible ---------- */
+.gallery-section .gal-card.gal-snap-in {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+/* ---------- Cascade rapide : décalage de 70ms par carte ---------- */
+.gallery-section .gal-card.gal-snap-in.gal-pos-1 { transition-delay: 0.00s; }
+.gallery-section .gal-card.gal-snap-in.gal-pos-2 { transition-delay: 0.07s; }
+.gallery-section .gal-card.gal-snap-in.gal-pos-3 { transition-delay: 0.14s; }
+.gallery-section .gal-card.gal-snap-in.gal-pos-4 { transition-delay: 0.21s; }
+.gallery-section .gal-card.gal-snap-in.gal-pos-5 { transition-delay: 0.28s; }
+.gallery-section .gal-card.gal-snap-in.gal-pos-6 { transition-delay: 0.35s; }
+
+/* ---------- Hover discret (pas de folie) ---------- */
+.gallery-section .gal-card:hover {
+    transition-delay: 0s !important;
+}
+
+.gallery-section .gal-card:hover img {
+    transform: scale(1.05);
+}
+
+/* ---------- prefers-reduced-motion : pas d'animation ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .gallery-section .gal-card,
+    .gallery-section .gal-card.gal-snap-in {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* ---------- MOBILE : entrées plus courtes ---------- */
+@media (max-width: 768px) {
+    .gallery-section .gal-card.gal-pos-1,
+    .gallery-section .gal-card.gal-pos-5 { transform: translateX(-40px) scale(0.95); }
+
+    .gallery-section .gal-card.gal-pos-2 { transform: translateY(-40px) scale(0.95); }
+
+    .gallery-section .gal-card.gal-pos-3,
+    .gallery-section .gal-card.gal-pos-6 { transform: translateX(40px) scale(0.95); }
+
+    .gallery-section .gal-card.gal-pos-4 { transform: translateY(40px) scale(0.95); }
+}
+
+/* ============================================================= */
+/* FIN SNAP ENTRY GALLERY                                        */
 /* ============================================================= */

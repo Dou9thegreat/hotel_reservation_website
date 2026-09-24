@@ -1967,24 +1967,6 @@
 }
 
 /* ============================================================= */
-/* ============================================================= */
-
-/* ============================================================= */
-/* ============================================================= */
-
-/* ============================================================= */
-/* ============================================================= */
-
-/* ============================================================= */
-
-/* ============================================================= */
-/* ============================================================= */
-
-/* ============================================================= */
-
-/* ============================================================= */
-
-/* ============================================================= */
 /* GALERIE MOSAÏQUE — AGRANDISSEMENT PROPORTIONNEL (+17%)        */
 /* Ne touche QUE le bloc galerie                                 */
 /* ============================================================= */
@@ -2101,4 +2083,172 @@
 /* FIN GALERIE MOSAÏQUE — AGRANDISSEMENT                         */
 /* ============================================================= */
 
+/* ============================================================= */
+/* FUN GALLERY ANIMATION — Expérience vivante                   */
+/* ============================================================= */
+
+/* ---------- 1. REVEAL EN CASCADE ---------- */
+@keyframes galReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.92) rotate(-3deg);
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+}
+
+.gal-card {
+    opacity: 0;
+    will-change: transform, opacity;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.5s ease,
+                filter 0.4s ease;
+}
+
+/* Déclenché par IntersectionObserver via .gal-revealed */
+.gal-card.gal-revealed {
+    animation: galReveal 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Délais en cascade pour un effet "domino" */
+.gal-card.gal-revealed.gal-pos-1 { animation-delay: 0.00s; }
+.gal-card.gal-revealed.gal-pos-2 { animation-delay: 0.10s; }
+.gal-card.gal-revealed.gal-pos-3 { animation-delay: 0.20s; }
+.gal-card.gal-revealed.gal-pos-4 { animation-delay: 0.30s; }
+.gal-card.gal-revealed.gal-pos-5 { animation-delay: 0.40s; }
+.gal-card.gal-revealed.gal-pos-6 { animation-delay: 0.50s; }
+
+/* ---------- 2. FLOTTEMENT CONTINU SUBTIL ---------- */
+@keyframes galFloat1 {
+    0%, 100% { transform: translateY(0px); }
+    50%      { transform: translateY(-6px); }
+}
+@keyframes galFloat2 {
+    0%, 100% { transform: translateY(0px); }
+    50%      { transform: translateY(-8px); }
+}
+@keyframes galFloat3 {
+    0%, 100% { transform: translateY(0px); }
+    50%      { transform: translateY(-4px); }
+}
+
+/* On applique le flottement APRÈS le reveal (via .gal-float-on) */
+.gal-card.gal-float-on.gal-pos-1 { animation: galFloat1 4s ease-in-out infinite 0.2s; }
+.gal-card.gal-float-on.gal-pos-2 { animation: galFloat2 4.5s ease-in-out infinite 0.8s; }
+.gal-card.gal-float-on.gal-pos-3 { animation: galFloat3 3.8s ease-in-out infinite 0.4s; }
+.gal-card.gal-float-on.gal-pos-4 { animation: galFloat1 4.2s ease-in-out infinite 1.2s; }
+.gal-card.gal-float-on.gal-pos-5 { animation: galFloat2 4.8s ease-in-out infinite 0.6s; }
+.gal-card.gal-float-on.gal-pos-6 { animation: galFloat3 4.1s ease-in-out infinite 1.0s; }
+
+/* Le parallax GSAP peut écraser le flottement → on l'applique sur le wrapper */
+/* Pour ce projet on gère via JS : voir plus bas */
+
+/* ---------- 3. IMAGE : SATURATION DYNAMIQUE ---------- */
+.gal-card img {
+    filter: saturate(0.85) contrast(1.05);
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+                filter 0.5s ease;
+}
+
+.gal-card:hover img {
+    filter: saturate(1.15) contrast(1.08) brightness(1.03);
+    transform: scale(1.10);
+}
+
+/* ---------- 4. SHIMMER DORÉ AU SURVOL ---------- */
+.gal-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg,
+        transparent 30%,
+        rgba(197, 154, 103, 0.35) 50%,
+        transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.gal-card:hover::before {
+    transform: translateX(100%);
+}
+
+/* ---------- 5. BORDURE DORÉE ANIMÉE AU SURVOL ---------- */
+.gal-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    border: 1.5px solid transparent;
+    pointer-events: none;
+    z-index: 3;
+    transition: border-color 0.4s ease, box-shadow 0.5s ease;
+}
+
+.gal-card:hover::after {
+    border-color: rgba(197, 154, 103, 0.6);
+    box-shadow: inset 0 0 30px rgba(197, 154, 103, 0.12);
+}
+
+/* ---------- 6. INSTAGRAM ICON ANIMÉ ---------- */
+@keyframes instaPulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.08); }
+}
+
+.gal-card .gal-overlay {
+    background: radial-gradient(circle at center,
+        rgba(10, 30, 45, 0.55) 0%,
+        rgba(10, 30, 45, 0.75) 100%);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.gal-card .gal-insta-icon {
+    background: linear-gradient(135deg,
+        #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 20px rgba(252, 176, 69, 0.4);
+}
+
+.gal-card:hover .gal-insta-icon {
+    animation: instaPulse 1.2s ease-in-out infinite;
+}
+
+/* ---------- 7. RESPECT DE PREFERS-REDUCED-MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .gal-card,
+    .gal-card img,
+    .gal-card::before,
+    .gal-card::after,
+    .gal-card .gal-insta-icon {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+    }
+}
+
+/* ---------- 8. MOBILE : effet allégé ---------- */
+@media (max-width: 768px) {
+    .gal-card.gal-float-on {
+        animation: none !important;
+    }
+    .gal-card:hover img {
+        transform: scale(1.05);
+    }
+}
+
+/* ============================================================= */
+/* FIN FUN GALLERY ANIMATION                                     */
 /* ============================================================= */
