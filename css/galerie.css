@@ -27,7 +27,7 @@ body {
     position: relative;
     width: 100%;
     height: 320px;
-    background-image: url('../images/hero-pool.webp');
+    background-image: url('../images/piscinehorizon.jpg');
     background-position: center;
     background-size: cover;
 }
@@ -189,4 +189,158 @@ body {
     .grid-item.item-large {
         grid-column: span 1;
     }
+}
+/* ============================================================= */
+/* FALLBACK HERO GALERIE                                         */
+/* Garantit un fond visible même si l'image est absente          */
+/* ============================================================= */
+.hero-section {
+    /* Dégradé de secours : bleu océan → vert Pullman */
+    background-color: #0A1E2D;
+    background-image:
+        linear-gradient(120deg, rgba(10, 30, 45, 0.75) 0%, rgba(21, 94, 117, 0.55) 100%),
+        url('../images/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Si l'image inline se charge, elle prend le dessus */
+.hero-section[style*="background-image"] {
+    background-color: transparent;
+}
+
+/* Hauteur responsive garantie */
+@media (max-width: 768px) {
+    .hero-section { height: 280px; }
+}
+@media (max-width: 480px) {
+    .hero-section { height: 240px; }
+}
+
+/* ============================================================= */
+/* HERO OVERLAY — Dégradé bleu nuit → bleu océan → vert Pullman  */
+/* Remplace l'ancien overlay noir uni                            */
+/* ============================================================= */
+.hero-section .hero-overlay {
+    background: linear-gradient(
+        135deg,
+        rgba(10, 30, 45, 0.82) 0%,      /* Bleu nuit profond */
+        rgba(21, 94, 117, 0.62) 45%,    /* Bleu océan */
+        rgba(56, 226, 143, 0.28) 100%   /* Vert Pullman translucide */
+    ) !important;
+}
+
+/* ============================================================= */
+/* LIGHTBOX GALERIE — Ouvre l'image au clic                      */
+/* ============================================================= */
+.grid-item {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.grid-item:hover {
+    transform: translateY(-4px);
+}
+
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 30, 45, 0.95);
+    backdrop-filter: blur(6px);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.gallery-lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+.gallery-lightbox img {
+    max-width: 92vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+    transform: scale(0.95);
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.gallery-lightbox.is-open img {
+    transform: scale(1);
+}
+.gallery-lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s, transform 0.25s;
+    font-family: inherit;
+}
+.gallery-lightbox-close:hover {
+    background: #38E28F;
+    border-color: #38E28F;
+    color: #0A1E2D;
+    transform: rotate(90deg);
+}
+.gallery-lightbox-caption {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.5px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 22px;
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+    max-width: 80vw;
+}
+.gallery-lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s, transform 0.25s;
+    font-family: inherit;
+}
+.gallery-lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-50%) scale(1.08);
+}
+.gallery-lightbox-nav.prev { left: 24px; }
+.gallery-lightbox-nav.next { right: 24px; }
+
+@media (max-width: 768px) {
+    .gallery-lightbox { padding: 20px 12px; }
+    .gallery-lightbox-nav { width: 42px; height: 42px; font-size: 18px; }
+    .gallery-lightbox-nav.prev { left: 10px; }
+    .gallery-lightbox-nav.next { right: 10px; }
+    .gallery-lightbox-close { top: 14px; right: 14px; width: 40px; height: 40px; }
 }

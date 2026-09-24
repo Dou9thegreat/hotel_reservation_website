@@ -158,6 +158,39 @@
       var dCode = document.getElementById('dCode');
       if (params.get('promo') && dCode) dCode.value = params.get('promo');
 
+      /* --- BANDEAU PROMO — JS --- */
+      var OFFERS = {
+        "LONGSTAY20": "Séjour longue durée · -20% + petit-déjeuner offert",
+        "ROMANCE":    "Escapade romantique · dîner + massage duo inclus",
+        "BUSINESS":   "Offre Business · transfert AIBD + pressing offert",
+        "DIRECT":     "Réservation directe · meilleur tarif garanti"
+      };
+      var promoBanner = document.getElementById("promoBanner");
+      if (params.get("promo") && promoBanner) {
+        var promoKey = params.get("promo").toUpperCase();
+        var label = OFFERS[promoKey] || ("Code promo " + params.get("promo"));
+        promoBanner.innerHTML =
+          "<i class=\"fa-solid fa-tag\"></i> <b>Offre appliquée :</b> " + label +
+          " <span class=\"promo-code\">" + params.get("promo") + "</span>";
+        promoBanner.style.display = "flex";
+      }
+
+      /* --- Affichage du bandeau promo --- */
+      var OFFERS = {
+        'LONGSTAY20': 'Séjour longue durée · -20% + petit-déjeuner offert',
+        'ROMANCE':    'Escapade romantique · dîner + massage duo inclus',
+        'BUSINESS':   'Offre Business · transfert AIBD + pressing offert'
+      };
+      var promoBanner = document.getElementById('promoBanner');
+      if (params.get('promo') && promoBanner) {
+        var promoKey = params.get('promo').toUpperCase();
+        var label = OFFERS[promoKey] || ('Code promo ' + params.get('promo'));
+        promoBanner.innerHTML =
+          '<i class="fa-solid fa-tag"></i> <b>Offre appliquée :</b> ' + label +
+          ' <span class="promo-code">' + params.get('promo') + '</span>';
+        promoBanner.style.display = 'flex';
+      }
+
       var roomId    = params.get('room');
       var tariffIdx = params.get('tariff');
       if (roomId && typeof window.selectTariff === 'function') {

@@ -82,6 +82,7 @@
         </div>
     </section>
 
+    <div id="ctx-room" class="ctx-panel">
     <div class="steps">
         <ol id="stepTracker">
             <li class="current" data-step="1"><span class="n">1</span>Choix du séjour</li>
@@ -115,6 +116,8 @@
                 <div class="sf"><label>Code promo</label><input type="text" placeholder="Facultatif" id="dCode"></div>
                 <div class="sf-actions"><button type="button" class="btn-search" onclick="doSearch()">Rechercher</button></div>
             </div>
+
+            <div id="promoBanner" class="promo-banner" style="display:none;"></div>
 
             <div class="chips">
                 <button type="button" class="chip active" data-f="vue" data-v="all">Toutes les vues</button>
@@ -267,6 +270,148 @@
         </section>
 
     </div>
+    </div>
+    </div><!-- /#ctx-room -->
+
+    <!-- ============================================================ -->
+    <!-- CONTEXTE : SPA                                                -->
+    <!-- ============================================================ -->
+    <div id="ctx-spa" class="ctx-panel" style="display:none;">
+        <div class="res-inner">
+            <div class="form-wrap" style="max-width:640px;">
+                <h2>Réserver un soin au Pullman Spa</h2>
+                <p class="sub">Choisissez votre soin, votre créneau et vos coordonnées.</p>
+                <form onsubmit="event.preventDefault(); ctxSubmit(event,'spa');">
+                    <input type="hidden" id="hiddenResType" value="spa">
+                    <div class="field">
+                        <label>Type de soin</label>
+                        <select id="spaSoinSelect" required>
+                            <option value="journee-bien-etre">Journée Bien-être — 75 000 FCFA</option>
+                            <option value="massage">Massage relaxant 50 min — 45 000 FCFA</option>
+                            <option value="yoga">Yoga &amp; Méditation — 25 000 FCFA</option>
+                            <option value="hammam">Hammam &amp; Sauna — 30 000 FCFA</option>
+                            <option value="piscine">Accès Piscine — 20 000 FCFA</option>
+                        </select>
+                    </div>
+                    <div class="grid2">
+                        <div class="field"><label>Date</label><input type="date" id="spaDateSelect" required></div>
+                        <div class="field"><label>Créneau</label>
+                            <select id="spaHeureSelect" required>
+                                <option>09h00 – 11h00</option><option>11h00 – 13h00</option>
+                                <option>14h00 – 16h00</option><option>16h00 – 18h00</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid2">
+                        <div class="field"><label>Prénom</label><input type="text" required></div>
+                        <div class="field"><label>Nom</label><input type="text" required></div>
+                    </div>
+                    <div class="grid2">
+                        <div class="field"><label>E-mail</label><input type="email" required></div>
+                        <div class="field"><label>Téléphone</label><input type="tel" required></div>
+                    </div>
+                    <div class="field">
+                        <label>Demandes particulières</label>
+                        <textarea placeholder="Allergies, occasion spéciale…"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <a href="experiences-piscine.html" class="btn-back">← Retour</a>
+                        <button type="submit" class="btn-next">Confirmer ma réservation →</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- CONTEXTE : RESTAURANT                                         -->
+    <!-- ============================================================ -->
+    <div id="ctx-resto" class="ctx-panel" style="display:none;">
+        <div class="res-inner">
+            <div class="form-wrap" style="max-width:640px;">
+                <h2>Réserver une table</h2>
+                <p class="sub">Indiquez vos préférences, nous confirmons sous 2h.</p>
+                <form onsubmit="event.preventDefault(); ctxSubmit(event,'resto');">
+                    <input type="hidden" id="hiddenResType" value="resto">
+                    <div class="field">
+                        <label>Restaurant</label>
+                        <select id="restoVenueSelect" required>
+                            <option value="lounge">Teranga Lounge</option>
+                            <option value="beach">Teranga Beach Club</option>
+                            <option value="brunch">Brunch du dimanche</option>
+                        </select>
+                    </div>
+                    <div class="grid3">
+                        <div class="field"><label>Date</label><input type="date" required></div>
+                        <div class="field"><label>Heure</label><input type="time" required></div>
+                        <div class="field"><label>Couverts</label>
+                            <select required>
+                                <option>1</option><option selected>2</option><option>3</option>
+                                <option>4</option><option>5</option><option>6+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid2">
+                        <div class="field"><label>Nom complet</label><input type="text" required></div>
+                        <div class="field"><label>Téléphone</label><input type="tel" required></div>
+                    </div>
+                    <div class="field">
+                        <label>Demandes particulières</label>
+                        <textarea placeholder="Allergies, occasion spéciale…"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <a href="experiences-restaurant.html" class="btn-back">← Retour</a>
+                        <button type="submit" class="btn-next">Réserver ma table →</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- CONTEXTE : ÉVÉNEMENT                                          -->
+    <!-- ============================================================ -->
+    <div id="ctx-evt" class="ctx-panel" style="display:none;">
+        <div class="res-inner">
+            <div class="form-wrap" style="max-width:640px;">
+                <h2>Demander un devis événement</h2>
+                <p class="sub">Réponse garantie sous 24h ouvrées.</p>
+                <form onsubmit="event.preventDefault(); ctxSubmit(event,'evt');">
+                    <input type="hidden" id="hiddenResType" value="evt">
+                    <div class="field">
+                        <label>Type d'événement</label>
+                        <select id="evtTypeSelect" required>
+                            <option value="">Choisir…</option>
+                            <option value="seminaire">Séminaire</option>
+                            <option value="conference">Conférence</option>
+                            <option value="mariage">Mariage</option>
+                            <option value="cocktail">Cocktail / Réception</option>
+                        </select>
+                    </div>
+                    <div class="grid2">
+                        <div class="field"><label>Nom complet</label><input type="text" required></div>
+                        <div class="field"><label>Société (facultatif)</label><input type="text"></div>
+                    </div>
+                    <div class="grid2">
+                        <div class="field"><label>E-mail</label><input type="email" required></div>
+                        <div class="field"><label>Téléphone</label><input type="tel" required></div>
+                    </div>
+                    <div class="grid2">
+                        <div class="field"><label>Participants</label><input type="number" min="1" required></div>
+                        <div class="field"><label>Date souhaitée</label><input type="date" required></div>
+                    </div>
+                    <div class="field">
+                        <label>Votre projet</label>
+                        <textarea placeholder="Configuration, besoins techniques…"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <a href="evenements.html" class="btn-back">← Retour</a>
+                        <button type="submit" class="btn-next">Envoyer ma demande →</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </main>
 
 <section class="why-direct-section">
@@ -306,21 +451,18 @@
 /* ========== SYSTÈME DE RÉSERVATION ========== */
 const TAXE_NUIT_PERS = 1000;
 
-/* ============================================================= */
 /* ROOM PHOTOS CONFIG                                            */
-/* ============================================================= */
 /* ⬇️ MODIFIEZ ICI : photos des chambres sur la page Réservation */
 /*    Chemins relatifs au fichier HTML : images/...              */
 /*    Laissez '' (chaîne vide) pour masquer la photo.            */
-/* ============================================================= */
 var ROOM_PHOTOS = {
-  'classique-ville':   'images/imageluxe1.jpg',
-  'classique-twin':    'images/imageluxe2.jpg.jpg',
-  'superieure-ocean':  'images/imagesuperieur1.jpg.jpg',
-  'deluxe-ocean':      'images/imageluxe1.jpg',
-  'suite-ambassadeur': 'images/imagesambassadeur-1.jpg (2).jpg'
+  /* 5 images DIFFÉRENTES — pas de doublon */
+  'classique-ville':   'images/imagesuperieur1.jpg.jpg',   // Classique Vue Ville
+  'classique-twin':    'images/imagesuperieur2.jpg.jpg',   // Classique Twin
+  'superieure-ocean':  'images/room-superior.png',   // Supérieure Vue Océan
+  'deluxe-ocean':      'images/room-deluxe.png',   // Deluxe Vue Océan
+  'suite-ambassadeur': 'images/room-suite.png'    // Suite Ambassadeur
 };
-/* ============================================================= */
 
 const ROOMS = [
  {id:'classique-ville',name:'Chambre Classique Vue Ville',vue:'ville',lit:'king',surface:30,cap:2,
@@ -386,11 +528,9 @@ function fmtDate(str){
   return d.toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'});
 }
 
-/* ============================================================= */
 /* Helper : génère l'attribut style avec l'image si disponible.  */
 /* Si aucune photo n'est configurée → '' (le CSS par défaut du   */
 /* .ph s'applique : dégradé gris). Pas d'icône cassée.           */
-/* ============================================================= */
 function getRoomPhotoStyle(roomId) {
   var url = (typeof ROOM_PHOTOS !== 'undefined' && ROOM_PHOTOS[roomId]) ? ROOM_PHOTOS[roomId] : '';
   if (!url) return '';
@@ -679,6 +819,8 @@ renderSelection();
 </footer>
 
     <script src="js/extras.js"></script>
+    <script src="js/reservation-forms.js"></script>
+    <script src="js/reservation-hub.js"></script>
     <script src="js/booking-bridge.js"></script>
     <script src="js/i18n.js"></script>
 

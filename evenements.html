@@ -280,7 +280,7 @@
                     <article class="realisation-card">
                         <div class="realisation-img">
                             <span class="realisation-tag">Séminaire</span>
-                            <img src="images\seminaire.png" alt="Séminaire d'entreprise" loading="lazy">
+                            <img src="images/seminaire.png" alt="Séminaire d'entreprise" loading="lazy">
                         </div>
                         <div class="realisation-body">
                             <h3>Séminaire - Ministere de l'agriculture</h3>
@@ -295,7 +295,7 @@
                     <article class="realisation-card">
                         <div class="realisation-img">
                             <span class="realisation-tag">Conférence</span>
-                            <img src="images\conference.jpg" alt="Conférence internationale" loading="lazy">
+                            <img src="images/conference.jpg" alt="Conférence internationale" loading="lazy">
                         </div>
                         <div class="realisation-body">
                             <h3>Conférence internationale — Tech Dakar</h3>
@@ -310,7 +310,7 @@
                     <article class="realisation-card">
                         <div class="realisation-img">
                             <span class="realisation-tag">Mariage</span>
-                            <img src="images\mariage.png" alt="Réception de mariage" loading="lazy">
+                            <img src="images/mariage.png" alt="Réception de mariage" loading="lazy">
                         </div>
                         <div class="realisation-body">
                             <h3>Réception de mariage </h3>
@@ -425,7 +425,7 @@
 
                     <div class="cta-evt-form reveal">
                         <h3>Demander un devis personnalisé</h3>
-                        <form action="https://formspree.io/f/mvkgaopv" method="POST">
+                        <form action="reservation.html" method="GET" onsubmit="return redirectEvtToReservation(event);">
                             <div class="form-row">
                                 <div class="form-group">
                                     <input type="text" name="nom" placeholder="Nom complet *" required autocomplete="name">
@@ -678,6 +678,16 @@
 
 <!-- ============================== SCRIPT PAGE ÉVÉNEMENTS ============================== -->
 <script>
+function redirectEvtToReservation(e) {
+    e.preventDefault();
+    var f = e.target;
+    var type = (f.querySelector("[name=\"type_evenement\"]") || {}).value || "";
+    var p = new URLSearchParams();
+    if (type) p.set("evt", type);
+    window.location.href = "reservation.html?" + p.toString();
+    return false;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ============ 1. POP-UP DEVIS ============ */
@@ -723,17 +733,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const participants = document.getElementById('evtParticipants')?.value || '';
             const date      = document.getElementById('evtDate')?.value || '';
 
-            alert(`✅ Demande de devis envoyée !
-
-Nom : ${prenomNom}
-Email : ${email}
-Type : ${type}
-Participants : ${participants}
-Date : ${date}
-
-Notre équipe vous répond sous 24h ouvrées.`);
-            modalForm.reset();
-            closeModal();
+            // Redirection vers le tunnel unifié
+            var params = new URLSearchParams();
+            if (type) params.set("evt", type);
+            window.location.href = "reservation.html?" + params.toString();
         });
     }
 
