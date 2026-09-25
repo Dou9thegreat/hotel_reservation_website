@@ -1,0 +1,1014 @@
+  <!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restaurants & Bars — Pullman Dakar Teranga</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/commun.css">
+<link rel="stylesheet" href="css/footer-cta.css">
+<link rel="stylesheet" href="css/experiences-restaurant.css">
+</head>
+<body>
+
+<!-- ============================== HEADER ============================== -->
+<header class="site-header">
+    <div class="topbar">
+        <div class="lang-switch">
+            <span class="lang-current">Français</span>
+            <span class="chevron">▾</span>
+            <ul class="lang-menu">
+                <li><a href="#" data-lang="fr" class="active">Français</a></li>
+                <li><a href="#" data-lang="en">English</a></li>
+                <li><a href="#" data-lang="es">Español</a></li>
+            </ul>
+        </div><span class="separator">|</span>
+        <a href="contact.html" class="topbar-contact">
+            <span class="icon-mail">✉</span> Nous contacter
+        </a>
+    </div>
+
+    <div class="mainbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Logo Pullman Dakar Teranga">
+        </a>
+        <nav class="main-nav">
+            <a href="index.html">ACCUEIL</a>
+            <span class="nav-sep">|</span>
+            <a href="chambres.html">CHAMBRES</a>
+            <span class="nav-sep">|</span>
+            <div class="dropdown">
+                <a class="active">EXPÉRIENCES</a>
+                <div class="dropdown-content">
+                    <a href="experiences-piscine.html">Piscine + Spa</a>
+                    <a href="experiences-restaurant.html">Restaurants + Bars</a>
+                </div>
+            </div>
+            <span class="nav-sep">|</span>
+            <a href="galerie.html">GALERIE</a>
+            <span class="nav-sep">|</span>
+            <a href="evenements.html">MEETING &amp; EVENTS</a>
+            <span class="nav-sep">|</span>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+        <a href="reservation.html" class="btn-reserver">Réserver maintenant</a>
+    </div>
+</header>
+
+<!-- ============================== MAIN ============================== -->
+<main>
+<div class="restaurants-page">
+
+    <!-- ============================================================
+         HERO 50/50 — 2 photos symétriques + logos restaurants
+         ============================================================ -->
+
+    <!-- ============================================================
+         HERO 50/50 — 2 photos symétriques + logos restaurants
+         ============================================================ -->
+    <section class="hero-resto">
+
+        <!-- MOITIÉ GAUCHE — JOUR -->
+        <div class="hero-resto-half hero-resto-half--jour">
+            <div class="hero-resto-bg"></div>
+            <div class="hero-resto-overlay"></div>
+
+            <div class="hero-resto-logo hero-resto-logo--left">
+                <img src="images/logo-teranga-beach-club.png"
+                     alt="Teranga Beach Club"
+                     class="hero-resto-logo-img">
+            </div>
+
+            <div class="hero-resto-half-label">De jour · Au feu de bois</div>
+        </div>
+
+        <!-- MOITIÉ DROITE — NUIT -->
+        <div class="hero-resto-half hero-resto-half--nuit">
+            <div class="hero-resto-bg"></div>
+            <div class="hero-resto-overlay"></div>
+
+            <div class="hero-resto-logo hero-resto-logo--right">
+                <img src="images/logo-teranga-lounge.png"
+                     alt="Teranga Lounge"
+                     class="hero-resto-logo-img">
+            </div>
+
+            <div class="hero-resto-half-label">Le soir · Artsy &amp; cosmopolite</div>
+        </div>
+
+        <!-- CONTENU CENTRAL SUPERPOSÉ -->
+        <div class="hero-resto-stage">
+            <span class="hero-resto-eyebrow">
+                <span class="hero-resto-dot"></span>
+                Restaurants &amp; Bars
+                <span class="hero-resto-dot"></span>
+            </span>
+
+            <h1 class="hero-resto-title">
+                Le feu de bois<br> <em>le jour</em>.<br>
+                Les néons du bar<br> <em>la nuit</em>.
+            </h1>
+
+            <p class="hero-resto-sub">
+                Deux façons de vivre l'océan de Dakar — une carte à midi les pieds
+                dans le sable, une carte le soir face à la ville qui s'allume.
+            </p>
+
+            <div class="hero-resto-actions">
+                <a href="#lounge" class="hero-resto-btn hero-resto-btn--primary">
+                    Découvrir nos tables
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+                <a href="reservation.html?venue=lounge" class="hero-resto-btn hero-resto-btn--ghost">
+                    <i class="fa-regular fa-calendar"></i>
+                    Réserver
+                </a>
+                <a href="pdf/menu-complet.pdf" target="_blank" rel="noopener" class="hero-resto-btn hero-resto-btn--ghost">
+                    <i class="fa-solid fa-book-open"></i>
+                    Menus
+                </a>
+            </div>
+        </div>
+
+        <a href="#intro" class="hero-resto-scroll" aria-label="Descendre">
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </section>
+    <section class="intro-resto" id="intro">
+        <div class="container">
+            <div class="intro-resto-header reveal">
+                <span class="eyebrow">Deux adresses, deux moments</span>
+                <h2>Choisissez votre heure de la journée</h2>
+                <p>Une même maison, deux univers. Le jour pour la lumière, l'océan et le feu. Le soir pour la ville qui s'allume, le bar et les conversations qui durent.</p>
+            </div>
+
+            <div class="intro-resto-grid">
+
+                <article class="intro-card intro-card--jour reveal">
+                    <div class="intro-card-image">
+                        <img src="images/resto-piscine-jour.webp" alt="Teranga Beach Club de jour">
+                        <span class="intro-card-badge">Jour</span>
+                    </div>
+                    <div class="intro-card-body">
+                        <div class="intro-card-logo">
+                            <i class="fa-solid fa-fire"></i>
+                            <span>Teranga Beach Club</span>
+                        </div>
+                        <h3>Le déjeuner face à la baie</h3>
+                        <p>Entre la piscine chauffée et l'horizon, une carte alfresco, un feu de bois et des produits du potager.</p>
+                        <a href="#beach-club" class="intro-card-link">
+                            Explorer ce restaurant
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="intro-card intro-card--nuit reveal">
+                    <div class="intro-card-image">
+                        <img src="images/resto-bar-nuitt.jpg" alt="Teranga Lounge le soir">
+                        <span class="intro-card-badge">Soir</span>
+                    </div>
+                    <div class="intro-card-body">
+                        <div class="intro-card-logo">
+                            <i class="fa-solid fa-champagne-glasses"></i>
+                            <span>Teranga Lounge</span>
+                        </div>
+                        <h3>Le dîner dans la ville</h3>
+                        <p>Une cuisine contemporaine, un bar cosmopolite, et le fameux brunch du dimanche.</p>
+                        <a href="#lounge" class="intro-card-link">
+                            Explorer ce restaurant
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SIGNATURE — Philosophie & geste des chefs
+         ============================================================ -->
+    <section class="signature-resto reveal">
+        <div class="container">
+            <div class="signature-grid">
+
+                <div class="signature-visual">
+                    <img src="images/feux de bois.webp" alt="Cuisson au feu de bois">
+                </div>
+
+                <div class="signature-content">
+                    <span class="eyebrow">Notre signature</span>
+                    <h2>Le geste, avant le plat</h2>
+                    <p>
+                        Chez nous, la cuisine se raconte autant qu'elle se goûte. Le feu de bois
+                        de la Cheffe Aïcha Zoumarou, le dressage du Chef Ibrahima Sow, la fumée
+                        qui monte au-dessus des braises — chaque plat porte un geste, un lieu,
+                        une heure de la journée.
+                    </p>
+                    <blockquote>
+                        « Le souvenir d'un repas commence avant la première bouchée : dans
+                        l'odeur du bois qui brûle, dans la lumière de la salle, dans le
+                        bruit du service. »
+                    </blockquote>
+                    <p class="signature-attr">— L'équipe Pullman Dakar Teranga</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION TERANGA LOUNGE
+         ============================================================ -->
+    <section class="resto-section resto-section--lounge" id="lounge">
+
+        <!-- Filigrane logo en fond -->
+        <div class="resto-watermark">
+            <i class="fa-solid fa-champagne-glasses"></i>
+            <span>Teranga Lounge</span>
+        </div>
+
+        <div class="container">
+            <div class="resto-grid reveal">
+
+                <div class="resto-info">
+                    <div class="resto-logo">
+                        <i class="fa-solid fa-champagne-glasses"></i>
+                        <span>Teranga Lounge</span>
+                    </div>
+
+                    <span class="resto-eyebrow">Le soir · Artsy &amp; cosmopolite</span>
+                    <h2 class="resto-title">Restaurant &amp; Bar</h2>
+
+                    <blockquote class="resto-quote">
+                        « Le Chef Ibrahima Sow compose une cuisine contemporaine
+                        à la croisée des influences françaises, italiennes et sénégalaises. »
+                    </blockquote>
+
+                    <p class="resto-desc">
+                        Buffets lunch, carte du soir, et le <strong>fameux brunch du dimanche</strong>
+                        — le tout dans un décor cosmopolite pensé pour les dialogues
+                        d'affaires comme les soirées à deux.
+                    </p>
+
+                    <!-- Bio chef enrichie (3 puces) -->
+                    <div class="resto-chef-bio">
+                        <div class="resto-chef-avatar">
+                            <img src="images/chef ibrahima.png" alt="Chef Ibrahima Sow">
+                        </div>
+                        <div class="resto-chef-info">
+                            <strong>Chef Ibrahima Sow</strong>
+                            <ul>
+                                <li><i class="fa-solid fa-graduation-cap"></i> Formé à l'école Ferrandi (Paris)</li>
+                                <li><i class="fa-solid fa-lightbulb"></i> Inspiration : Méditerranée &amp; Afrique de l'Ouest</li>
+                                <li><i class="fa-solid fa-signature"></i> Plat signature : Risotto au baobab</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Timeline horaire -->
+                    <div class="resto-timeline">
+                        <div class="resto-timeline-item">
+                            <span class="resto-timeline-hour">06:30</span>
+                            <div>
+                                <strong>Petit-déjeuner</strong>
+                                <span>Buffet et service à la carte</span>
+                            </div>
+                        </div>
+                        <div class="resto-timeline-item">
+                            <span class="resto-timeline-hour">12:00</span>
+                            <div>
+                                <strong>Buffet Lunch</strong>
+                                <span>Cuisine du monde et spécialités locales</span>
+                            </div>
+                        </div>
+                        <div class="resto-timeline-item">
+                            <span class="resto-timeline-hour">18:00</span>
+                            <div>
+                                <strong>Tapastry by Pullman</strong>
+                                <span>Afterwork, tapas &amp; cocktails signature</span>
+                            </div>
+                        </div>
+                        <div class="resto-timeline-item">
+                            <span class="resto-timeline-hour">23:00</span>
+                            <div>
+                                <strong>Fermeture</strong>
+                                <span>Dernier service au bar</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resto-proof">
+                        <div class="resto-proof-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="resto-proof-text">
+                            <strong>Noté 5/5 pour le brunch du dimanche</strong>
+                            par nos clients sur Tripadvisor
+                        </div>
+                    </div>
+
+                    <div class="resto-cta">
+                        <a href="reservation.html?venue=lounge" class="resto-btn resto-btn--primary">
+                            Réserver une table
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#" class="resto-btn resto-btn--ghost" data-open-menu="lounge">
+                            <i class="fa-solid fa-book-open"></i>
+                            Voir le menu
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resto-visual">
+                    <div class="resto-visual-main">
+                        <span class="resto-badge">Chef Ibrahima Sow</span>
+                        <img src="images/733064913_17892837402554221_8744990083883894502_n (1).jpg" alt="Chef Ibrahima Sow en action">
+                    </div>
+                    <div class="resto-visual-secondary">
+                        <img src="images/resto-bar-nuitt.jpg" alt="Bar de nuit">
+                        <img src="images/651017496_17874036816554221_2167752616912884997_n.jpg" alt="Table du brunch">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION TERANGA BEACH CLUB
+         ============================================================ -->
+    <section class="resto-section resto-section--beach" id="beach-club">
+
+        <!-- Filigrane logo en fond -->
+        <div class="resto-watermark">
+            <i class="fa-solid fa-fire"></i>
+            <span>Teranga Beach Club</span>
+        </div>
+
+        <div class="container">
+            <div class="resto-grid resto-grid--reverse reveal">
+
+                <div class="resto-info">
+                    <div class="resto-logo">
+                        <i class="fa-solid fa-fire"></i>
+                        <span>Teranga Beach Club</span>
+                    </div>
+
+                    <span class="resto-eyebrow">De jour · Au feu de bois</span>
+                    <h2 class="resto-title">L'art du feu,<br>face à l'océan</h2>
+
+                    <blockquote class="resto-quote">
+                        « La cheffe Aïcha Zoumarou met en avant le produit local
+                        et la cuisson au feu de bois, entre la piscine chauffée
+                        et la vue sur la baie de Dakar. »
+                    </blockquote>
+
+                    <p class="resto-desc">
+                        <strong>Poisson grillé au feu de bois</strong>, fumé et croustillant,
+                        servi avec les légumes du potager du jour cueillis le matin même.
+                        Une carte déjeuner alfresco, pensée pour prolonger la matinée à la plage.
+                    </p>
+
+                    <!-- Bio cheffe enrichie -->
+                    <div class="resto-chef-bio">
+                        <div class="resto-chef-avatar">
+                            <img src="Capture d'écran 2026-09-23 162321.png" alt="Cheffe Aïcha Zoumarou">
+                        </div>
+                        <div class="resto-chef-info">
+                            <strong>Cheffe Aïcha Zoumarou</strong>
+                            <ul>
+                                <li><i class="fa-solid fa-graduation-cap"></i> Formée à l'Institut Paul Bocuse (Lyon)</li>
+                                <li><i class="fa-solid fa-lightbulb"></i> Inspiration : produits locaux &amp; cuisson au feu</li>
+                                <li><i class="fa-solid fa-signature"></i> Plat signature : Capitaine entier grillé</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resto-timeline">
+                        <div class="resto-timeline-item">
+                            <span class="resto-timeline-hour">12:00</span>
+                            <div>
+                                <strong>Ouverture</strong>
+                                <span>Apéritifs et première mise en bouche</span>
+                            </div>
+                        </div>
+                        <div class="resto-timeline-item">
+                            <span class="resto-timeline-hour">14:00</span>
+                            <div>
+                                <strong>Service principal</strong>
+                                <span>Poissons et viandes au feu de bois</span>
+                            </div>
+                        </div>
+                        <div class="resto-timeline-item">
+                            <span class="resto-timeline-hour">16:00</span>
+                            <div>
+                                <strong>Goûter</strong>
+                                <span>Douceurs et boissons fraîches</span>
+                            </div>
+                        </div>
+                        <div class="resto-timeline-item">
+                            <span class="resto-timeline-hour">18:00</span>
+                            <div>
+                                <strong>Dernier service</strong>
+                                <span>Fin du service déjeuner</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resto-cta">
+                        <a href="reservation.html?venue=beach" class="resto-btn resto-btn--primary">
+                            Réserver une table
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#" class="resto-btn resto-btn--ghost" data-open-menu="beach">
+                            <i class="fa-solid fa-book-open"></i>
+                            Voir le menu
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resto-visual">
+                    <div class="resto-visual-main">
+                        <span class="resto-badge">Feu de bois</span>
+                        <img src="650412954_17873058048554221_4528126567914043286_n.jpg" alt="Poisson en cuisson au feu de bois">
+                    </div>
+                    <div class="resto-visual-secondary">
+                        <img src="757603127_17897313063554221_4764904593028132693_n.jpg" alt="Piscine chauffée">
+                        <img src="615927086_17864782260554221_2590665441021235298_n.jpg" alt="Cheffe Aïcha Zoumarou">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         BANDEAU BRUNCH
+         ============================================================ -->
+    <section class="brunch-banner reveal">
+        <div class="brunch-inner">
+
+            <div class="brunch-content">
+                <span class="brunch-eyebrow">
+                    <i class="fa-solid fa-star"></i>
+                    Chaque dimanche seulement
+                </span>
+                <h2>Le brunch qui fait <em>danser</em> le Teranga Lounge</h2>
+                <p>
+                    Carpaccios, agneau, poisson entier, musique live.
+                    Un rendez-vous hebdomadaire unique face à la ville qui s'allume.
+                </p>
+
+                <ul class="brunch-list">
+                    <li><i class="fa-solid fa-check"></i> Buffet salé &amp; sucré à volonté</li>
+                    <li><i class="fa-solid fa-check"></i> Poisson entier grillé au feu de bois</li>
+                    <li><i class="fa-solid fa-check"></i> Agneau rôti &amp; carpaccios</li>
+                    <li><i class="fa-solid fa-check"></i> Musique live &amp; ambiance Teranga</li>
+                </ul>
+            </div>
+
+            <div class="brunch-gallery">
+                <img src="brunch table.jpg" alt="Table du brunch">
+                <img src="ambiance brunch.jpg" alt="Ambiance du brunch">
+                <img src="580506909_17857440840554221_1414419304420957422_n.jpg" alt="Préparation du brunch">
+            </div>
+
+            <div class="brunch-price">
+                <span class="brunch-price-label">Tout compris</span>
+                <span class="brunch-price-value">35 000</span>
+                <span class="brunch-price-unit">FCFA / personne</span>
+                <a href="reservation.html?venue=brunch" class="brunch-btn">
+                    Réserver le brunch
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MENU SIGNATURE
+         ============================================================ -->
+    <section class="menu-signature reveal">
+        <div class="container">
+            <div class="menu-signature-header">
+                <span class="eyebrow">Nos incontournables</span>
+                <h2>Les plats qui racontent nos deux chefs</h2>
+                <p>Quatre assiettes emblématiques — choisies pour ce qu'elles disent du produit, du geste et de la saison.</p>
+            </div>
+
+            <div class="menu-signature-grid">
+                <article class="menu-dish">
+                    <div class="menu-dish-image">
+                        <img src="OIP 22222222.webp" alt="Poisson entier grillé au feu de bois">
+                    </div>
+                    <div class="menu-dish-body">
+                        <span class="menu-dish-tag">Beach Club</span>
+                        <h3>Poisson entier au feu de bois</h3>
+                        <p>Pêche locale grillée lentement sur braises, fumée et croustillante, légumes du potager du jour.</p>
+                    </div>
+                </article>
+
+                <article class="menu-dish">
+                    <div class="menu-dish-image">
+                        <img src="carpaaaaa.webp" alt="Carpaccio signature">
+                    </div>
+                    <div class="menu-dish-body">
+                        <span class="menu-dish-tag">Lounge</span>
+                        <h3>Carpaccio de bœuf, huile de sésame</h3>
+                        <p>Fines lamelles de bœuf, roquette, copeaux de parmesan et huile de sésame torréfié.</p>
+                    </div>
+                </article>
+
+                <article class="menu-dish">
+                    <div class="menu-dish-image">
+                        <img src="rotiii.webp" alt="Agneau rôti du brunch">
+                    </div>
+                    <div class="menu-dish-body">
+                        <span class="menu-dish-tag">Brunch</span>
+                        <h3>Agneau rôti, jus court aux épices</h3>
+                        <p>Épaule d'agneau confite, jus réduit aux épices douces, semoule parfumée.</p>
+                    </div>
+                </article>
+
+                <article class="menu-dish">
+                    <div class="menu-dish-image">
+                        <img src="télécharger (1).webp" alt="Dessert signature">
+                    </div>
+                    <div class="menu-dish-body">
+                        <span class="menu-dish-tag">Les deux</span>
+                        <h3>Ananas rôti, glace coco</h3>
+                        <p>Ananas caramélisé au gingembre, glace coco maison et tuile croustillante.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="menu-signature-cta">
+                <a href="pdf/menu-complet.pdf" target="_blank" rel="noopener" class="menu-signature-btn">
+                    <i class="fa-solid fa-book-open"></i>
+                    Voir la carte complète (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         ATMOSPHÈRE IMMERSIVE
+         ============================================================ -->
+    <section class="atmosphere-resto">
+        <div class="atmosphere-image"></div>
+        <div class="atmosphere-overlay"></div>
+        <div class="atmosphere-content reveal">
+            <span class="eyebrow">L'atmosphère</span>
+            <h2>Ici, on ne dîne pas.<br>On se souvient.</h2>
+            <p>Le bruit du feu, la lumière chaude du soir, la vue qui s'ouvre sur l'Atlantique — venez vivre un moment qui ne s'oublie pas.</p>
+            <a href="reservation.html?venue=lounge" class="atmosphere-btn">
+                Réserver votre table
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         RECONNAISSANCE — Badges agrégés
+         ============================================================ -->
+    <section class="reco-resto reveal">
+        <div class="container">
+            <div class="reco-header">
+                <span class="eyebrow">Reconnaissance</span>
+                <h2>Une expérience saluée par la critique</h2>
+            </div>
+
+            <div class="reco-grid">
+
+                <div class="reco-card">
+                    <div class="reco-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="reco-body">
+                        <strong class="reco-score">5.0<small>/5</small></strong>
+                        <span class="reco-label">Brunch du dimanche</span>
+                        <span class="reco-source">Tripadvisor</span>
+                    </div>
+                </div>
+
+                <div class="reco-card">
+                    <div class="reco-icon">
+                        <i class="fa-brands fa-google"></i>
+                    </div>
+                    <div class="reco-body">
+                        <strong class="reco-score">4.6<small>/5</small></strong>
+                        <span class="reco-label">Note globale</span>
+                        <span class="reco-source">Google Reviews</span>
+                    </div>
+                </div>
+
+                <div class="reco-card">
+                    <div class="reco-icon">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div class="reco-body">
+                        <strong class="reco-score">2024</strong>
+                        <span class="reco-label">Meilleure table de Dakar</span>
+                        <span class="reco-source">Dakar Food Awards</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PREUVE SOCIALE — Avis clients
+         ============================================================ -->
+    <section class="proof-section reveal">
+        <div class="proof-header">
+            <span class="eyebrow">Ils ont vécu l'expérience</span>
+            <h2>Ce que nos clients disent de nos tables</h2>
+        </div>
+
+        <div class="proof-grid">
+
+            <article class="proof-card">
+                <div class="proof-stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="proof-text">
+                    « Le brunch du dimanche au Teranga Lounge est une vraie
+                    expérience : musique live, vue magnifique et buffet
+                    d'une qualité rare à Dakar. »
+                </p>
+                <div class="proof-author">
+                    <div class="proof-avatar">A</div>
+                    <div class="proof-info">
+                        <h5>Aminata D.</h5>
+                        <span>Dakar · Tripadvisor · Février 2026</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="proof-card">
+                <div class="proof-stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="proof-text">
+                    « Dîner au Teranga Lounge : cuisine précise, service
+                    impeccable. Le cadre artsy rend les dîners d'affaires
+                    vraiment plaisants. »
+                </p>
+                <div class="proof-author">
+                    <div class="proof-avatar">M</div>
+                    <div class="proof-info">
+                        <h5>Marc L.</h5>
+                        <span>Paris · Google · Janvier 2026</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="proof-card">
+                <div class="proof-stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="proof-text">
+                    « Déjeuner au Beach Club : poisson grillé au feu de bois
+                    exceptionnel, vue sur la baie à couper le souffle.
+                    Une vraie parenthèse. »
+                </p>
+                <div class="proof-author">
+                    <div class="proof-avatar">F</div>
+                    <div class="proof-info">
+                        <h5>Fatou N.</h5>
+                        <span>Saint-Louis · Tripadvisor · Décembre 2025</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ
+         ============================================================ -->
+    <section class="faq-resto reveal">
+        <div class="container">
+            <div class="faq-resto-header">
+                <span class="eyebrow">Questions fréquentes</span>
+                <h2>Tout ce qu'il faut savoir avant de venir</h2>
+            </div>
+
+            <div class="faq-resto-list">
+
+                <div class="faq-resto-item">
+                    <button type="button" class="faq-resto-question">
+                        <span>Faut-il réserver pour le brunch du dimanche ?</span>
+                        <i class="fa-solid fa-chevron-down faq-resto-chevron"></i>
+                    </button>
+                    <div class="faq-resto-answer">
+                        <p>Oui, vivement recommandé. Le brunch affiche souvent complet 48h à l'avance. Nous vous conseillons de réserver par téléphone ou en ligne au moins 3 jours à l'avance, surtout en haute saison.</p>
+                    </div>
+                </div>
+
+                <div class="faq-resto-item">
+                    <button type="button" class="faq-resto-question">
+                        <span>Le Beach Club est-il ouvert aux non-résidents ?</span>
+                        <i class="fa-solid fa-chevron-down faq-resto-chevron"></i>
+                    </button>
+                    <div class="faq-resto-answer">
+                        <p>Absolument. Le Teranga Beach Club accueille résidents et visiteurs extérieurs. Nous vous recommandons simplement de réserver votre table pour le service déjeuner, surtout le week-end.</p>
+                    </div>
+                </div>
+
+                <div class="faq-resto-item">
+                    <button type="button" class="faq-resto-question">
+                        <span>Proposez-vous des options végétariennes ou sans allergènes ?</span>
+                        <i class="fa-solid fa-chevron-down faq-resto-chevron"></i>
+                    </button>
+                    <div class="faq-resto-answer">
+                        <p>Oui. Nos chefs adaptent les plats aux régimes végétariens, vegan et aux allergènes sur demande. Précisez-le lors de votre réservation, ou directement à votre arrivée.</p>
+                    </div>
+                </div>
+
+                <div class="faq-resto-item">
+                    <button type="button" class="faq-resto-question">
+                        <span>Y a-t-il un dress code ?</span>
+                        <i class="fa-solid fa-chevron-down faq-resto-chevron"></i>
+                    </button>
+                    <div class="faq-resto-answer">
+                        <p>Une tenue élégante casual est appréciée au Teranga Lounge le soir. Au Beach Club en journée, la tenue balnéaire est bienvenue — nous sommes les pieds dans le sable.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CTA FINAL
+         ============================================================ -->
+    <section class="resto-cta-final">
+        <div class="resto-cta-inner reveal">
+            <h2>Une table vous attend sur le rivage</h2>
+            <p>
+                Réservez directement — meilleur tarif garanti,
+                confirmation immédiate, annulation flexible.
+            </p>
+
+            <div class="resto-cta-actions">
+                <a href="reservation.html" class="resto-btn resto-btn--primary">
+                    Réserver une table
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#" class="resto-btn resto-btn--ghost" data-open-menu="all">
+                    <i class="fa-solid fa-book-open"></i>
+                    Voir le menu (PDF)
+                </a>
+            </div>
+
+            <div class="resto-cta-contact">
+                <span><i class="fa-solid fa-location-dot"></i> 10, Rue Colbert · Place de l'Indépendance · Dakar</span>
+                <span><i class="fa-solid fa-phone"></i> +221 33 869 66 66</span>
+                <span><i class="fa-regular fa-envelope"></i> dakar.reservation@accor.com</span>
+            </div>
+        </div>
+    </section>
+
+</div><!-- /.restaurants-page -->
+</main>
+
+<!-- ============================== CTA RÉSERVATION ============================== -->
+<section class="booking-section">
+    <div class="container">
+        <h2>PRÊT POUR VOTRE PROCHAINE <span class="highlight">ÉVASION</span> ?</h2>
+        <p class="subtitle">Réservez maintenant et vivez l'expérience Pullman Dakar Teranga.</p>
+
+        <div class="booking-widget">
+            <div class="widget-field">
+                <span class="icon-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg></span>
+                <div class="field-info">
+                    <label>Chambre</label>
+                    <select id="cta-chambre" class="cta-select">
+                        <option value="1 chambre">1 chambre</option>
+                        <option value="2 chambres">2 chambres</option>
+                        <option value="3 chambres">3 chambres</option>
+                    </select>
+                </div>
+            </div>
+            <div class="widget-field">
+                <span class="icon-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
+                <div class="field-info">
+                    <label>Arrivée</label>
+                    <input type="text" id="cta-checkin" class="cta-date-input" placeholder="Sélectionner" readonly>
+                </div>
+            </div>
+            <div class="widget-field">
+                <span class="icon-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="m9 16 2 2 4-4"></path></svg></span>
+                <div class="field-info">
+                    <label>Départ</label>
+                    <input type="text" id="cta-checkout" class="cta-date-input" placeholder="Sélectionner" readonly>
+                </div>
+            </div>
+            <div class="widget-field">
+                <span class="icon-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span>
+                <div class="field-info">
+                    <label>Hôtes</label>
+                    <select id="cta-hotes" class="cta-select">
+                        <option value="1 personne">1 personne</option>
+                        <option value="2 personnes" selected>2 personnes</option>
+                        <option value="3 personnes">3 personnes</option>
+                        <option value="4 personnes">4 personnes</option>
+                    </select>
+                </div>
+            </div>
+            <button type="button" class="btn-submit">
+                VÉRIFIER LES<br>DISPONIBILITÉS
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+        </div>
+
+        <div class="booking-features">
+            <div class="feature-item">
+                <span class="icon-circle"><i class="fas fa-certificate"></i></span>
+                <span>Meilleur tarif garanti</span>
+            </div>
+            <div class="feature-item">
+                <span class="icon-circle"><i class="fas fa-calendar-check"></i></span>
+                <span>Annulation flexible</span>
+            </div>
+            <div class="feature-item">
+                <span class="icon-circle"><i class="fas fa-lock"></i></span>
+                <span>Paiement sécurisé</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="images/logo-pullman-white.png" alt="Pullman Hotels and Resorts" class="img-manual-logo">
+                </div>
+                <div class="contact-details">
+                    <p><i class="fa-solid fa-location-dot icon-contact"></i> Pullman Dakar Teranga<br>Route de la Corniche Ouest<br>BP 8181, Dakar, Sénégal</p>
+                    <p><i class="fa-solid fa-phone icon-contact"></i> +221 33 869 66 66</p>
+                    <p><i class="fa-regular fa-envelope icon-contact"></i> HB076@accor.com</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">LIENS UTILES</h4>
+                <ul>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="conditions-generales.html">Conditions générales</a></li>
+                    <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                    <li><a href="accessibilite.html">Accessibilité</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">DÉCOUVRIR</h4>
+                <ul>
+                    <li><a href="chambres.html">Nos chambres</a></li>
+                    <li><a href="experiences.html">Expériences</a></li>
+                    <li><a href="offres-speciales.html">Offres spéciales</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">SUIVEZ-NOUS</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-solid fa-globe"></i></a>
+                </div>
+                <h4 class="footer-title" style="margin-top:26px;">MOYENS DE PAIEMENT</h4>
+                <div class="payment-methods">
+                    <span class="payment-badge pay-visa" title="Visa">VISA</span>
+                    <span class="payment-badge pay-mc" title="Mastercard">
+                        <span class="circle c1"></span><span class="circle c2"></span>
+                    </span>
+                    <span class="payment-badge pay-wave" title="Wave">Wave</span>
+                    <span class="payment-badge pay-om" title="Orange Money">Orange Money</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Pullman Dakar Teranga - Tous droits réservés.</p>
+            <div class="footer-bottom-right">
+                <div class="currency-switch">
+                    <button class="currency-current" type="button">
+                        <i class="fas fa-globe"></i> FR · XOF <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="currency-menu">
+                        <li><a href="#" data-currency="XOF" class="active"><span>Franc CFA</span><span class="code">XOF</span></a></li>
+                        <li><a href="#" data-currency="EUR"><span>Euro</span><span class="code">EUR</span></a></li>
+                        <li><a href="#" data-currency="USD"><span>Dollar US</span><span class="code">USD</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ============================== SCRIPTS ============================== -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script>
+<script src="js/booking-bridge.js"></script>
+<script src="js/i18n.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ============ 1. REVEAL ============ */
+    const reveals = document.querySelectorAll('.restaurants-page .reveal');
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+        reveals.forEach(el => el.classList.add('active'));
+    } else {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+        reveals.forEach(el => observer.observe(el));
+    }
+
+    /* ============ 2. HERO ============ */
+    if (!reduceMotion) {
+        const heroStage = document.querySelector('.hero-resto-stage');
+        if (heroStage) {
+            heroStage.style.opacity = '0';
+            heroStage.style.transform = 'translate(-50%, -46%) scale(0.96)';
+            heroStage.style.transition = 'opacity 1.4s ease-out, transform 1.4s ease-out';
+            setTimeout(() => {
+                heroStage.style.opacity = '1';
+                heroStage.style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 200);
+        }
+    }
+
+    /* ============ 3. SMOOTH SCROLL ============ */
+    const scrollBtn = document.querySelector('.hero-resto-scroll');
+    if (scrollBtn) {
+        scrollBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector('#intro');
+            if (target) {
+                target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+            }
+        });
+    }
+
+    /* ============ 4. Menus PDF ============ */
+    document.querySelectorAll('[data-open-menu]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const type = btn.dataset.openMenu;
+            const pdfUrls = {
+                'lounge': 'pdf/menu-teranga-lounge.pdf',
+                'beach':  'pdf/menu-beach-club.pdf',
+                'all':    'pdf/menu-complet.pdf'
+            };
+            window.open(pdfUrls[type] || pdfUrls['all'], '_blank', 'noopener');
+        });
+    });
+
+    /* ============ 5. FAQ ============ */
+    document.querySelectorAll('.faq-resto-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.closest('.faq-resto-item');
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-resto-item.open').forEach(el => el.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        });
+    });
+
+});
+</script>
+
+</body>
+</html>

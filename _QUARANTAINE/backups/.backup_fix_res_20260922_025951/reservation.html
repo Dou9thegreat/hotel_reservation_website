@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Réserver — Pullman Dakar Teranga</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/commun.css">
+<link rel="stylesheet" href="css/footer-cta.css">
+<link rel="stylesheet" href="css/reservation.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="topbar">
+        <div class="lang-switch">
+            <span class="lang-current">Français</span>
+            <span class="chevron">▾</span>
+            <ul class="lang-menu">
+                <li><a href="#" data-lang="fr" class="active">Français</a></li>
+                <li><a href="#" data-lang="en">English</a></li>
+                <li><a href="#" data-lang="es">Español</a></li>
+            </ul>
+        </div><span class="separator">|</span>
+        <a href="contact.html" class="topbar-contact">
+            <span class="icon-mail">✉</span> Nous contacter
+        </a>
+    </div>
+
+    <div class="mainbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Logo Pullman Dakar Teranga">
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html">ACCUEIL</a>
+            <span class="nav-sep">|</span>
+
+            <a href="chambres.html">CHAMBRES</a>
+            <span class="nav-sep">|</span>
+
+            <div class="dropdown">
+                <a>EXPÉRIENCES</a>
+                <div class="dropdown-content">
+                    <a href="experiences-piscine.html">Piscine + Spa</a>
+                    <a href="experiences-restaurant.html">Restaurant + Wifi</a>
+                </div>
+            </div>
+            <span class="nav-sep">|</span>
+
+            <a href="galerie.html">GALERIE</a>
+            <span class="nav-sep">|</span>
+
+            <a href="evenements.html">MEETING &amp; EVENTS</a>
+            <span class="nav-sep">|</span>
+
+            <a href="contact.html">CONTACT</a>
+        </nav>
+
+        <a href="reservation.html" class="btn-reserver">Réserver maintenant</a>
+    </div>
+</header>
+
+<main class="reservation-page">
+
+    <section class="hero">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="hero-text">
+            <h1>Réservez votre séjour au Pullman Dakar Teranga</h1>
+            <p>Profitez d'une expérience unique alliant confort, élégance et hospitalité sénégalaise face à l'océan Atlantique.</p>
+        </div>
+    </section>
+
+    <div class="steps">
+        <ol id="stepTracker">
+            <li class="current" data-step="1"><span class="n">1</span>Choix du séjour</li>
+            <li data-step="2"><span class="n">2</span>Vos coordonnées</li>
+            <li data-step="3"><span class="n">3</span>Récapitulatif</li>
+            <li data-step="4"><span class="n">4</span>Confirmation</li>
+        </ol>
+    </div>
+
+    <div class="res-inner">
+
+        <section class="step-panel active" id="panel-1">
+            <div class="searchbar">
+                <div class="sf"><label>Arrivée</label><input type="date" id="dArrivee" value="2026-09-09"></div>
+                <div class="sf"><label>Départ</label><input type="date" id="dDepart" value="2026-09-10"></div>
+                <div class="sf"><label>Voyageurs</label>
+                    <select id="dVoy">
+                        <option>2 adultes</option>
+                        <option>1 adulte</option>
+                        <option>2 adultes, 1 enfant</option>
+                        <option>2 adultes, 2 enfants</option>
+                    </select>
+                </div>
+                <div class="sf"><label>Chambres</label>
+                    <select id="dChambres">
+                        <option value="1">1 chambre</option>
+                        <option value="2">2 chambres</option>
+                        <option value="3">3 chambres</option>
+                    </select>
+                </div>
+                <div class="sf"><label>Code promo</label><input type="text" placeholder="Facultatif" id="dCode"></div>
+                <div class="sf-actions"><button type="button" class="btn-search" onclick="doSearch()">Rechercher</button></div>
+            </div>
+
+            <div class="chips">
+                <button type="button" class="chip active" data-f="vue" data-v="all">Toutes les vues</button>
+                <button type="button" class="chip" data-f="vue" data-v="ocean">Vue océan</button>
+                <button type="button" class="chip" data-f="vue" data-v="ville">Vue ville</button>
+                <button type="button" class="chip" data-f="lit" data-v="king">1 lit King</button>
+                <button type="button" class="chip" data-f="lit" data-v="twin">2 lits simples</button>
+            </div>
+
+            <div class="multi-room-flag" id="multiFlag">Chambre <span id="mrCur">1</span> sur <span id="mrTot">1</span> — sélectionnez une chambre pour continuer</div>
+            <p class="avail-count"><b id="roomCount">5</b> catégories de chambres disponibles pour vos dates</p>
+
+            <div class="booking-grid">
+                <div id="roomList"></div>
+
+                <aside class="selection-panel">
+                    <h3>Votre sélection</h3>
+                    <div id="selContent"><p class="sel-empty">Choisissez une chambre et un tarif dans la liste pour voir apparaître ici le détail de votre réservation.</p></div>
+                    
+                <!-- BANDEAU EXTRAS -->
+                <div id="exbBanner" class="exb-banner" style="display:none;">
+                    <div class="exb-head">
+                        <span class="exb-icon"><i class="fa-solid fa-gift"></i></span>
+                        <div class="exb-head-text">
+                            <strong>Enrichissez votre sejour</strong>
+                            <span>Ajoutez une experience a votre reservation</span>
+                        </div>
+                    </div>
+                    <div class="exb-quick-grid" id="exbQuickGrid"></div>
+                    <button type="button" class="exb-link" id="exbOpenModal">
+                        Voir tous les extras <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <button type="button" class="btn-continue" id="btnContinueStep1" disabled onclick="goStep(2)">Continuer</button>
+                    <div class="reassure">
+                        <span>✓ Meilleur tarif garanti</span><span>✓ Paiement sécurisé</span>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="step-panel" id="panel-2">
+            <div class="form-wrap">
+                <h2>Vos coordonnées</h2>
+                <p class="sub">Ces informations serviront à votre confirmation de réservation et à votre accueil à l'hôtel.</p>
+                <form id="coordForm" onsubmit="event.preventDefault(); submitCoord();">
+                    <fieldset>
+                        <legend>Voyageur principal</legend>
+                        <div class="grid3">
+                            <div class="field"><label>Civilité <span class="req">*</span></label>
+                                <select required><option>Madame</option><option>Monsieur</option><option>Autre</option></select></div>
+                            <div class="field"><label>Prénom <span class="req">*</span></label><input required type="text" placeholder="Aïssatou"></div>
+                            <div class="field"><label>Nom <span class="req">*</span></label><input required type="text" placeholder="Diop"></div>
+                        </div>
+                        <div class="grid2">
+                            <div class="field"><label>E-mail <span class="req">*</span></label><input required type="email" placeholder="vous@exemple.com"></div>
+                            <div class="field"><label>Téléphone <span class="req">*</span></label>
+                                <div class="tel-group">
+                                    <select><option>+221</option><option>+33</option><option>+1</option><option>+225</option></select>
+                                    <input required type="tel" placeholder="77 123 45 67">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid2">
+                            <div class="field"><label>Pays de résidence <span class="req">*</span></label>
+                                <select required><option>Sénégal</option><option>France</option><option>Côte d'Ivoire</option><option>États-Unis</option><option>Autre</option></select></div>
+                            <div class="field"><label>Motif du séjour</label>
+                                <select><option>Loisirs</option><option>Affaires</option><option>Événement / Séminaire</option></select></div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Votre arrivée</legend>
+                        <div class="grid2">
+                            <div class="field"><label>Heure d'arrivée estimée</label>
+                                <select><option>Avant 14h</option><option>14h – 18h</option><option>18h – 22h</option><option>Après 22h (arrivée tardive)</option></select></div>
+                            <div class="field"><label>Numéro adhérent ALL (facultatif)</label><input type="text" placeholder="Ex : 3512xxxxxx"></div>
+                        </div>
+                        <div class="field"><label>Demandes particulières</label>
+                            <textarea placeholder="Étage élevé, lit bébé, allergie, anniversaire… (sous réserve de disponibilité)"></textarea></div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Services additionnels</legend>
+                        <div class="checkbox-row"><input type="checkbox" id="svcTransfer"><label for="svcTransfer">Transfert aéroport AIBD aller-retour — 35 000 FCFA</label></div>
+                        <div class="checkbox-row"><input type="checkbox" id="svcLate"><label for="svcLate">Late check-out (départ 16h) — Gratuit sur demande</label></div>
+                        <div class="checkbox-row"><input type="checkbox" id="svcSpa"><label for="svcSpa">Accès Pullman Spa — 25 000 FCFA / personne</label></div>
+                    </fieldset>
+
+                    <div class="checkbox-row"><input type="checkbox" required id="cgv"><label for="cgv">J'accepte les <a href="#" style="color:#155E75;text-decoration:underline">conditions générales de vente</a> <span class="req">*</span></label></div>
+                    <div class="checkbox-row"><input type="checkbox" id="news"><label for="news">Je souhaite recevoir les offres et actualités du Pullman Dakar Teranga</label></div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-back" onclick="goStep(1)">← Retour</button>
+                        <button type="submit" class="btn-next">Continuer vers le récapitulatif →</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="step-panel" id="panel-3">
+            <div class="recap-grid">
+                <div>
+                    <div class="card">
+                        <h3>Votre séjour <button type="button" onclick="goStep(1)">Modifier</button></h3>
+                        <div id="recapStay"></div>
+                    </div>
+                    <div class="card">
+                        <h3>Vos coordonnées <button type="button" onclick="goStep(2)">Modifier</button></h3>
+                        <div id="recapCoord"></div>
+                    </div>
+                    <div class="card">
+                        <h3>Mode de paiement</h3>
+                        <div class="pay-options">
+                            <label class="pay-opt checked"><input type="radio" name="pay" checked><div><div class="pname">Wave</div><div class="pdesc">Paiement instantané via l'application Wave</div></div></label>
+                            <label class="pay-opt"><input type="radio" name="pay"><div><div class="pname">Orange Money</div><div class="pdesc">Paiement via votre compte Orange Money</div></div></label>
+                            <label class="pay-opt"><input type="radio" name="pay"><div><div class="pname">Carte bancaire</div><div class="pdesc">Visa, Mastercard — paiement sécurisé 3D Secure</div></div></label>
+                        </div>
+                        <div class="secure-row">🔒 Transaction chiffrée SSL · Conforme 3D Secure</div>
+                    </div>
+                    <div class="card">
+                        <h3>Politique d'annulation</h3>
+                        <div class="policy-box">Annulation gratuite jusqu'au <b id="policyDate">07 sept. 2026, 18h00</b>. Passé ce délai, le montant de la première nuit sera facturé.</div>
+                    </div>
+                </div>
+
+                <aside class="selection-panel">
+                    <h3>Total à régler</h3>
+                    <div class="price-detail" id="finalPriceDetail"></div>
+                    <div class="price-total"><span class="lbl">TOTAL</span><span class="amt" id="finalTotal">0 FCFA</span></div>
+                    <button type="button" class="btn-continue" onclick="goStep(4)">Payer et confirmer</button>
+                    <div class="reassure"><span>✓ Meilleur tarif garanti</span><span>✓ Annulation flexible</span></div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="step-panel" id="panel-4">
+            <div class="confirm-wrap">
+                <div class="confirm-icon">✓</div>
+                <h2>Réservation confirmée</h2>
+                <p>Un e-mail et un SMS de confirmation viennent de vous être envoyés. Nous avons hâte de vous accueillir au Pullman Dakar Teranga.</p>
+                <div class="conf-num">Numéro de réservation<span id="bookingRef">PDT-284719</span></div>
+                <div class="card" style="text-align:left" id="confSummary"></div>
+                <div class="conf-actions">
+                    <a href="#" class="primary">Télécharger le PDF</a>
+                    <a href="#">Ajouter au calendrier</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<section class="why-direct-section">
+    <div class="container">
+        <h2>Pourquoi réserver en direct ?</h2>
+        <div class="why-direct-grid">
+            <div class="why-item">
+                <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+                <div>
+                    <h3>Meilleur tarif garanti</h3>
+                    <p>Profitez des meilleurs tarifs disponibles uniquement sur notre site officiel.</p>
+                </div>
+            </div>
+            <div class="why-item">
+                <div class="why-icon"><i class="far fa-calendar-check"></i></div>
+                <div>
+                    <h3>Annulation flexible</h3>
+                    <p>Annulation gratuite jusqu'à 48h avant votre arrivée.</p>
+                </div>
+            </div>
+            <div class="why-item">
+                <div class="why-icon"><i class="fas fa-lock"></i></div>
+                <div>
+                    <h3>Paiement sécurisé</h3>
+                    <p>Vos transactions sont 100% sécurisées.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script>
+
+<script>
+/* ========== SYSTÈME DE RÉSERVATION ========== */
+const TAXE_NUIT_PERS = 1000;
+const ROOMS = [
+ {id:'classique-ville',name:'Chambre Classique Vue Ville',vue:'ville',lit:'king',surface:30,cap:2,
+  desc:"Élégante et confortable, pensée pour un séjour urbain pratique au cœur de Dakar.",
+  amen:['Lit King Size','Wi-Fi haut débit','Minibar','Climatisation'],scarcity:null,
+  tariffs:[
+    {name:'Tarif Flexible',sub:"Annulation gratuite jusqu'à 48h avant l'arrivée",price:115000,petitdej:0},
+    {name:'Tarif Non-remboursable',sub:'Paiement immédiat, −15%',price:97750,old:115000,petitdej:0},
+    {name:'Petit-déjeuner inclus',sub:'Buffet Teranga Lounge chaque matin',price:133000,petitdej:1}
+  ]},
+ {id:'classique-twin',name:'Chambre Classique Twin Vue Ville',vue:'ville',lit:'twin',surface:30,cap:2,
+  desc:"Deux lits simples, idéale pour les collègues ou amis en voyage d'affaires.",
+  amen:['2 lits simples','Wi-Fi haut débit','Minibar','Climatisation'],scarcity:'Plus que 3 chambres à ce tarif',
+  tariffs:[
+    {name:'Tarif Flexible',sub:"Annulation gratuite jusqu'à 48h avant l'arrivée",price:115000,petitdej:0},
+    {name:'Petit-déjeuner inclus',sub:'Buffet Teranga Lounge chaque matin',price:133000,petitdej:1}
+  ]},
+ {id:'superieure-ocean',name:'Chambre Supérieure Vue Océan',vue:'ocean',lit:'king',surface:33,cap:2,
+  desc:"Terrasse privative et lumière naturelle généreuse, face à l'île de Gorée.",
+  amen:['Lit King Size','Terrasse','Baignoire','Coffre-fort'],scarcity:'Plus que 2 chambres à ce tarif',
+  tariffs:[
+    {name:'Tarif Flexible',sub:"Annulation gratuite jusqu'à 48h avant l'arrivée",price:155000,petitdej:0},
+    {name:'Tarif Non-remboursable',sub:'Paiement immédiat, −15%',price:131750,old:155000,petitdej:0},
+    {name:'Petit-déjeuner inclus',sub:'Buffet Teranga Lounge chaque matin',price:178250,petitdej:1}
+  ]},
+ {id:'deluxe-ocean',name:'Chambre Deluxe Vue Océan',vue:'ocean',lit:'king',surface:33,cap:2,
+  desc:"Balcon privé et vue imprenable sur l'Atlantique depuis votre lit King Size.",
+  amen:['Lit King Size','Balcon privé','Machine Illy','Wi-Fi haut débit'],scarcity:'Plus que 4 chambres à ce tarif',
+  tariffs:[
+    {name:'Tarif Flexible',sub:"Annulation gratuite jusqu'à 48h avant l'arrivée",price:185000,petitdej:0},
+    {name:'Tarif Non-remboursable',sub:'Paiement immédiat, −15%',price:157250,old:185000,petitdej:0},
+    {name:'Petit-déjeuner inclus',sub:'Buffet Teranga Lounge chaque matin',price:212750,petitdej:1}
+  ]},
+ {id:'suite-ambassadeur',name:'Suite Ambassadeur Pullman',vue:'ocean',lit:'king',surface:60,cap:2,
+  desc:"Salon séparé, volumes généreux et services exclusifs pour un séjour d'exception.",
+  amen:['Salon séparé','Canapé-lit','Baignoire & douche','Service Concierge'],scarcity:'Plus que 2 chambres à ce tarif',
+  tariffs:[
+    {name:'Tarif Flexible',sub:"Annulation gratuite jusqu'à 48h avant l'arrivée",price:350000,petitdej:0},
+    {name:'Tarif Non-remboursable',sub:'Paiement immédiat, −15%',price:297500,old:350000,petitdej:0},
+    {name:'Petit-déjeuner inclus',sub:'Buffet Teranga Lounge + service en chambre',price:402500,petitdej:1}
+  ]}
+];
+
+let filters = {vue:'all', lit:'all'};
+let selected = null;
+
+function fmt(n){ return n.toLocaleString('fr-FR').replace(/,/g,' ') + ' FCFA'; }
+
+function nights(){
+  const a = new Date(document.getElementById('dArrivee').value);
+  const d = new Date(document.getElementById('dDepart').value);
+  const n = Math.round((d - a) / 86400000);
+  return n > 0 ? n : 1;
+}
+function guestsCount(){
+  const v = document.getElementById('dVoy').value;
+  const m = v.match(/(\d+) adulte/); const adults = m ? parseInt(m[1]) : 2;
+  const m2 = v.match(/(\d+) enfant/); const kids = m2 ? parseInt(m2[1]) : 0;
+  return adults + kids;
+}
+function fmtDate(str){
+  const d = new Date(str);
+  return d.toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'});
+}
+
+function renderRooms(){
+  const list = document.getElementById('roomList');
+  const filtered = ROOMS.filter(r =>
+    (filters.vue === 'all' || r.vue === filters.vue) &&
+    (filters.lit === 'all' || r.lit === filters.lit)
+  );
+  document.getElementById('roomCount').textContent = filtered.length;
+  list.innerHTML = filtered.map(r => {
+    const isSel = selected && selected.room.id === r.id;
+    return '<div class="room-card ' + (isSel ? 'selected' : '') + '">' +
+      '<span class="check">✓</span>' +
+      '<div class="rc-gallery"><div class="ph">Photo —<br>' + r.name + '</div></div>' +
+      '<div class="rc-body">' +
+        '<div class="rc-top"><div><span class="rc-tag">' + (r.vue === 'ocean' ? 'Vue Océan' : 'Vue Ville') + '</span>' +
+        '<h3 class="rc-name">' + r.name + '</h3></div></div>' +
+        '<div class="rc-meta"><span>👤 ' + r.cap + ' pers.</span><span>🛏 ' + (r.lit === 'king' ? '1 lit King' : '2 lits simples') + '</span><span>📐 ' + r.surface + ' m²</span></div>' +
+        '<p class="rc-desc">' + r.desc + '</p>' +
+        '<div class="rc-amenities">' + r.amen.map(a => '<span>· ' + a + '</span>').join('') + '</div>' +
+        (r.scarcity ? '<div class="rc-scarcity">● ' + r.scarcity + '</div>' : '') +
+        '<div class="tariffs">' +
+          r.tariffs.map((t, i) => {
+            const chosen = isSel && selected.tariff === t;
+            return '<div class="tariff-row">' +
+              '<div class="tariff-info"><div class="tariff-name">' + t.name + '</div><div class="tariff-sub">✓ ' + t.sub + '</div></div>' +
+              '<div class="tariff-price">' + (t.old ? '<span class="old">' + fmt(t.old) + '</span>' : '') + '<span class="amt">' + fmt(t.price) + '</span><div class="unit">par nuit</div></div>' +
+              '<button type="button" class="btn-select ' + (chosen ? 'selected' : '') + '" onclick="selectTariff(\'' + r.id + '\',' + i + ')">' + (chosen ? '✓ Sélectionnée' : 'Sélectionner') + '</button>' +
+            '</div>';
+          }).join('') +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function selectTariff(roomId, tariffIdx){
+  const room = ROOMS.find(r => r.id === roomId);
+  if (!room) return;
+  const tariff = room.tariffs[tariffIdx];
+  selected = {room, tariff};
+  renderRooms();
+  renderSelection();
+}
+
+function renderSelection(){
+  const el = document.getElementById('selContent');
+  const btn = document.getElementById('btnContinueStep1');
+  if (!selected){
+    el.innerHTML = '<p class="sel-empty">Choisissez une chambre et un tarif dans la liste pour voir apparaître ici le détail de votre réservation.</p>';
+    btn.disabled = true;
+    return;
+  }
+  const n = nights(), g = guestsCount();
+  const room = selected.room, tariff = selected.tariff;
+  const sousTotal = tariff.price * n;
+  const taxe = TAXE_NUIT_PERS * g * n;
+  const total = sousTotal + taxe;
+  el.innerHTML =
+    '<div class="sel-room"><div class="ph">Photo</div>' +
+      '<div><div class="sel-room-name">' + room.name + '</div><div class="sel-room-tariff">' + tariff.name + '</div></div>' +
+    '</div>' +
+    '<div class="sel-meta">' +
+      '<div><span>Arrivée</span><b>' + fmtDate(document.getElementById('dArrivee').value) + '</b></div>' +
+      '<div><span>Départ</span><b>' + fmtDate(document.getElementById('dDepart').value) + '</b></div>' +
+      '<div><span>Voyageurs</span><b>' + document.getElementById('dVoy').value + '</b></div>' +
+      '<div><span>Nuits</span><b>' + n + '</b></div>' +
+    '</div>' +
+    '<div class="price-detail">' +
+      '<div><span>' + fmt(tariff.price) + ' × ' + n + ' nuit' + (n > 1 ? 's' : '') + '</span><b>' + fmt(sousTotal) + '</b></div>' +
+      '<div class="sub"><span>Taxe de promotion touristique</span><b>' + fmt(taxe) + '</b></div>' +
+      '<div><span>TVA</span><b>incluse</b></div>' +
+    '</div>' +
+    '<div class="price-total"><span class="lbl">TOTAL SÉJOUR</span><span class="amt">' + fmt(total) + '</span></div>';
+  btn.disabled = false;
+}
+
+function doSearch(){
+  const roomsToBook = parseInt(document.getElementById('dChambres').value);
+  document.getElementById('multiFlag').style.display = roomsToBook > 1 ? 'block' : 'none';
+  document.getElementById('mrTot').textContent = roomsToBook;
+  selected = null;
+  renderRooms();
+  renderSelection();
+}
+
+document.querySelectorAll('.chip').forEach(function(c){
+  c.addEventListener('click', function(){
+    const group = c.dataset.f;
+    document.querySelectorAll('.chip[data-f="' + group + '"]').forEach(function(x){ x.classList.remove('active'); });
+    c.classList.add('active');
+    filters[group] = c.dataset.v;
+    renderRooms();
+  });
+});
+
+function goStep(n){
+  document.querySelectorAll('.step-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById('panel-' + n).classList.add('active');
+  document.querySelectorAll('#stepTracker li').forEach(function(li){
+    const s = parseInt(li.dataset.step);
+    li.classList.toggle('current', s === n);
+    li.classList.toggle('done', s < n);
+  });
+  if (n === 3) renderRecap();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function submitCoord(){
+  const form = document.getElementById('coordForm');
+  if (!form.checkValidity()){ form.reportValidity(); return; }
+  goStep(3);
+}
+
+document.querySelectorAll('input[name="pay"]').forEach(function(r){
+  r.addEventListener('change', function(){
+    document.querySelectorAll('.pay-opt').forEach(function(o){ o.classList.remove('checked'); });
+    r.closest('.pay-opt').classList.add('checked');
+  });
+});
+
+function renderRecap(){
+  if (!selected) return;
+  const n = nights(), g = guestsCount();
+  const room = selected.room, tariff = selected.tariff;
+  const sousTotal = tariff.price * n;
+  const taxe = TAXE_NUIT_PERS * g * n;
+  const total = sousTotal + taxe;
+  document.getElementById('recapStay').innerHTML =
+    '<div class="recap-line"><span>Chambre</span><b>' + room.name + '</b></div>' +
+    '<div class="recap-line"><span>Tarif</span><b>' + tariff.name + '</b></div>' +
+    '<div class="recap-line"><span>Arrivée</span><b>' + fmtDate(document.getElementById('dArrivee').value) + '</b></div>' +
+    '<div class="recap-line"><span>Départ</span><b>' + fmtDate(document.getElementById('dDepart').value) + '</b></div>' +
+    '<div class="recap-line"><span>Voyageurs</span><b>' + document.getElementById('dVoy').value + '</b></div>';
+  const form = document.getElementById('coordForm');
+  const inputs = form.querySelectorAll('input[type=text],input[type=email],input[type=tel]');
+  const prenom = (inputs[0] && inputs[0].value) || '—';
+  const nom = (inputs[1] && inputs[1].value) || '—';
+  const emailEl = form.querySelector('input[type=email]');
+  const email = (emailEl && emailEl.value) || '—';
+  document.getElementById('recapCoord').innerHTML =
+    '<div class="recap-line"><span>Nom</span><b>' + prenom + ' ' + nom + '</b></div>' +
+    '<div class="recap-line"><span>E-mail</span><b>' + email + '</b></div>';
+  document.getElementById('finalPriceDetail').innerHTML =
+    '<div><span>' + fmt(tariff.price) + ' × ' + n + ' nuit' + (n > 1 ? 's' : '') + '</span><b>' + fmt(sousTotal) + '</b></div>' +
+    '<div class="sub"><span>Taxe de promotion touristique</span><b>' + fmt(taxe) + '</b></div>' +
+    '<div><span>TVA</span><b>incluse</b></div>';
+  document.getElementById('finalTotal').textContent = fmt(total);
+
+  const arr = new Date(document.getElementById('dArrivee').value);
+  arr.setDate(arr.getDate() - 2);
+  document.getElementById('policyDate').textContent = arr.toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'}) + ', 18h00';
+
+  document.getElementById('confSummary').innerHTML =
+    '<div class="recap-line"><span>Chambre</span><b>' + room.name + ' — ' + tariff.name + '</b></div>' +
+    '<div class="recap-line"><span>Séjour</span><b>' + fmtDate(document.getElementById('dArrivee').value) + ' → ' + fmtDate(document.getElementById('dDepart').value) + '</b></div>' +
+    '<div class="recap-line"><span>Voyageur</span><b>' + prenom + ' ' + nom + '</b></div>' +
+    '<div class="recap-line"><span>Total réglé</span><b>' + fmt(total) + '</b></div>';
+}
+
+renderRooms();
+renderSelection();
+
+flatpickr("#cta-checkin",  { locale: "fr", dateFormat: "d M. Y", minDate: "today" });
+flatpickr("#cta-checkout", { locale: "fr", dateFormat: "d M. Y", minDate: "today" });
+</script>
+
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="images/logo-pullman-white.png" alt="Pullman Hotels and Resorts" class="img-manual-logo">
+                </div>
+                <div class="contact-details">
+                    <p><i class="fa-solid fa-location-dot icon-contact"></i> Pullman Dakar Teranga<br>Route de la Corniche Ouest<br>BP 8181, Dakar, Sénégal</p>
+                    <p><i class="fa-solid fa-phone icon-contact"></i> +221 33 869 66 66</p>
+                    <p><i class="fa-regular fa-envelope icon-contact"></i> HB076@accor.com</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">LIENS UTILES</h4>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Conditions générales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">Accessibilité</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">DÉCOUVRIR</h4>
+                <ul>
+                    <li><a href="chambres.html">Nos chambres</a></li>
+                    <li><a href="experiences.html">Expériences</a></li>
+                    <li><a href="#">Offres spéciales</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">SUIVEZ-NOUS</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-solid fa-globe"></i></a>
+                </div>
+                <h4 class="footer-title" style="margin-top:26px;">MOYENS DE PAIEMENT</h4>
+                <div class="payment-methods">
+                    <span class="payment-badge pay-visa" title="Visa">VISA</span>
+                    <span class="payment-badge pay-mc" title="Mastercard">
+                        <span class="circle c1"></span><span class="circle c2"></span>
+                    </span>
+                    <span class="payment-badge pay-wave" title="Wave">Wave</span>
+                    <span class="payment-badge pay-om" title="Orange Money">Orange Money</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Pullman Dakar Teranga - Tous droits réservés.</p>
+            <div class="footer-bottom-right">
+                <div class="currency-switch">
+                    <button class="currency-current" type="button">
+                        <i class="fas fa-globe"></i> FR · XOF <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="currency-menu">
+                        <li><a href="#" data-currency="XOF" class="active"><span>Franc CFA</span><span class="code">XOF</span></a></li>
+                        <li><a href="#" data-currency="EUR"><span>Euro</span><span class="code">EUR</span></a></li>
+                        <li><a href="#" data-currency="USD"><span>Dollar US</span><span class="code">USD</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="js/extras.js"></script>
+    <script src="js/booking-bridge.js"></script>
+    <script src="js/i18n.js"></script>
+
+<!-- MODAL EXTRAS -->
+<div class="exb-modal-overlay" id="exbModal" aria-hidden="true">
+    <div class="exb-modal" role="dialog" aria-modal="true" aria-labelledby="exbModalTitle">
+        <button type="button" class="exb-modal-close" id="exbModalClose" aria-label="Fermer">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="exb-modal-header">
+            <span class="exb-eyebrow"><i class="fa-solid fa-gift"></i> Extras &amp; Experiences</span>
+            <h2 id="exbModalTitle">Enrichissez votre sejour</h2>
+            <p>Selectionnez les experiences que vous souhaitez ajouter a votre reservation.</p>
+        </div>
+        <div class="exb-tabs" role="tablist">
+            <button type="button" class="exb-tab active" data-cat="all">Tous</button>
+            <button type="button" class="exb-tab" data-cat="spa">Spa &amp; Bien-etre</button>
+            <button type="button" class="exb-tab" data-cat="resto">Restaurants</button>
+            <button type="button" class="exb-tab" data-cat="bar">Bars</button>
+            <button type="button" class="exb-tab" data-cat="service">Services</button>
+        </div>
+        <div class="exb-modal-body">
+            <div class="exb-cat-banner" id="exbCategoryBanner" style="display:none;">
+                <span class="exb-banner-title">Spa &amp; Bien-etre</span>
+                <span class="exb-banner-subtitle">Ressourcez-vous face a l'Atlantique</span>
+            </div>
+            <div class="exb-list" id="exbList"></div>
+        </div>
+        <div class="exb-modal-footer">
+            <div class="exb-subtotal">
+                <span>Sous-total extras</span>
+                <strong id="exbSubtotal">0 FCFA</strong>
+            </div>
+            <div class="exb-actions">
+                <button type="button" class="exb-btn exb-btn--ghost" id="exbCancel">Annuler</button>
+                <button type="button" class="exb-btn exb-btn--primary" id="exbConfirm">
+                    Ajouter a mon sejour <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

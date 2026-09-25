@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+window.open(MENU_URLS[type] || MENU_URLS['all'], '_blank', 'noopener,noreferrer');  <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -17,6 +17,8 @@
 <link rel="stylesheet" href="css/commun.css">
 <link rel="stylesheet" href="css/footer-cta.css">
 <link rel="stylesheet" href="css/experiences-restaurant.css">
+    <link rel="stylesheet" href="css/landing-page.css">
+    <link rel="stylesheet" href="css/mobile-premium.css">
 </head>
 <body>
 
@@ -132,7 +134,7 @@
                     <i class="fa-regular fa-calendar"></i>
                     Réserver
                 </a>
-                <a href="pdf/menu-complet.pdf" target="_blank" rel="noopener" class="hero-resto-btn hero-resto-btn--ghost">
+                <a href="https://issuu.com/pullmandakarteranga/docs/menu_2025_carte_teranga_beach_club_" target="_blank" rel="noopener" class="hero-resto-btn hero-resto-btn--ghost">
                     <i class="fa-solid fa-book-open"></i>
                     Menus
                 </a>
@@ -387,7 +389,7 @@
                     <!-- Bio cheffe enrichie -->
                     <div class="resto-chef-bio">
                         <div class="resto-chef-avatar">
-                            <img src="Capture d'écran 2026-09-23 162321.png" alt="Cheffe Aïcha Zoumarou">
+                            <img src="images/Capture d'écran 2026-09-23 162321.png" alt="Cheffe Aïcha Zoumarou">
                         </div>
                         <div class="resto-chef-info">
                             <strong>Cheffe Aïcha Zoumarou</strong>
@@ -445,11 +447,11 @@
                 <div class="resto-visual">
                     <div class="resto-visual-main">
                         <span class="resto-badge">Feu de bois</span>
-                        <img src="650412954_17873058048554221_4528126567914043286_n.jpg" alt="Poisson en cuisson au feu de bois">
+                        <img src="images/650412954_17873058048554221_4528126567914043286_n.jpg" alt="Poisson en cuisson au feu de bois">
                     </div>
                     <div class="resto-visual-secondary">
-                        <img src="757603127_17897313063554221_4764904593028132693_n.jpg" alt="Piscine chauffée">
-                        <img src="615927086_17864782260554221_2590665441021235298_n.jpg" alt="Cheffe Aïcha Zoumarou">
+                        <img src="images/757603127_17897313063554221_4764904593028132693_n.jpg" alt="Piscine chauffée">
+                        <img src="images/615927086_17864782260554221_2590665441021235298_n.jpg" alt="Cheffe Aïcha Zoumarou">
                     </div>
                 </div>
 
@@ -483,9 +485,9 @@
             </div>
 
             <div class="brunch-gallery">
-                <img src="brunch table.jpg" alt="Table du brunch">
-                <img src="ambiance brunch.jpg" alt="Ambiance du brunch">
-                <img src="580506909_17857440840554221_1414419304420957422_n.jpg" alt="Préparation du brunch">
+                <img src="images/brunch table.jpg" alt="Table du brunch">
+                <img src="images/ambiance brunch.jpg" alt="Ambiance du brunch">
+                <img src="images/580506909_17857440840554221_1414419304420957422_n.jpg" alt="Préparation du brunch">
             </div>
 
             <div class="brunch-price">
@@ -515,7 +517,7 @@
             <div class="menu-signature-grid">
                 <article class="menu-dish">
                     <div class="menu-dish-image">
-                        <img src="OIP 22222222.webp" alt="Poisson entier grillé au feu de bois">
+                        <img src="images/OIP 22222222.webp" alt="Poisson entier grillé au feu de bois">
                     </div>
                     <div class="menu-dish-body">
                         <span class="menu-dish-tag">Beach Club</span>
@@ -526,7 +528,7 @@
 
                 <article class="menu-dish">
                     <div class="menu-dish-image">
-                        <img src="carpaaaaa.webp" alt="Carpaccio signature">
+                        <img src="images/carpaaaaa.webp" alt="Carpaccio signature">
                     </div>
                     <div class="menu-dish-body">
                         <span class="menu-dish-tag">Lounge</span>
@@ -537,7 +539,7 @@
 
                 <article class="menu-dish">
                     <div class="menu-dish-image">
-                        <img src="rotiii.webp" alt="Agneau rôti du brunch">
+                        <img src="images/rotiii.webp" alt="Agneau rôti du brunch">
                     </div>
                     <div class="menu-dish-body">
                         <span class="menu-dish-tag">Brunch</span>
@@ -548,7 +550,7 @@
 
                 <article class="menu-dish">
                     <div class="menu-dish-image">
-                        <img src="télécharger (1).webp" alt="Dessert signature">
+                        <img src="images/télécharger (1).webp" alt="Dessert signature">
                     </div>
                     <div class="menu-dish-body">
                         <span class="menu-dish-tag">Les deux</span>
@@ -559,7 +561,7 @@
             </div>
 
             <div class="menu-signature-cta">
-                <a href="pdf/menu-complet.pdf" target="_blank" rel="noopener" class="menu-signature-btn">
+                <a href="https://issuu.com/pullmandakarteranga/docs/menu_2025_carte_teranga_beach_club_" target="_blank" rel="noopener" class="menu-signature-btn">
                     <i class="fa-solid fa-book-open"></i>
                     Voir la carte complète (PDF)
                 </a>
@@ -990,11 +992,11 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             const type = btn.dataset.openMenu;
-            const pdfUrls = {
-                'lounge': 'pdf/menu-teranga-lounge.pdf',
-                'beach':  'pdf/menu-beach-club.pdf',
-                'all':    'pdf/menu-complet.pdf'
-            };
+            const MENU_URLS = {
+    'lounge': 'https://issuu.com/pullmandakarteranga/docs/menu_2025_carte_teranga_beach_club_',
+    'beach':  'https://issuu.com/pullmandakarteranga/docs/menu_2025_carte_teranga_beach_club_',
+    'all':    'https://issuu.com/pullmandakarteranga/docs/menu_2025_carte_teranga_beach_club_'
+};
             window.open(pdfUrls[type] || pdfUrls['all'], '_blank', 'noopener');
         });
     });
@@ -1012,5 +1014,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script src="js/landing-page.js" defer></script>
+<script src="js/mobile-nav.js" defer></script>
 </body>
 </html>

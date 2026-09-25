@@ -1,0 +1,205 @@
+/* ============================================================= */
+/* LANDING-PAGE.CSS — Pullman Dakar Teranga                      */
+/* Landing page responsive · desktop · tablette · mobile         */
+/* ============================================================= */
+
+#rp-loader-landing {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: radial-gradient(120% 90% at 50% 22%, rgba(71,178,125,0.12), transparent 60%), #04080D;
+    color: #F3F6F4;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0);
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+    transition: opacity .6s ease, visibility .6s ease;
+}
+#rp-loader-landing.rp-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+body.rp-locked {
+    overflow: hidden !important;
+}
+
+#rp-loader-landing .lp-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.4rem;
+    width: 100%;
+    max-width: 640px;
+    padding: 2rem 6vw;
+    text-align: center;
+}
+
+/* ---------- Orbe ---------- */
+#rp-loader-landing .lp-orb-wrap {
+    width: 220px;
+    height: 220px;
+    flex: none;
+}
+#rp-loader-landing .lp-orb-wrap svg {
+    overflow: visible;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#rp-loader-landing .lp-ring-dotted {
+    animation: lpSpin 42s linear infinite;
+    transform-origin: 110px 110px;
+}
+#rp-loader-landing .lp-ring-arc-a {
+    animation: lpSpin 6s linear infinite;
+    transform-origin: 110px 110px;
+}
+#rp-loader-landing .lp-ring-arc-b {
+    animation: lpSpinRev 8s linear infinite;
+    transform-origin: 110px 110px;
+}
+@keyframes lpSpin { to { transform: rotate(360deg); } }
+@keyframes lpSpinRev { to { transform: rotate(-360deg); } }
+
+#rp-loader-landing .lp-mark-pulse {
+    animation: lpPulseScale 2.8s ease-in-out infinite;
+    transform-origin: 836.19px 323.56px;
+}
+#rp-loader-landing .lp-mark-pulse path { fill: #47B27D; }
+@keyframes lpPulseScale {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.035); }
+}
+
+/* ---------- Logo Pullman ---------- */
+#rp-loader-landing .lp-wordmark {
+    width: 212px;
+    height: auto;
+    max-width: 80vw;
+}
+#rp-loader-landing .lp-wordmark path { fill: #F3F6F4; }
+
+/* ---------- Label TERANGA NDAKARU ---------- */
+#rp-loader-landing .lp-label {
+    font-size: .72rem;
+    letter-spacing: .34em;
+    color: #8AD4AD;
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* ---------- Barre de progression ---------- */
+#rp-loader-landing .lp-bar-row {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    width: 100%;
+    max-width: 280px;
+}
+#rp-loader-landing .lp-bar {
+    flex: 1;
+    height: 1px;
+    background: rgba(243,246,244,.14);
+    position: relative;
+}
+#rp-loader-landing .lp-bar-fill {
+    position: absolute;
+    left: 0;
+    top: -1px;
+    height: 3px;
+    width: 0%;
+    background: #47B27D;
+    box-shadow: 0 0 12px rgba(71,178,125,.75);
+}
+#rp-loader-landing .lp-pct {
+    font-size: .7rem;
+    letter-spacing: .06em;
+    color: #9AA3A0;
+    min-width: 2.6em;
+    font-weight: 500;
+    text-align: right;
+}
+
+/* ---------- Phrase d'accueil ---------- */
+#rp-loader-landing .lp-word {
+    text-align: center;
+    line-height: 1.4;
+    margin-top: .3rem;
+    font-size: clamp(1.1rem, 4.6vw, 1.95rem);
+}
+#rp-loader-landing .lp-word .bold { color: #9AA3A0; font-weight: 700; }
+#rp-loader-landing .lp-word .reg  { color: #47B27D; font-weight: 400; }
+
+/* ============================================================= */
+/* RESPONSIVE                                                    */
+/* ============================================================= */
+
+/* Tablette 768–1024px */
+@media (max-width: 1024px) {
+    #rp-loader-landing .lp-orb-wrap { width: 190px; height: 190px; }
+    #rp-loader-landing .lp-inner { gap: 1.2rem; padding: 2rem 8vw; }
+    #rp-loader-landing .lp-wordmark { width: 190px; }
+    #rp-loader-landing .lp-bar-row { max-width: 260px; }
+}
+
+/* Mobile 480–768px */
+@media (max-width: 768px) {
+    #rp-loader-landing .lp-orb-wrap { width: 170px; height: 170px; }
+    #rp-loader-landing .lp-inner { gap: 1.1rem; padding: 1.8rem 8vw; }
+    #rp-loader-landing .lp-wordmark { width: 170px; }
+    #rp-loader-landing .lp-label { font-size: .66rem; letter-spacing: .3em; }
+    #rp-loader-landing .lp-bar-row { max-width: 240px; }
+    #rp-loader-landing .lp-word { font-size: clamp(1rem, 5vw, 1.5rem); }
+}
+
+/* Petit mobile 375–480px */
+@media (max-width: 480px) {
+    #rp-loader-landing .lp-orb-wrap { width: 150px; height: 150px; }
+    #rp-loader-landing .lp-inner { gap: 1rem; padding: 1.5rem 7vw; }
+    #rp-loader-landing .lp-wordmark { width: 150px; }
+    #rp-loader-landing .lp-label { font-size: .62rem; letter-spacing: .28em; }
+    #rp-loader-landing .lp-bar-row { max-width: 220px; gap: .7rem; }
+    #rp-loader-landing .lp-word { font-size: 1rem; }
+}
+
+/* Très petit mobile 320–375px (iPhone SE) */
+@media (max-width: 375px) {
+    #rp-loader-landing .lp-orb-wrap { width: 130px; height: 130px; }
+    #rp-loader-landing .lp-inner { gap: .85rem; padding: 1.2rem 6vw; }
+    #rp-loader-landing .lp-wordmark { width: 130px; }
+    #rp-loader-landing .lp-label { font-size: .58rem; letter-spacing: .24em; }
+    #rp-loader-landing .lp-bar-row { max-width: 200px; gap: .6rem; }
+    #rp-loader-landing .lp-pct { font-size: .62rem; min-width: 2.4em; }
+    #rp-loader-landing .lp-word { font-size: .9rem; }
+}
+
+/* Micro-mobile < 320px */
+@media (max-width: 320px) {
+    #rp-loader-landing .lp-orb-wrap { width: 110px; height: 110px; }
+    #rp-loader-landing .lp-wordmark { width: 110px; }
+    #rp-loader-landing .lp-bar-row { max-width: 180px; }
+    #rp-loader-landing .lp-word { font-size: .82rem; }
+}
+
+/* Mobile paysage (hauteur faible) */
+@media (max-height: 500px) and (orientation: landscape) {
+    #rp-loader-landing .lp-orb-wrap { width: 120px; height: 120px; }
+    #rp-loader-landing .lp-inner { gap: .7rem; padding: 1rem 5vw; }
+    #rp-loader-landing .lp-wordmark { width: 120px; }
+    #rp-loader-landing .lp-label { font-size: .6rem; }
+    #rp-loader-landing .lp-word { font-size: .9rem; margin-top: 0; }
+}
+
+/* Accessibilité */
+@media (prefers-reduced-motion: reduce) {
+    #rp-loader-landing * { animation: none !important; }
+    #rp-loader-landing .lp-bar-fill { width: 100% !important; transition: none; }
+}

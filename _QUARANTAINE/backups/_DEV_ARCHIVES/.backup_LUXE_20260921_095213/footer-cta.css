@@ -1,0 +1,272 @@
+/* ============================================================= */
+/* FOOTER + CTA — Styles complets                                */
+/* Ne pas modifier sans validation du chef de projet             */
+/* ============================================================= */
+
+:root {
+    --primary-green: #06C65B;
+    --accent-green: #00D67D;
+    --primary-blue: #0E5A70;
+    --dark-blue: #083D4C;
+    --footer-bg: #042C39;
+    --text-dark: #2D3748;
+    --text-muted: #6B7A82;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Montserrat", sans-serif;
+}
+
+/* ---------- CTA (bandeau réservation) ---------- */
+.booking-section {
+    background-color: #073B4C;
+    color: #ffffff;
+    padding: 50px 0;
+    text-align: center;
+    font-family: var(--font-sans);
+}
+.booking-section .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+.booking-section h2 { font-size: 30px; letter-spacing: 2px; font-weight: 700; color: #fff; margin: 0 0 6px 0; }
+.booking-section p.subtitle { font-size: 13px; color: #A0AEC0; margin: 0 0 30px 0; }
+.booking-section .booking-widget {
+    background: #fff; border-radius: 8px; display: grid;
+    grid-template-columns: repeat(4, 1fr) auto; align-items: center;
+    padding: 6px; margin-bottom: 30px; gap: 8px;
+}
+.booking-section .widget-field {
+    display: flex; align-items: center; gap: 12px; padding: 12px 20px;
+    border-right: 1px solid #E2E8F0; text-align: left; color: #0D2834;
+}
+.booking-section .icon-field { font-size: 18px; color: var(--text-muted); }
+.booking-section .widget-field label {
+    display: block; font-size: 10px; font-weight: 700;
+    color: var(--text-muted); letter-spacing: 0.5px; text-transform: uppercase;
+}
+.booking-section .cta-date-input {
+    border: none; background: transparent; outline: none; padding: 0;
+    width: 100%; font-family: inherit; font-size: 13px; font-weight: 600;
+    color: #0D2834; cursor: pointer;
+}
+.booking-section .widget-field select {
+    appearance: none; -webkit-appearance: none; border: none;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%230D2834' opacity='0.6' d='M0 0l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat; background-position: right 2px center;
+    padding-right: 18px; font-family: inherit; font-size: 13px;
+    font-weight: 600; color: #0D2834; cursor: pointer; outline: none;
+}
+.booking-section .widget-field select option { background: #fff; color: #0D2834; }
+.booking-section .btn-submit {
+    background-color: #D2A366; color: #fff; border: none;
+    padding: 18px 28px; border-radius: 8px; font-weight: 700;
+    font-size: 12px; letter-spacing: 1px; cursor: pointer;
+    white-space: nowrap; text-transform: uppercase;
+    box-shadow: 0 6px 16px rgba(0,0,0,.18); transition: .2s;
+    text-decoration: none;
+}
+.booking-section .btn-submit:hover { background-color: #b88d52; transform: scale(1.02); }
+.booking-section .booking-features { display: flex; justify-content: center; gap: 40px; }
+.booking-section .feature-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+}
+.booking-section .icon-circle {
+    border: 1px solid var(--accent-green); color: var(--accent-green);
+    border-radius: 50%; width: 28px; height: 28px;
+    display: flex; align-items: center; justify-content: center; font-size: 12px;
+}
+
+/* ============================================================= */
+/* FOOTER                                                        */
+/* ============================================================= */
+.main-footer {
+    background-color: var(--footer-bg);
+    color: #A0AEC0;
+    padding: 60px 0 20px 0;
+    font-size: 12px;
+    font-family: var(--font-sans);
+    position: relative;
+    overflow: hidden;
+}
+.main-footer .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+.main-footer .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    padding-bottom: 40px;
+}
+.main-footer .footer-title {
+    color: var(--accent-green);
+    font-size: 12px; letter-spacing: 1.5px;
+    margin: 0 0 20px 0; font-weight: 700;
+}
+.main-footer .footer-col h4 {
+    color: #fff; font-size: 12px; letter-spacing: 1.5px;
+    margin: 0 0 20px 0; font-weight: 700;
+}
+.main-footer .footer-col ul { list-style: none; padding: 0; margin: 0; }
+.main-footer .footer-col ul li { margin-bottom: 10px; }
+.main-footer .footer-col ul a { color: #A0AEC0; text-decoration: none; transition: color .2s; }
+.main-footer .footer-col ul a:hover { color: #fff; }
+
+.main-footer .img-manual-logo {
+    width: 240px; max-width: 100%; height: auto;
+    display: block; margin: -20px 0 20px -70px;
+}
+.main-footer .contact-details p {
+    margin: 0 0 10px -10px; display: flex;
+    align-items: flex-start; gap: 10px; line-height: 1.6;
+}
+.main-footer .icon-contact { color: #A0AEC0; font-size: 14px; margin-top: 3px; }
+
+.main-footer .social-links { display: flex; gap: 10px; margin-bottom: 30px; }
+.main-footer .social-links a {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.2); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; transition: .2s;
+}
+.main-footer .social-links a:hover {
+    border-color: var(--accent-green); color: var(--accent-green);
+    transform: translateY(-2px);
+}
+.main-footer .engagement-block { margin-top: 20px; }
+.main-footer .slogan { color: #fff; font-size: 16px; font-weight: 600; line-height: 1.3; margin: 0; }
+.main-footer .slogan-line { width: 30px; height: 2px; background: var(--accent-green); margin-top: 10px; }
+
+/* ---------- MOYENS DE PAIEMENT ---------- */
+.main-footer .payment-methods {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; align-items: center;
+}
+.main-footer .payment-badge {
+    background: #ffffff; border-radius: 5px; height: 30px; min-width: 48px;
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 4px 8px; font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900; font-style: italic; font-size: 12px;
+    letter-spacing: .5px; line-height: 1;
+}
+.main-footer .pay-visa { color: #1A1F71; }
+.main-footer .pay-mc { padding: 0 6px; gap: 0; }
+.main-footer .pay-mc .circle { width: 16px; height: 16px; border-radius: 50%; display: inline-block; }
+.main-footer .pay-mc .c1 { background: #EB001B; margin-right: -6px; }
+.main-footer .pay-mc .c2 { background: #F79E1B; opacity: .9; }
+.main-footer .pay-wave { background: #1DC8FF; color: #fff; font-style: normal; font-size: 11px; font-weight: 700; }
+.main-footer .pay-om { background: #FF7900; color: #fff; font-style: normal; font-size: 9.5px; font-weight: 700; padding: 4px 7px; }
+
+/* ---------- FOOTER BOTTOM (copyright + devise) ---------- */
+.main-footer .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    text-align: left;
+    padding-top: 22px;
+    font-size: 11px;
+    color: #718096;
+}
+.main-footer .footer-bottom p { margin: 0; }
+.main-footer .footer-bottom-right { display: flex; align-items: center; gap: 14px; }
+
+.main-footer .currency-switch { position: relative; }
+.main-footer .currency-current {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; color: #A0AEC0; font-weight: 600; letter-spacing: .3px;
+    cursor: pointer; background: none; border: none; font-family: inherit;
+    padding: 6px 10px; border-radius: 4px; transition: background .2s, color .2s;
+}
+.main-footer .currency-current:hover { background: rgba(255,255,255,.06); color: #fff; }
+.main-footer .currency-current i { font-size: 10px; }
+.main-footer .currency-menu {
+    display: none; position: absolute; bottom: calc(100% + 6px); right: 0;
+    background: #1a1a1a; border: 1px solid rgba(255,255,255,.1);
+    border-radius: 6px; min-width: 190px; padding: 6px 0;
+    list-style: none; margin: 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,.4); z-index: 2000;
+}
+.main-footer .currency-switch.open .currency-menu { display: block; }
+.main-footer .currency-menu li { margin: 0; }
+.main-footer .currency-menu a {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 9px 14px; color: #A0AEC0; text-decoration: none; font-size: 12px;
+    transition: background .15s, color .15s;
+}
+.main-footer .currency-menu a:hover { background: rgba(255,255,255,.06); color: #fff; }
+.main-footer .currency-menu a.active { color: #38E28F; font-weight: 700; }
+.main-footer .currency-menu a .code {
+    font-weight: 700; font-size: 11px; color: #fff;
+    background: rgba(255,255,255,.08); padding: 2px 8px; border-radius: 4px;
+}
+
+/* ---------- LOGO DÉCORATIF EN BAS À DROITE ---------- */
+.main-footer::after {
+    content: "";
+    position: absolute;
+    bottom: -70px;
+    right: -80px;
+    width: 320px;
+    height: 320px;
+    background-image: url('../images/logo-symbole.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ============================================================= */
+/* SÉLECTEUR DE LANGUE (TOPBAR)                                  */
+/* ============================================================= */
+.topbar .lang-switch { position: relative; user-select: none; }
+.topbar .lang-current {
+    cursor: pointer; color: #C59A67; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 4px;
+}
+.topbar .lang-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: #fff;
+    border: 1px solid #E9ECEF;
+    border-radius: 6px;
+    min-width: 140px;
+    padding: 6px 0;
+    list-style: none;
+    margin: 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+    z-index: 2000;
+}
+.topbar .lang-switch.open .lang-menu { display: block; }
+.topbar .lang-menu li { margin: 0; }
+.topbar .lang-menu a {
+    display: block;
+    padding: 8px 14px;
+    color: #404040;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    transition: background .15s, color .15s;
+}
+.topbar .lang-menu a:hover { background: #f7f7f7; color: #C59A67; }
+.topbar .lang-menu a.active { color: #C59A67; font-weight: 700; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 992px) {
+    .booking-section .booking-widget { grid-template-columns: 1fr; gap: 10px; }
+    .booking-section .widget-field { border-right: none; border-bottom: 1px solid #E2E8F0; }
+    .main-footer .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+    .booking-section .booking-features { flex-direction: column; gap: 15px; }
+    .main-footer .footer-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+    .main-footer .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .main-footer::after { width: 200px; height: 200px; bottom: -50px; right: -50px; }
+}

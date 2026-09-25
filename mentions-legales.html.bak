@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mentions légales — Pullman Dakar Teranga</title>
+    <link rel="icon" type="image/png" href="images/logo-symbole.png">
+    <link rel="apple-touch-icon" href="images/logo-symbole.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/commun.css">
+<link rel="stylesheet" href="css/footer-cta.css">
+<link rel="stylesheet" href="css/legal.css">
+    <link rel="stylesheet" href="css/landing-page.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="topbar">
+        <div class="lang-switch">
+            <span class="lang-current">Français</span>
+            <span class="chevron">▾</span>
+            <ul class="lang-menu">
+                <li><a href="#" data-lang="fr" class="active">Français</a></li>
+                <li><a href="#" data-lang="en">English</a></li>
+                <li><a href="#" data-lang="es">Español</a></li>
+            </ul>
+        </div>
+        <span class="separator">|</span>
+        <a href="contact.html" class="topbar-contact">
+            <span class="icon-mail">✉</span> Nous contacter
+        </a>
+    </div>
+
+    <div class="mainbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Logo Pullman Dakar Teranga">
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html">ACCUEIL</a>
+            <span class="nav-sep">|</span>
+            <a href="chambres.html">CHAMBRES</a>
+            <span class="nav-sep">|</span>
+            <div class="dropdown">
+                <a>EXPÉRIENCES</a>
+                <div class="dropdown-content">
+                    <a href="experiences-piscine.html">Piscine + Spa</a>
+                    <a href="experiences-restaurant.html">Restaurants + Bars</a>
+                </div>
+            </div>
+            <span class="nav-sep">|</span>
+            <a href="galerie.html">GALERIE</a>
+            <span class="nav-sep">|</span>
+            <a href="evenements.html">MEETING &amp; EVENTS</a>
+            <span class="nav-sep">|</span>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+
+        <a href="reservation.html" class="btn-reserver">Réserver maintenant</a>
+    </div>
+</header>
+<main class="legal-page">
+    <section class="legal-hero">
+        <div class="legal-hero-inner">
+            <p class="legal-breadcrumb">
+                <a href="index.html">Accueil</a>
+                <i class="fa-solid fa-chevron-right" style="font-size:.6rem;opacity:.6;"></i>
+                <span>Mentions légales</span>
+            </p>
+            <span class="legal-eyebrow">Informations légales</span>
+            <h1>Mentions légales</h1>
+            <p>Informations légales relatives au site officiel du Pullman Dakar Teranga, conformément à la réglementation en vigueur au Sénégal.</p>
+        </div>
+    </section>
+
+    <div class="legal-inner">
+        <nav class="legal-toc">
+            <h3>Sommaire</h3>
+            <ol>
+                <li><a href="#editeur">Éditeur du site</a></li>
+                <li><a href="#hebergeur">Hébergeur</a></li>
+                <li><a href="#propriete">Propriété intellectuelle</a></li>
+                <li><a href="#donnees">Données personnelles</a></li>
+                <li><a href="#cookies">Cookies</a></li>
+                <li><a href="#responsabilite">Responsabilité</a></li>
+                <li><a href="#droit">Droit applicable</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ol>
+        </nav>
+
+        <section class="legal-section" id="editeur">
+            <h2>1. Éditeur du site</h2>
+            <p>Le présent site est édité par :</p>
+            <table class="legal-table">
+                <tr><th>Raison sociale</th><td>Pullman Dakar Teranga</td></tr>
+                <tr><th>Forme juridique</th><td>Société hôtelière — Groupe Accor</td></tr>
+                <tr><th>Adresse</th><td>Route de la Corniche Ouest<br>BP 8181, Dakar, Sénégal</td></tr>
+                <tr><th>Téléphone</th><td>+221 33 869 66 66</td></tr>
+                <tr><th>Fax</th><td>+221 33 869 66 66</td></tr>
+                <tr><th>E-mail</th><td>HB076@accor.com</td></tr>
+                <tr><th>Directeur de publication</th><td><span class="todo">[À COMPLÉTER — Nom du Directeur Général]</span></td></tr>
+                <tr><th>N° RCCM</th><td><span class="todo">[À COMPLÉTER — Numéro RCCM]</span></td></tr>
+                <tr><th>N° NINEA</th><td><span class="todo">[À COMPLÉTER — Numéro NINEA]</span></td></tr>
+                <tr><th>Capital social</th><td><span class="todo">[À COMPLÉTER]</span></td></tr>
+                <tr><th>Hébergement</th><td>Accor SA — 82, rue Henri Farman, 92130 Issy-les-Moulineaux, France</td></tr>
+            </table>
+        </section>
+
+        <section class="legal-section" id="hebergeur">
+            <h2>2. Hébergeur</h2>
+            <p>Le site est hébergé par :</p>
+            <table class="legal-table">
+                <tr><th>Société</th><td>Accor SA</td></tr>
+                <tr><th>Adresse</th><td>82, rue Henri Farman<br>92130 Issy-les-Moulineaux<br>France</td></tr>
+                <tr><th>Téléphone</th><td>+33 (0)1 45 38 86 00</td></tr>
+                <tr><th>Site</th><td><a href="https://all.accor.com" target="_blank" rel="noopener">all.accor.com</a></td></tr>
+            </table>
+        </section>
+
+        <section class="legal-section" id="propriete">
+            <h2>3. Propriété intellectuelle</h2>
+            <p>L'ensemble des éléments du site (textes, images, vidéos, logos, marques, structure, code, etc.) est protégé par le droit de la propriété intellectuelle et appartient à <strong>Accor SA</strong> ou à ses partenaires.</p>
+            <p>Toute reproduction, représentation, modification, publication ou adaptation, totale ou partielle, par quelque procédé que ce soit, est interdite sans autorisation écrite préalable.</p>
+            <p>La marque <strong>Pullman</strong> et le logo associé sont des marques déposées d'Accor SA. Toute utilisation non autorisée constitue une contrefaçon sanctionnée par le Code de la propriété intellectuelle.</p>
+        </section>
+
+        <section class="legal-section" id="donnees">
+            <h2>4. Données personnelles</h2>
+            <p>Le traitement de vos données personnelles est décrit en détail dans notre <a href="politique-confidentialite.html">Politique de confidentialité</a>.</p>
+            <p>Conformément à la loi sénégalaise n° 2008-12 du 25 janvier 2008 sur la protection des données personnelles et au Règlement Général sur la Protection des Données (RGPD), vous disposez de droits d'accès, de rectification, d'effacement, de limitation et d'opposition sur vos données.</p>
+            <p>Pour exercer ces droits, contactez-nous à : <a href="mailto:HB076@accor.com">HB076@accor.com</a></p>
+        </section>
+
+        <section class="legal-section" id="cookies">
+            <h2>5. Cookies</h2>
+            <p>Le site peut utiliser des cookies pour améliorer l'expérience utilisateur, réaliser des statistiques de visite et personnaliser les contenus.</p>
+            <p>Lors de votre première visite, un bandeau vous informe de l'utilisation des cookies et vous permet de les accepter ou de les refuser. Vous pouvez à tout moment modifier vos préférences.</p>
+            <p>Types de cookies utilisés :</p>
+            <ul>
+                <li><strong>Cookies essentiels</strong> : nécessaires au fonctionnement du site (session, panier, etc.)</li>
+                <li><strong>Cookies analytiques</strong> : mesure d'audience anonymisée</li>
+                <li><strong>Cookies marketing</strong> : personnalisation des offres et publicités</li>
+            </ul>
+        </section>
+
+        <section class="legal-section" id="responsabilite">
+            <h2>6. Limitation de responsabilité</h2>
+            <p>Le Pullman Dakar Teranga s'efforce d'assurer l'exactitude des informations diffusées sur ce site. Toutefois, il ne peut garantir l'exhaustivité ni l'absence d'erreur.</p>
+            <p>Le site peut contenir des liens vers d'autres sites. Le Pullman Dakar Teranga n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu.</p>
+        </section>
+
+        <section class="legal-section" id="droit">
+            <h2>7. Droit applicable</h2>
+            <p>Les présentes mentions légales sont soumises au <strong>droit sénégalais</strong>. Tout litige relatif à l'utilisation du site sera soumis à la compétence exclusive des tribunaux de Dakar.</p>
+        </section>
+
+        <section class="legal-section" id="contact">
+            <h2>8. Contact</h2>
+            <p>Pour toute question relative aux présentes mentions légales :</p>
+            <div class="legal-box">
+                <strong>Pullman Dakar Teranga</strong>
+                <p>Route de la Corniche Ouest<br>BP 8181, Dakar, Sénégal<br>
+                Téléphone : +221 33 869 66 66<br>
+                E-mail : <a href="mailto:HB076@accor.com">HB076@accor.com</a></p>
+            </div>
+        </section>
+
+        <p class="legal-updated">Dernière mise à jour : 23 septembre 2026</p>
+
+        <div class="legal-cta">
+            <h3>Une question ?</h3>
+            <p>Notre équipe est à votre disposition pour toute demande d'information.</p>
+            <a href="contact.html"><i class="fa-solid fa-envelope"></i> Nous contacter</a>
+        </div>
+    </div>
+</main>
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="images/logo-pullman-white.png" alt="Pullman Hotels and Resorts" class="img-manual-logo">
+                </div>
+                <div class="contact-details">
+                    <p><i class="fa-solid fa-location-dot icon-contact"></i> Pullman Dakar Teranga<br>Route de la Corniche Ouest<br>BP 8181, Dakar, Sénégal</p>
+                    <p><i class="fa-solid fa-phone icon-contact"></i> +221 33 869 66 66</p>
+                    <p><i class="fa-regular fa-envelope icon-contact"></i> HB076@accor.com</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">LIENS UTILES</h4>
+                <ul>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="conditions-generales.html">Conditions générales</a></li>
+                    <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                    <li><a href="accessibilite.html">Accessibilité</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">DÉCOUVRIR</h4>
+                <ul>
+                    <li><a href="chambres.html">Nos chambres</a></li>
+                    <li><a href="experiences.html">Expériences</a></li>
+                    <li><a href="offres-speciales.html">Offres spéciales</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">SUIVEZ-NOUS</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-solid fa-globe"></i></a>
+                </div>
+                <h4 class="footer-title" style="margin-top:26px;">MOYENS DE PAIEMENT</h4>
+                <div class="payment-methods">
+                    <span class="payment-badge pay-visa" title="Visa">VISA</span>
+                    <span class="payment-badge pay-mc" title="Mastercard">
+                        <span class="circle c1"></span><span class="circle c2"></span>
+                    </span>
+                    <span class="payment-badge pay-wave" title="Wave">Wave</span>
+                    <span class="payment-badge pay-om" title="Orange Money">Orange Money</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Pullman Dakar Teranga - Tous droits réservés.</p>
+            <div class="footer-bottom-right">
+                <div class="currency-switch">
+                    <button class="currency-current" type="button">
+                        <i class="fas fa-globe"></i> FR · XOF <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="currency-menu">
+                        <li><a href="#" data-currency="XOF" class="active"><span>Franc CFA</span><span class="code">XOF</span></a></li>
+                        <li><a href="#" data-currency="EUR"><span>Euro</span><span class="code">EUR</span></a></li>
+                        <li><a href="#" data-currency="USD"><span>Dollar US</span><span class="code">USD</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script>
+<script src="js/booking-bridge.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/landing-page.js" defer></script>
+</body>
+</html>

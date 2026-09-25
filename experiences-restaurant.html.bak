@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+window.open(MENU_URLS[type] || MENU_URLS['all'], '_blank', 'noopener,noreferrer');  <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Restaurants & Bars — Pullman Dakar Teranga</title>
+    <link rel="icon" type="image/png" href="images/logo-symbole.png">
+    <link rel="apple-touch-icon" href="images/logo-symbole.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +17,7 @@
 <link rel="stylesheet" href="css/commun.css">
 <link rel="stylesheet" href="css/footer-cta.css">
 <link rel="stylesheet" href="css/experiences-restaurant.css">
+    <link rel="stylesheet" href="css/landing-page.css">
 </head>
 <body>
 
@@ -69,6 +72,10 @@
     <!-- ============================================================
          HERO 50/50 — 2 photos symétriques + logos restaurants
          ============================================================ -->
+
+    <!-- ============================================================
+         HERO 50/50 — 2 photos symétriques + logos restaurants
+         ============================================================ -->
     <section class="hero-resto">
 
         <!-- MOITIÉ GAUCHE — JOUR -->
@@ -76,9 +83,10 @@
             <div class="hero-resto-bg"></div>
             <div class="hero-resto-overlay"></div>
 
-            <!-- Logo restaurant dans le coin supérieur gauche -->
             <div class="hero-resto-logo hero-resto-logo--left">
-                <img src="images/logo-teranga-beach-club.png" alt="Teranga Beach Club" class="hero-resto-logo-img">
+                <img src="images/logo-teranga-beach-club.png"
+                     alt="Teranga Beach Club"
+                     class="hero-resto-logo-img">
             </div>
 
             <div class="hero-resto-half-label">De jour · Au feu de bois</div>
@@ -89,9 +97,10 @@
             <div class="hero-resto-bg"></div>
             <div class="hero-resto-overlay"></div>
 
-            <!-- Logo restaurant dans le coin supérieur droit -->
             <div class="hero-resto-logo hero-resto-logo--right">
-                <img src="images/logo-teranga-lounge.png" alt="Teranga Lounge" class="hero-resto-logo-img">
+                <img src="images/logo-teranga-lounge.png"
+                     alt="Teranga Lounge"
+                     class="hero-resto-logo-img">
             </div>
 
             <div class="hero-resto-half-label">Le soir · Artsy &amp; cosmopolite</div>
@@ -106,8 +115,8 @@
             </span>
 
             <h1 class="hero-resto-title">
-                Le feu de bois <em>le jour</em>.<br>
-                Les néons du bar <em>la nuit</em>.
+                Le feu de bois<br> <em>le jour</em>.<br>
+                Les néons du bar<br> <em>la nuit</em>.
             </h1>
 
             <p class="hero-resto-sub">
@@ -120,11 +129,11 @@
                     Découvrir nos tables
                     <i class="fa-solid fa-arrow-down"></i>
                 </a>
-                <a href="reservation.html" class="hero-resto-btn hero-resto-btn--ghost">
+                <a href="reservation.html?venue=lounge" class="hero-resto-btn hero-resto-btn--ghost">
                     <i class="fa-regular fa-calendar"></i>
                     Réserver
                 </a>
-                <a href="pdf/menu-complet.pdf" target="_blank" rel="noopener" class="hero-resto-btn hero-resto-btn--ghost">
+                <a href="https://issuu.com/pullmandakarteranga/docs/menu_2025_carte_teranga_beach_club_" target="_blank" rel="noopener" class="hero-resto-btn hero-resto-btn--ghost">
                     <i class="fa-solid fa-book-open"></i>
                     Menus
                 </a>
@@ -135,10 +144,6 @@
             <i class="fa-solid fa-chevron-down"></i>
         </a>
     </section>
-
-    <!-- ============================================================
-         INTRO — Deux restaurants, deux ambiances
-         ============================================================ -->
     <section class="intro-resto" id="intro">
         <div class="container">
             <div class="intro-resto-header reveal">
@@ -151,7 +156,7 @@
 
                 <article class="intro-card intro-card--jour reveal">
                     <div class="intro-card-image">
-                        <img src="images/resto-piscine-jour.jpg" alt="Teranga Beach Club de jour">
+                        <img src="images/resto-piscine-jour.webp" alt="Teranga Beach Club de jour">
                         <span class="intro-card-badge">Jour</span>
                     </div>
                     <div class="intro-card-body">
@@ -170,7 +175,7 @@
 
                 <article class="intro-card intro-card--nuit reveal">
                     <div class="intro-card-image">
-                        <img src="images/resto-bar-nuit.jpg" alt="Teranga Lounge le soir">
+                        <img src="images/resto-bar-nuitt.jpg" alt="Teranga Lounge le soir">
                         <span class="intro-card-badge">Soir</span>
                     </div>
                     <div class="intro-card-body">
@@ -199,7 +204,7 @@
             <div class="signature-grid">
 
                 <div class="signature-visual">
-                    <img src="images/resto-feu-bois.jpg" alt="Cuisson au feu de bois">
+                    <img src="images/feux de bois.webp" alt="Cuisson au feu de bois">
                 </div>
 
                 <div class="signature-content">
@@ -260,7 +265,7 @@
                     <!-- Bio chef enrichie (3 puces) -->
                     <div class="resto-chef-bio">
                         <div class="resto-chef-avatar">
-                            <img src="images/resto-chef-sow.jpg" alt="Chef Ibrahima Sow">
+                            <img src="images/chef ibrahima.png" alt="Chef Ibrahima Sow">
                         </div>
                         <div class="resto-chef-info">
                             <strong>Chef Ibrahima Sow</strong>
@@ -319,7 +324,7 @@
                     </div>
 
                     <div class="resto-cta">
-                        <a href="reservation.html" class="resto-btn resto-btn--primary">
+                        <a href="reservation.html?venue=lounge" class="resto-btn resto-btn--primary">
                             Réserver une table
                             <i class="fa-solid fa-arrow-right"></i>
                         </a>
@@ -333,11 +338,11 @@
                 <div class="resto-visual">
                     <div class="resto-visual-main">
                         <span class="resto-badge">Chef Ibrahima Sow</span>
-                        <img src="images/resto-chef-sow.jpg" alt="Chef Ibrahima Sow en action">
+                        <img src="images/733064913_17892837402554221_8744990083883894502_n (1).jpg" alt="Chef Ibrahima Sow en action">
                     </div>
                     <div class="resto-visual-secondary">
-                        <img src="images/resto-bar-nuit.jpg" alt="Bar de nuit">
-                        <img src="images/resto-brunch.jpg" alt="Table du brunch">
+                        <img src="images/resto-bar-nuitt.jpg" alt="Bar de nuit">
+                        <img src="images/651017496_17874036816554221_2167752616912884997_n.jpg" alt="Table du brunch">
                     </div>
                 </div>
 
@@ -383,7 +388,7 @@
                     <!-- Bio cheffe enrichie -->
                     <div class="resto-chef-bio">
                         <div class="resto-chef-avatar">
-                            <img src="images/resto-chef-aicha.jpg" alt="Cheffe Aïcha Zoumarou">
+                            <img src="images/Capture d'écran 2026-09-23 162321.png" alt="Cheffe Aïcha Zoumarou">
                         </div>
                         <div class="resto-chef-info">
                             <strong>Cheffe Aïcha Zoumarou</strong>
@@ -427,7 +432,7 @@
                     </div>
 
                     <div class="resto-cta">
-                        <a href="reservation.html" class="resto-btn resto-btn--primary">
+                        <a href="reservation.html?venue=beach" class="resto-btn resto-btn--primary">
                             Réserver une table
                             <i class="fa-solid fa-arrow-right"></i>
                         </a>
@@ -441,11 +446,11 @@
                 <div class="resto-visual">
                     <div class="resto-visual-main">
                         <span class="resto-badge">Feu de bois</span>
-                        <img src="images/resto-feu-bois.jpg" alt="Poisson en cuisson au feu de bois">
+                        <img src="images/650412954_17873058048554221_4528126567914043286_n.jpg" alt="Poisson en cuisson au feu de bois">
                     </div>
                     <div class="resto-visual-secondary">
-                        <img src="images/resto-piscine-jour.jpg" alt="Piscine chauffée">
-                        <img src="images/resto-chef-aicha.jpg" alt="Cheffe Aïcha Zoumarou">
+                        <img src="images/757603127_17897313063554221_4764904593028132693_n.jpg" alt="Piscine chauffée">
+                        <img src="images/615927086_17864782260554221_2590665441021235298_n.jpg" alt="Cheffe Aïcha Zoumarou">
                     </div>
                 </div>
 
@@ -479,16 +484,16 @@
             </div>
 
             <div class="brunch-gallery">
-                <img src="images/resto-brunch.jpg" alt="Table du brunch">
-                <img src="images/resto-bar-nuit.jpg" alt="Ambiance du brunch">
-                <img src="images/resto-chef-sow.jpg" alt="Préparation du brunch">
+                <img src="images/brunch table.jpg" alt="Table du brunch">
+                <img src="images/ambiance brunch.jpg" alt="Ambiance du brunch">
+                <img src="images/580506909_17857440840554221_1414419304420957422_n.jpg" alt="Préparation du brunch">
             </div>
 
             <div class="brunch-price">
                 <span class="brunch-price-label">Tout compris</span>
                 <span class="brunch-price-value">35 000</span>
                 <span class="brunch-price-unit">FCFA / personne</span>
-                <a href="reservation.html" class="brunch-btn">
+                <a href="reservation.html?venue=brunch" class="brunch-btn">
                     Réserver le brunch
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -511,7 +516,7 @@
             <div class="menu-signature-grid">
                 <article class="menu-dish">
                     <div class="menu-dish-image">
-                        <img src="images/resto-feu-bois.jpg" alt="Poisson entier grillé au feu de bois">
+                        <img src="images/OIP 22222222.webp" alt="Poisson entier grillé au feu de bois">
                     </div>
                     <div class="menu-dish-body">
                         <span class="menu-dish-tag">Beach Club</span>
@@ -522,7 +527,7 @@
 
                 <article class="menu-dish">
                     <div class="menu-dish-image">
-                        <img src="images/resto-chef-sow.jpg" alt="Carpaccio signature">
+                        <img src="images/carpaaaaa.webp" alt="Carpaccio signature">
                     </div>
                     <div class="menu-dish-body">
                         <span class="menu-dish-tag">Lounge</span>
@@ -533,7 +538,7 @@
 
                 <article class="menu-dish">
                     <div class="menu-dish-image">
-                        <img src="images/resto-brunch.jpg" alt="Agneau rôti du brunch">
+                        <img src="images/rotiii.webp" alt="Agneau rôti du brunch">
                     </div>
                     <div class="menu-dish-body">
                         <span class="menu-dish-tag">Brunch</span>
@@ -544,7 +549,7 @@
 
                 <article class="menu-dish">
                     <div class="menu-dish-image">
-                        <img src="images/resto-piscine-jour.jpg" alt="Dessert signature">
+                        <img src="images/télécharger (1).webp" alt="Dessert signature">
                     </div>
                     <div class="menu-dish-body">
                         <span class="menu-dish-tag">Les deux</span>
@@ -555,7 +560,7 @@
             </div>
 
             <div class="menu-signature-cta">
-                <a href="pdf/menu-complet.pdf" target="_blank" rel="noopener" class="menu-signature-btn">
+                <a href="https://issuu.com/pullmandakarteranga/docs/menu_2025_carte_teranga_beach_club_" target="_blank" rel="noopener" class="menu-signature-btn">
                     <i class="fa-solid fa-book-open"></i>
                     Voir la carte complète (PDF)
                 </a>
@@ -573,7 +578,7 @@
             <span class="eyebrow">L'atmosphère</span>
             <h2>Ici, on ne dîne pas.<br>On se souvient.</h2>
             <p>Le bruit du feu, la lumière chaude du soir, la vue qui s'ouvre sur l'Atlantique — venez vivre un moment qui ne s'oublie pas.</p>
-            <a href="reservation.html" class="atmosphere-btn">
+            <a href="reservation.html?venue=lounge" class="atmosphere-btn">
                 Réserver votre table
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -783,7 +788,7 @@
 
             <div class="resto-cta-contact">
                 <span><i class="fa-solid fa-location-dot"></i> 10, Rue Colbert · Place de l'Indépendance · Dakar</span>
-                <span><i class="fa-solid fa-phone"></i> +221 33 889 22 00</span>
+                <span><i class="fa-solid fa-phone"></i> +221 33 869 66 66</span>
                 <span><i class="fa-regular fa-envelope"></i> dakar.reservation@accor.com</span>
             </div>
         </div>
@@ -876,10 +881,10 @@
             <div class="footer-col">
                 <h4 class="footer-title">LIENS UTILES</h4>
                 <ul>
-                    <li><a href="#">Mentions légales</a></li>
-                    <li><a href="#">Conditions générales</a></li>
-                    <li><a href="#">Politique de confidentialité</a></li>
-                    <li><a href="#">Accessibilité</a></li>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="conditions-generales.html">Conditions générales</a></li>
+                    <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                    <li><a href="accessibilite.html">Accessibilité</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -887,7 +892,7 @@
                 <ul>
                     <li><a href="chambres.html">Nos chambres</a></li>
                     <li><a href="experiences.html">Expériences</a></li>
-                    <li><a href="#">Offres spéciales</a></li>
+                    <li><a href="offres-speciales.html">Offres spéciales</a></li>
                     <li><a href="galerie.html">Galerie</a></li>
                 </ul>
             </div>
@@ -986,11 +991,11 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             const type = btn.dataset.openMenu;
-            const pdfUrls = {
-                'lounge': 'pdf/menu-teranga-lounge.pdf',
-                'beach':  'pdf/menu-beach-club.pdf',
-                'all':    'pdf/menu-complet.pdf'
-            };
+            const MENU_URLS = {
+    'lounge': 'https://issuu.com/pullmandakarteranga/docs/menu_2025_carte_teranga_beach_club_',
+    'beach':  'https://issuu.com/pullmandakarteranga/docs/menu_2025_carte_teranga_beach_club_',
+    'all':    'https://issuu.com/pullmandakarteranga/docs/menu_2025_carte_teranga_beach_club_'
+};
             window.open(pdfUrls[type] || pdfUrls['all'], '_blank', 'noopener');
         });
     });
@@ -1008,5 +1013,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script src="js/landing-page.js" defer></script>
 </body>
 </html>

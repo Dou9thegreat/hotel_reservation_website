@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Hôtel Pullman — Meeting & Events</title>
+    <link rel="icon" type="image/png" href="images/logo-symbole.png">
+    <link rel="apple-touch-icon" href="images/logo-symbole.png">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/commun.css">
+    <link rel="stylesheet" href="css/footer-cta.css">
+    <link rel="stylesheet" href="css/evenements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="css/landing-page.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="topbar">
+        <div class="lang-switch">
+            <span class="lang-current">Français</span>
+            <span class="chevron">▾</span>
+            <ul class="lang-menu">
+                <li><a href="#" data-lang="fr" class="active">Français</a></li>
+                <li><a href="#" data-lang="en">English</a></li>
+                <li><a href="#" data-lang="es">Español</a></li>
+            </ul>
+        </div><span class="separator">|</span>
+        <a href="contact.html" class="topbar-contact">
+            <span class="icon-mail">✉</span> Nous contacter
+        </a>
+    </div>
+
+    <div class="mainbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Logo Pullman Dakar Teranga">
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html">ACCUEIL</a>
+            <span class="nav-sep">|</span>
+
+            <a href="chambres.html">CHAMBRES</a>
+            <span class="nav-sep">|</span>
+
+            <div class="dropdown">
+                <a>EXPÉRIENCES</a>
+                <div class="dropdown-content">
+                    <a href="experiences-piscine.html">Piscine + Spa</a>
+                    <a href="experiences-restaurant.html">Restaurant + Wifi</a>
+                </div>
+            </div>
+            <span class="nav-sep">|</span>
+
+            <a href="galerie.html">GALERIE</a>
+            <span class="nav-sep">|</span>
+
+            <a href="evenements.html" class="active">MEETING &amp; EVENTS</a>
+            <span class="nav-sep">|</span>
+
+            <a href="contact.html">CONTACT</a>
+        </nav>
+
+        <a href="reservation.html" class="btn-reserver">Réserver maintenant</a>
+    </div>
+</header>
+
+    <!-- ============================== MAIN ============================== -->
+    <main>
+    <div class="evenements-page">
+
+        <!-- ============================================================
+             HERO PREMIUM
+             ============================================================ -->
+        <section class="hero-evt" id="heroEvt">
+            <div class="hero-evt-bg" style="background-image: url('images/image hero.png');"></div>
+            <div class="hero-evt-overlay"></div>
+
+            <div class="hero-evt-content">
+                <p class="breadcrumb">
+                    <a href="index.html">Accueil</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="evenements.html">Meeting &amp; Events</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Réserver un espace</span>
+                </p>
+
+                <span class="eyebrow">Meeting &amp; Events</span>
+
+                <h1>Des espaces <span class="highlight">uniques</span><br>pour vos événements</h1>
+
+                <p class="hero-evt-desc">
+                    Séminaires, conférences, mariages ou soirées privées :<br>
+                    le Pullman Dakar Teranga vous offre un cadre d'exception<br>
+                    pour des moments inoubliables, face à l'Atlantique.
+                </p>
+
+                <div class="hero-evt-actions">
+                    <button type="button" class="btn-hero-primary" data-open-evt-modal>
+                        Demander un devis
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <a href="#galerie" class="btn-hero-ghost">
+                        Découvrir nos espaces
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-evt-chips">
+                <span class="hero-chip"><i class="fa-solid fa-star"></i> 528 m² modulables</span>
+                <span class="hero-chip"><i class="fa-solid fa-star"></i> Jusqu'à 400 personnes</span>
+                <span class="hero-chip"><i class="fa-solid fa-star"></i> 5 salles</span>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             FEATURES — 3 piliers
+             ============================================================ -->
+        <section class="features-evt">
+            <div class="container">
+                <div class="features-evt-grid reveal">
+                    <div class="feature-evt-item">
+                        <div class="feature-evt-icon"><i class="fa-solid fa-border-all"></i></div>
+                        <h3>Espaces modulables</h3>
+                        <p>Des salles élégantes et flexibles, adaptées à tous vos formats d'événements, du comité de direction au congrès.</p>
+                    </div>
+                    <div class="feature-evt-item">
+                        <div class="feature-evt-icon"><i class="fa-solid fa-utensils"></i></div>
+                        <h3>Restauration sur mesure</h3>
+                        <p>Une cuisine raffinée, signée par nos chefs, pour une expérience culinaire à la hauteur de vos invités.</p>
+                    </div>
+                    <div class="feature-evt-item">
+                        <div class="feature-evt-icon"><i class="fa-solid fa-user-tie"></i></div>
+                        <h3>Accompagnement dédié</h3>
+                        <p>Une équipe experte à vos côtés, de la conception à la réalisation, pour un événement sans fausse note.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             GALERIE
+             ============================================================ -->
+        <section class="gallery-evt" id="galerie">
+            <div class="container">
+                <div class="gallery-evt-header reveal">
+                    <span class="section-subtitle">Nos espaces en images</span>
+                    <h2 class="titre-souligne titre-souligne--left">Un lieu, mille configurations</h2>
+                    <p class="highlight-text" style="margin-top: 26px;">
+                        Le Pullman Dakar Teranga dispose d'un espace événementiel<br>
+                        modulable de près de <strong>528 m²</strong>, pensé pour accueillir<br>
+                        aussi bien des réunions de direction que des conférences<br>
+                        de grande envergure, des banquets d'affaires ou des réceptions privées.
+                    </p>
+                </div>
+
+                <div class="gallery-evt-grid reveal">
+                    <div class="gallery-evt-item">
+                        <img src="images/1.png" alt="Configuration théâtre" loading="lazy">
+                        <span class="gallery-evt-caption">Configuration théâtre</span>
+                    </div>
+                    <div class="gallery-evt-item">
+                        <img src="images/2.png" alt="Espace lounge" loading="lazy">
+                        <span class="gallery-evt-caption">Espace lounge</span>
+                    </div>
+                    <div class="gallery-evt-item">
+                        <img src="images/3.png" alt="Configuration banquet" loading="lazy">
+                        <span class="gallery-evt-caption">Configuration banquet</span>
+                    </div>
+                    <div class="gallery-evt-item">
+                        <img src="images/4.png" alt="Salle de réunion" loading="lazy">
+                        <span class="gallery-evt-caption">Salle de réunion</span>
+                    </div>
+                    <div class="gallery-evt-item">
+                        <img src="images/5.png" alt="Configuration en U" loading="lazy">
+                        <span class="gallery-evt-caption">Configuration en U</span>
+                    </div>
+                    <div class="gallery-evt-item">
+                        <img src="images/6.png" alt="Espace cocktail" loading="lazy">
+                        <span class="gallery-evt-caption">Espace cocktail</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             TABLEAU CAPACITÉS
+             ============================================================ -->
+        <section class="capacity-evt">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-subtitle">Nos salles de réunion</span>
+                    <h2 class="titre-souligne">Capacités et configurations</h2>
+                </div>
+
+                <div class="table-responsive reveal">
+                    <table class="capacity-table">
+                        <thead>
+                            <tr>
+                                <th>Nom de la salle</th>
+                                <th>Superficie</th>
+                                <th>Théâtre</th>
+                                <th>Cocktail</th>
+                                <th>Banquet</th>
+                                <th>Classe</th>
+                                <th>En U</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Teranga (Plénière)</td><td>272 m²</td><td>350</td><td>400</td><td>220</td><td>160</td><td>60</td></tr>
+                            <tr><td>Gorée</td><td>118 m²</td><td>100</td><td>110</td><td>70</td><td>55</td><td>35</td></tr>
+                            <tr><td>Madeleine</td><td>60 m²</td><td>45</td><td>50</td><td>—</td><td>25</td><td>20</td></tr>
+                            <tr><td>Comité 1</td><td>40 m²</td><td>25</td><td>—</td><td>—</td><td>15</td><td>15</td></tr>
+                            <tr><td>Comité 2</td><td>40 m²</td><td>25</td><td>—</td><td>—</td><td>15</td><td>15</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             TECHNOLOGIE
+             ============================================================ -->
+        <section class="tech-evt">
+            <div class="container">
+                <div class="tech-evt-wrapper reveal">
+                    <div class="tech-evt-intro">
+                        <span class="section-subtitle">Équipements audiovisuels</span>
+                        <h2 class="titre-souligne titre-souligne--left">Une technologie au service de vos échanges</h2>
+                        <p>Les salles sont équipées selon la démarche <strong>Co-Meeting</strong> de Pullman : simplicité, efficacité, fiabilité.</p>
+                    </div>
+
+                    <div class="tech-evt-grid">
+                        <div class="tech-evt-card">
+                            <div class="tech-evt-icon"><i class="fa-solid fa-wifi"></i></div>
+                            <h4>Connectivité</h4>
+                            <ul>
+                                <li>Wi-Fi haut débit dédié</li>
+                                <li>Accès Internet fibre</li>
+                                <li>Réseau sécurisé séparé</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-evt-card">
+                            <div class="tech-evt-icon"><i class="fa-solid fa-tv"></i></div>
+                            <h4>Image &amp; Affichage</h4>
+                            <ul>
+                                <li>Vidéoprojecteurs HD</li>
+                                <li>Écrans de projection encastrés</li>
+                                <li>Téléviseurs LED d'appoint</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-evt-card">
+                            <div class="tech-evt-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+                            <h4>Sonorisation</h4>
+                            <ul>
+                                <li>Système audio intégré</li>
+                                <li>Micros sans fil (HF)</li>
+                                <li>Micros cravate</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             RÉALISATIONS
+             ============================================================ -->
+        <section class="realisations-evt">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-subtitle">Ils nous ont fait confiance</span>
+                    <h2 class="titre-souligne">Nos dernières réalisations</h2>
+                </div>
+
+                <div class="realisations-grid reveal">
+                    <article class="realisation-card">
+                        <div class="realisation-img">
+                            <span class="realisation-tag">Séminaire</span>
+                            <img src="images/seminaire.png" alt="Séminaire d'entreprise" loading="lazy">
+                        </div>
+                        <div class="realisation-body">
+                            <h3>Séminaire - Ministere de l'agriculture</h3>
+                            <p>250 participants sur 2 jours, avec ateliers parallèles et dîner de gala face à l'océan.</p>
+                            <div class="realisation-meta">
+                                <span><i class="fa-solid fa-users"></i> 250 pers.</span>
+                                <span><i class="fa-solid fa-calendar"></i> Nov. 2025</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="realisation-card">
+                        <div class="realisation-img">
+                            <span class="realisation-tag">Conférence</span>
+                            <img src="images/conference.jpg" alt="Conférence internationale" loading="lazy">
+                        </div>
+                        <div class="realisation-body">
+                            <h3>Conférence internationale — Tech Dakar</h3>
+                            <p>Espace plénier Teranga en configuration théâtre, avec retransmission en direct dans les salles annexes.</p>
+                            <div class="realisation-meta">
+                                <span><i class="fa-solid fa-users"></i> 350 pers.</span>
+                                <span><i class="fa-solid fa-calendar"></i> Sept. 2025</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="realisation-card">
+                        <div class="realisation-img">
+                            <span class="realisation-tag">Mariage</span>
+                            <img src="images/mariage.png" alt="Réception de mariage" loading="lazy">
+                        </div>
+                        <div class="realisation-body">
+                            <h3>Réception de mariage </h3>
+                            <p>Cocktail sur la terrasse puis dîner assis pour 180 convives, avec espace dancing et scène ouverte.</p>
+                            <div class="realisation-meta">
+                                <span><i class="fa-solid fa-users"></i> 180 pers.</span>
+                                <span><i class="fa-solid fa-calendar"></i> Juin 2025</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             FAQ
+             ============================================================ -->
+        <section class="faq-evt">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-subtitle">Questions fréquentes</span>
+                    <h2 class="titre-souligne">Tout ce qu'il faut savoir</h2>
+                </div>
+
+                <div class="faq-liste reveal">
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span>Combien de temps à l'avance faut-il réserver un espace ?</span>
+                            <i class="fa-solid fa-chevron-down faq-chevron"></i>
+                        </button>
+                        <div class="faq-reponse">
+                            Pour un événement jusqu'à 100 personnes, nous recommandons 4 à 6 semaines.
+                            Pour les grands événements (>200 personnes) ou les dates de fin d'année,
+                            prévoyez 3 à 6 mois à l'avance.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span>Proposez-vous des forfaits tout compris ?</span>
+                            <i class="fa-solid fa-chevron-down faq-chevron"></i>
+                        </button>
+                        <div class="faq-reponse">
+                            Oui. Nos forfaits « Journée Co-Meeting » et « Séminaire Résidentiel »
+                            incluent la location de salle, les pauses café, le déjeuner,
+                            les équipements audiovisuels et l'assistance technique.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span>Peut-on privatiser l'espace Teranga en entier ?</span>
+                            <i class="fa-solid fa-chevron-down faq-chevron"></i>
+                        </button>
+                        <div class="faq-reponse">
+                            Absolument. L'espace Teranga (272 m²) peut être privatisé en totalité
+                            ou scindé en plusieurs configurations selon votre plan de salle.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span>Y a-t-il un parking pour les invités ?</span>
+                            <i class="fa-solid fa-chevron-down faq-chevron"></i>
+                        </button>
+                        <div class="faq-reponse">
+                            Oui, un parking sécurisé est disponible sur place, avec un service
+                            de voiturier sur demande pour les événements de plus de 150 personnes.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span>Puis-je personnaliser le menu et le service ?</span>
+                            <i class="fa-solid fa-chevron-down faq-chevron"></i>
+                        </button>
+                        <div class="faq-reponse">
+                            Bien sûr. Notre chef élabore chaque menu en concertation avec vous,
+                            en tenant compte des régimes alimentaires, allergènes et traditions culinaires.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             CTA FINAL — Formulaire devis
+             ============================================================ -->
+        <section class="cta-evt">
+            <div class="container">
+                <div class="cta-evt-wrapper">
+                    <div class="cta-evt-text reveal">
+                        <span class="section-subtitle">Votre conciergerie événements</span>
+                        <h2>Planifions ensemble votre prochain événement</h2>
+                        <p>Notre équipe dédiée vous accompagne de A à Z pour créer un événement sur-mesure, à la hauteur de votre image.</p>
+
+                        <div class="cta-evt-contacts">
+                            <div class="cta-evt-contact">
+                                <i class="fa-solid fa-phone"></i>
+                                <span>+221 33 869 66 66</span>
+                            </div>
+                            <div class="cta-evt-contact">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>events@pullman-dakar.com</span>
+                            </div>
+                            <div class="cta-evt-contact">
+                                <i class="fa-solid fa-clock"></i>
+                                <span>Réponse garantie sous 24h ouvrées</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cta-evt-form reveal">
+                        <h3>Demander un devis personnalisé</h3>
+                        <form action="reservation.html" method="GET" onsubmit="return redirectEvtToReservation(event);">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" name="nom" placeholder="Nom complet *" required autocomplete="name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Email *" required autocomplete="email">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="tel" name="telephone" placeholder="Téléphone *" required autocomplete="tel">
+                                </div>
+                                <div class="form-group">
+                                    <select name="type_evenement" required>
+                                        <option value="" disabled selected>Type d'événement *</option>
+                                        <option value="seminaire">Séminaire</option>
+                                        <option value="conference">Conférence</option>
+                                        <option value="mariage">Mariage</option>
+                                        <option value="cocktail">Cocktail / Réception</option>
+                                        <option value="autre">Autre</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Décrivez votre projet : nombre de participants, dates souhaitées, besoins particuliers…"></textarea>
+                            </div>
+                            <button type="submit" class="btn-cta">
+                                Envoyer ma demande
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             POP-UP DEVIS
+             ============================================================ -->
+        <div class="evt-modal-overlay" id="evtModal" aria-hidden="true">
+            <div class="evt-modal" role="dialog" aria-modal="true" aria-labelledby="evtModalTitle">
+                <button type="button" class="evt-modal-close" id="evtModalClose" aria-label="Fermer">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div class="evt-modal-header">
+                    <span class="eyebrow">Devis en 24h</span>
+                    <h3 id="evtModalTitle">Planifions votre événement</h3>
+                    <p>Remplissez ce formulaire et notre équipe vous recontacte sous 24h ouvrées.</p>
+                </div>
+
+                <div class="evt-modal-body">
+                    <form id="evtModalForm">
+                        <div class="evt-modal-row">
+                            <div class="evt-modal-field">
+                                <label for="evtNom">Nom complet</label>
+                                <input type="text" id="evtNom" name="nom" placeholder="Votre nom" required>
+                            </div>
+                            <div class="evt-modal-field">
+                                <label for="evtSociete">Société (facultatif)</label>
+                                <input type="text" id="evtSociete" name="societe" placeholder="Nom de la société">
+                            </div>
+                        </div>
+
+                        <div class="evt-modal-row">
+                            <div class="evt-modal-field">
+                                <label for="evtEmail">E-mail</label>
+                                <input type="email" id="evtEmail" name="email" placeholder="vous@exemple.com" required>
+                            </div>
+                            <div class="evt-modal-field">
+                                <label for="evtTel">Téléphone</label>
+                                <input type="tel" id="evtTel" name="telephone" placeholder="+221 77 123 45 67" required>
+                            </div>
+                        </div>
+
+                        <div class="evt-modal-row">
+                            <div class="evt-modal-field">
+                                <label for="evtType">Type d'événement</label>
+                                <select id="evtType" name="type_evenement" required>
+                                    <option value="" disabled selected>Choisir…</option>
+                                    <option value="seminaire">Séminaire</option>
+                                    <option value="conference">Conférence</option>
+                                    <option value="mariage">Mariage</option>
+                                    <option value="cocktail">Cocktail / Réception</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            <div class="evt-modal-field">
+                                <label for="evtParticipants">Nombre de participants</label>
+                                <input type="number" id="evtParticipants" name="participants" min="1" placeholder="Ex. 150" required>
+                            </div>
+                        </div>
+
+                        <div class="evt-modal-field">
+                            <label for="evtDate">Date souhaitée</label>
+                            <input type="date" id="evtDate" name="date_evenement" required>
+                        </div>
+
+                        <div class="evt-modal-field">
+                            <label for="evtMessage">Votre projet</label>
+                            <textarea id="evtMessage" name="message" placeholder="Décrivez brièvement votre événement : configuration, besoins techniques, restauration…"></textarea>
+                        </div>
+
+                        <button type="submit" class="evt-modal-submit">
+                            Envoyer ma demande
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                        <div class="evt-modal-reassurance">
+                            <span><i class="fa-solid fa-check"></i> Réponse en 24h</span>
+                            <span><i class="fa-solid fa-check"></i> Devis gratuit</span>
+                            <span><i class="fa-solid fa-check"></i> Sans engagement</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /.evenements-page -->
+    </main>
+
+<section class="booking-section">
+            <div class="container">
+                <h2>PRÊT POUR VOTRE PROCHAINE <span class="highlight">ÉVASION</span> ?</h2>
+                <p class="subtitle">Réservez maintenant et vivez l'expérience Pullman Dakar Teranga.</p>
+
+                <div class="booking-widget">
+    <div class="widget-field">
+        <span class="icon-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg></span>
+        <div class="field-info">
+            <label>Chambre</label>
+            <select id="cta-chambre" class="cta-select">
+                <option value="1 chambre">1 chambre</option>
+                <option value="2 chambres">2 chambres</option>
+                <option value="3 chambres">3 chambres</option>
+            </select>
+        </div>
+    </div>
+    <div class="widget-field">
+        <span class="icon-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
+        <div class="field-info">
+            <label>Arrivée</label>
+            <input type="text" id="cta-checkin" class="cta-date-input" placeholder="Sélectionner" readonly>
+        </div>
+    </div>
+    <div class="widget-field">
+        <span class="icon-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="m9 16 2 2 4-4"></path></svg></span>
+        <div class="field-info">
+            <label>Départ</label>
+            <input type="text" id="cta-checkout" class="cta-date-input" placeholder="Sélectionner" readonly>
+        </div>
+    </div>
+    <div class="widget-field">
+        <span class="icon-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span>
+        <div class="field-info">
+            <label>Hôtes</label>
+            <select id="cta-hotes" class="cta-select">
+                <option value="1 personne">1 personne</option>
+                <option value="2 personnes" selected>2 personnes</option>
+                <option value="3 personnes">3 personnes</option>
+                <option value="4 personnes">4 personnes</option>
+            </select>
+        </div>
+    </div>
+    <button type="button" class="btn-submit">
+        VÉRIFIER LES<br>DISPONIBILITÉS
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </button>
+</div>
+        </section>
+
+
+    <footer class="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="images/logo-pullman-white.png" alt="Pullman Hotels and Resorts" class="img-manual-logo">
+                </div>
+                <div class="contact-details">
+                    <p><i class="fa-solid fa-location-dot icon-contact"></i> Pullman Dakar Teranga<br>Route de la Corniche Ouest<br>BP 8181, Dakar, Sénégal</p>
+                    <p><i class="fa-solid fa-phone icon-contact"></i> +221 33 869 66 66</p>
+                    <p><i class="fa-regular fa-envelope icon-contact"></i> HB076@accor.com</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">LIENS UTILES</h4>
+                <ul>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="conditions-generales.html">Conditions générales</a></li>
+                    <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                    <li><a href="accessibilite.html">Accessibilité</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">DÉCOUVRIR</h4>
+                <ul>
+                    <li><a href="chambres.html">Nos chambres</a></li>
+                    <li><a href="experiences.html">Expériences</a></li>
+                    <li><a href="offres-speciales.html">Offres spéciales</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">SUIVEZ-NOUS</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-solid fa-globe"></i></a>
+                </div>
+                <h4 class="footer-title" style="margin-top:26px;">MOYENS DE PAIEMENT</h4>
+                <div class="payment-methods">
+                    <span class="payment-badge pay-visa" title="Visa">VISA</span>
+                    <span class="payment-badge pay-mc" title="Mastercard">
+                        <span class="circle c1"></span><span class="circle c2"></span>
+                    </span>
+                    <span class="payment-badge pay-wave" title="Wave">Wave</span>
+                    <span class="payment-badge pay-om" title="Orange Money">Orange Money</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Pullman Dakar Teranga - Tous droits réservés.</p>
+            <div class="footer-bottom-right">
+                <div class="currency-switch">
+                    <button class="currency-current" type="button">
+                        <i class="fas fa-globe"></i> FR · XOF <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="currency-menu">
+                        <li><a href="#" data-currency="XOF" class="active"><span>Franc CFA</span><span class="code">XOF</span></a></li>
+                        <li><a href="#" data-currency="EUR"><span>Euro</span><span class="code">EUR</span></a></li>
+                        <li><a href="#" data-currency="USD"><span>Dollar US</span><span class="code">USD</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script src="js/booking-bridge.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/fix-datepicker.js"></script>
+
+<!-- ============================== SCRIPT PAGE ÉVÉNEMENTS ============================== -->
+<script>
+function redirectEvtToReservation(e) {
+    e.preventDefault();
+    var f = e.target;
+    var type = (f.querySelector("[name=\"type_evenement\"]") || {}).value || "";
+    var p = new URLSearchParams();
+    if (type) p.set("evt", type);
+    window.location.href = "reservation.html?" + p.toString();
+    return false;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    /* ============ 1. POP-UP DEVIS ============ */
+    const modal      = document.getElementById('evtModal');
+    const modalClose = document.getElementById('evtModalClose');
+    const modalForm  = document.getElementById('evtModalForm');
+    const modalDate  = document.getElementById('evtDate');
+
+    function openModal() {
+        if (!modal) return;
+        if (modalDate && !modalDate.value) {
+            const d = new Date();
+            d.setDate(d.getDate() + 30);
+            modalDate.valueAsDate = d;
+            modalDate.min = new Date().toISOString().split('T')[0];
+        }
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+        if (!modal) return;
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-open-evt-modal]').forEach(btn => {
+        btn.addEventListener('click', e => { e.preventDefault(); openModal(); });
+    });
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modal) modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && modal && modal.classList.contains('is-open')) closeModal();
+    });
+
+    if (modalForm) {
+        modalForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const prenomNom = document.getElementById('evtNom')?.value || '';
+            const email     = document.getElementById('evtEmail')?.value || '';
+            const type      = document.getElementById('evtType')?.value || '';
+            const participants = document.getElementById('evtParticipants')?.value || '';
+            const date      = document.getElementById('evtDate')?.value || '';
+
+            // Redirection vers le tunnel unifié
+            var params = new URLSearchParams();
+            if (type) params.set("evt", type);
+            window.location.href = "reservation.html?" + params.toString();
+        });
+    }
+
+    /* ============ 2. FAQ ACCORDÉON ============ */
+    document.querySelectorAll('.evenements-page .faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.closest('.faq-item');
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.evenements-page .faq-item.open').forEach(el => el.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        });
+    });
+
+    /* ============ 3. REVEAL / ANIMATIONS ============ */
+    const reveals = document.querySelectorAll('.evenements-page .reveal');
+    if (reveals.length) {
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+            reveals.forEach(el => {
+                gsap.fromTo(el,
+                    { opacity: 0, y: 40 },
+                    {
+                        opacity: 1, y: 0, duration: 1, ease: "power2.out",
+                        scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none none" }
+                    }
+                );
+            });
+        } else {
+            const check = () => {
+                const wh = window.innerHeight;
+                reveals.forEach(el => {
+                    if (el.getBoundingClientRect().top < wh - 100) el.classList.add('active');
+                });
+            };
+            check();
+            window.addEventListener('scroll', check);
+            window.addEventListener('resize', check);
+        }
+    }
+
+    /* ============ 4. PARALLAX HERO léger ============ */
+    const heroBg = document.querySelector('.evenements-page .hero-evt-bg');
+    const heroSec = document.querySelector('.evenements-page .hero-evt');
+    if (heroBg && heroSec && typeof gsap !== 'undefined') {
+        window.addEventListener('scroll', () => {
+            const y = window.scrollY;
+            if (y <= heroSec.offsetHeight) {
+                heroBg.style.transform = `translateY(${y * 0.25}px) scale(${1 + y * 0.0002})`;
+            }
+        });
+    }
+
+});
+</script>
+
+<script src="js/landing-page.js" defer></script>
+</body>
+</html>

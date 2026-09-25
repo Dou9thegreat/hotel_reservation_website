@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conditions générales — Pullman Dakar Teranga</title>
+    <link rel="icon" type="image/png" href="images/logo-symbole.png">
+    <link rel="apple-touch-icon" href="images/logo-symbole.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/commun.css">
+<link rel="stylesheet" href="css/footer-cta.css">
+<link rel="stylesheet" href="css/legal.css">
+    <link rel="stylesheet" href="css/landing-page.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="topbar">
+        <div class="lang-switch">
+            <span class="lang-current">Français</span>
+            <span class="chevron">▾</span>
+            <ul class="lang-menu">
+                <li><a href="#" data-lang="fr" class="active">Français</a></li>
+                <li><a href="#" data-lang="en">English</a></li>
+                <li><a href="#" data-lang="es">Español</a></li>
+            </ul>
+        </div>
+        <span class="separator">|</span>
+        <a href="contact.html" class="topbar-contact">
+            <span class="icon-mail">✉</span> Nous contacter
+        </a>
+    </div>
+
+    <div class="mainbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Logo Pullman Dakar Teranga">
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html">ACCUEIL</a>
+            <span class="nav-sep">|</span>
+            <a href="chambres.html">CHAMBRES</a>
+            <span class="nav-sep">|</span>
+            <div class="dropdown">
+                <a>EXPÉRIENCES</a>
+                <div class="dropdown-content">
+                    <a href="experiences-piscine.html">Piscine + Spa</a>
+                    <a href="experiences-restaurant.html">Restaurants + Bars</a>
+                </div>
+            </div>
+            <span class="nav-sep">|</span>
+            <a href="galerie.html">GALERIE</a>
+            <span class="nav-sep">|</span>
+            <a href="evenements.html">MEETING &amp; EVENTS</a>
+            <span class="nav-sep">|</span>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+
+        <a href="reservation.html" class="btn-reserver">Réserver maintenant</a>
+    </div>
+</header>
+<main class="legal-page">
+    <section class="legal-hero">
+        <div class="legal-hero-inner">
+            <p class="legal-breadcrumb">
+                <a href="index.html">Accueil</a>
+                <i class="fa-solid fa-chevron-right" style="font-size:.6rem;opacity:.6;"></i>
+                <span>Conditions générales</span>
+            </p>
+            <span class="legal-eyebrow">Contrat de réservation</span>
+            <h1>Conditions générales</h1>
+            <p>Les présentes conditions régissent toute réservation effectuée auprès du Pullman Dakar Teranga, directement ou via notre site officiel.</p>
+        </div>
+    </section>
+
+    <div class="legal-inner">
+        <nav class="legal-toc">
+            <h3>Sommaire</h3>
+            <ol>
+                <li><a href="#objet">Objet et champ d'application</a></li>
+                <li><a href="#reservation">Réservation</a></li>
+                <li><a href="#tarifs">Tarifs et taxes</a></li>
+                <li><a href="#paiement">Paiement</a></li>
+                <li><a href="#annulation">Annulation et modification</a></li>
+                <li><a href="#sejour">Déroulement du séjour</a></li>
+                <li><a href="#responsabilite">Responsabilité</a></li>
+                <li><a href="#reclamation">Réclamations</a></li>
+                <li><a href="#loi">Loi applicable</a></li>
+            </ol>
+        </nav>
+
+        <section class="legal-section" id="objet">
+            <h2>1. Objet et champ d'application</h2>
+            <p>Les présentes Conditions Générales de Vente (CGV) s'appliquent à toute réservation de chambre, de table au restaurant, de soin au spa ou de service réalisée auprès du Pullman Dakar Teranga.</p>
+            <p>Toute réservation implique l'acceptation sans réserve des présentes conditions par le client.</p>
+        </section>
+
+        <section class="legal-section" id="reservation">
+            <h2>2. Réservation</h2>
+            <h3>2.1 Modes de réservation</h3>
+            <ul>
+                <li>Site officiel : <a href="reservation.html">reservation.html</a></li>
+                <li>Téléphone : +221 33 869 66 66</li>
+                <li>E-mail : <a href="mailto:dakar.reservation@accor.com">dakar.reservation@accor.com</a></li>
+                <li>Agences de voyage partenaires</li>
+            </ul>
+
+            <h3>2.2 Confirmation</h3>
+            <p>La réservation est confirmée dès réception d'un e-mail de confirmation contenant un numéro de réservation unique. Le client doit vérifier l'exactitude des informations fournies.</p>
+
+            <h3>2.3 Âge minimum</h3>
+            <p>Le titulaire de la réservation doit être majeur (18 ans révolus). Une pièce d'identité valide sera demandée à l'arrivée.</p>
+        </section>
+
+        <section class="legal-section" id="tarifs">
+            <h2>3. Tarifs et taxes</h2>
+            <p>Les tarifs affichés sont exprimés en Francs CFA (XOF) et incluent la TVA et la taxe de promotion touristique, sauf mention contraire.</p>
+            <p>La taxe de séjour est de <strong>1 000 FCFA par personne et par nuit</strong>, conformément à la réglementation en vigueur au Sénégal.</p>
+            <p>Les tarifs peuvent varier selon la période, la disponibilité et le type de chambre. Le tarif applicable est celui affiché au moment de la confirmation de la réservation.</p>
+        </section>
+
+        <section class="legal-section" id="paiement">
+            <h2>4. Paiement</h2>
+            <h3>4.1 Moyens de paiement acceptés</h3>
+            <ul>
+                <li>Cartes bancaires : Visa, Mastercard (paiement sécurisé 3D Secure)</li>
+                <li>Wave (paiement mobile instantané)</li>
+                <li>Orange Money</li>
+                <li>Espèces en FCFA (à la réception)</li>
+                <li>Virements bancaires (sur demande pour les groupes)</li>
+            </ul>
+
+            <h3>4.2 Moment du paiement</h3>
+            <p>Selon le tarif choisi :</p>
+            <ul>
+                <li><strong>Tarif Flexible</strong> : paiement à l'arrivée</li>
+                <li><strong>Tarif Non-remboursable</strong> : paiement immédiat à la réservation (remise de 15 %)</li>
+                <li><strong>Tarif Petit-déjeuner inclus</strong> : paiement à l'arrivée</li>
+            </ul>
+        </section>
+
+        <section class="legal-section" id="annulation">
+            <h2>5. Annulation et modification</h2>
+            <h3>5.1 Tarif Flexible</h3>
+            <p>Annulation gratuite jusqu'à <strong>48 heures avant l'arrivée</strong>. Passé ce délai, le montant de la première nuit sera facturé.</p>
+
+            <h3>5.2 Tarif Non-remboursable</h3>
+            <p>Ce tarif ne permet ni annulation, ni modification, ni remboursement. En cas de non-présentation (no-show), la totalité du séjour est due.</p>
+
+            <h3>5.3 Modification</h3>
+            <p>Toute demande de modification est soumise à disponibilité et peut entraîner une différence tarifaire.</p>
+
+            <h3>5.4 Cas de force majeure</h3>
+            <p>En cas de force majeure (catastrophe naturelle, pandémie, décision gouvernementale), les conditions d'annulation pourront être adaptées au cas par cas.</p>
+        </section>
+
+        <section class="legal-section" id="sejour">
+            <h2>6. Déroulement du séjour</h2>
+            <h3>6.1 Arrivée et départ</h3>
+            <ul>
+                <li>Check-in : à partir de 14h00</li>
+                <li>Check-out : avant 12h00</li>
+                <li>Late check-out possible sur demande (jusqu'à 16h00, selon disponibilité)</li>
+            </ul>
+
+            <h3>6.2 Règles de l'établissement</h3>
+            <ul>
+                <li>Il est interdit de fumer dans les chambres et espaces intérieurs</li>
+                <li>Les animaux de compagnie sont admis moyennant un supplément</li>
+                <li>Le calme doit être respecté entre 22h00 et 7h00</li>
+                <li>Les visiteurs extérieurs doivent être signalés à la réception</li>
+            </ul>
+
+            <h3>6.3 Bagages</h3>
+            <p>Une bagagerie gratuite est à disposition avant le check-in et après le check-out.</p>
+        </section>
+
+        <section class="legal-section" id="responsabilite">
+            <h2>7. Responsabilité</h2>
+            <p>Le Pullman Dakar Teranga ne saurait être tenu responsable :</p>
+            <ul>
+                <li>Des vols ou pertes d'objets non déposés au coffre-fort de la chambre</li>
+                <li>Des dommages causés par le client aux biens de l'établissement</li>
+                <li>Des interruptions de service indépendantes de sa volonté (coupures réseau, etc.)</li>
+            </ul>
+            <p>Le client est responsable des dommages causés par lui-même ou les personnes dont il répond.</p>
+        </section>
+
+        <section class="legal-section" id="reclamation">
+            <h2>8. Réclamations</h2>
+            <p>Toute réclamation doit être adressée dans un délai de 30 jours suivant la fin du séjour :</p>
+            <div class="legal-box">
+                <strong>Service client</strong>
+                <p>Pullman Dakar Teranga<br>
+                Route de la Corniche Ouest<br>
+                BP 8181, Dakar, Sénégal<br>
+                E-mail : <a href="mailto:HB076@accor.com">HB076@accor.com</a></p>
+            </div>
+        </section>
+
+        <section class="legal-section" id="loi">
+            <h2>9. Loi applicable</h2>
+            <p>Les présentes conditions sont régies par le <strong>droit sénégalais</strong>. En cas de litige, les tribunaux de Dakar seront seuls compétents.</p>
+            <p>Le client est invité à consulter également notre <a href="politique-confidentialite.html">Politique de confidentialité</a> et nos <a href="mentions-legales.html">Mentions légales</a>.</p>
+        </section>
+
+        <p class="legal-updated">Dernière mise à jour : 23 septembre 2026</p>
+
+        <div class="legal-cta">
+            <h3>Besoin d'aide pour votre réservation ?</h3>
+            <p>Notre équipe vous accompagne 24h/24 et 7j/7.</p>
+            <a href="contact.html"><i class="fa-solid fa-headset"></i> Contacter le service réservation</a>
+        </div>
+    </div>
+</main>
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="images/logo-pullman-white.png" alt="Pullman Hotels and Resorts" class="img-manual-logo">
+                </div>
+                <div class="contact-details">
+                    <p><i class="fa-solid fa-location-dot icon-contact"></i> Pullman Dakar Teranga<br>Route de la Corniche Ouest<br>BP 8181, Dakar, Sénégal</p>
+                    <p><i class="fa-solid fa-phone icon-contact"></i> +221 33 869 66 66</p>
+                    <p><i class="fa-regular fa-envelope icon-contact"></i> HB076@accor.com</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">LIENS UTILES</h4>
+                <ul>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="conditions-generales.html">Conditions générales</a></li>
+                    <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                    <li><a href="accessibilite.html">Accessibilité</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">DÉCOUVRIR</h4>
+                <ul>
+                    <li><a href="chambres.html">Nos chambres</a></li>
+                    <li><a href="experiences.html">Expériences</a></li>
+                    <li><a href="offres-speciales.html">Offres spéciales</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">SUIVEZ-NOUS</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-solid fa-globe"></i></a>
+                </div>
+                <h4 class="footer-title" style="margin-top:26px;">MOYENS DE PAIEMENT</h4>
+                <div class="payment-methods">
+                    <span class="payment-badge pay-visa" title="Visa">VISA</span>
+                    <span class="payment-badge pay-mc" title="Mastercard">
+                        <span class="circle c1"></span><span class="circle c2"></span>
+                    </span>
+                    <span class="payment-badge pay-wave" title="Wave">Wave</span>
+                    <span class="payment-badge pay-om" title="Orange Money">Orange Money</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Pullman Dakar Teranga - Tous droits réservés.</p>
+            <div class="footer-bottom-right">
+                <div class="currency-switch">
+                    <button class="currency-current" type="button">
+                        <i class="fas fa-globe"></i> FR · XOF <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="currency-menu">
+                        <li><a href="#" data-currency="XOF" class="active"><span>Franc CFA</span><span class="code">XOF</span></a></li>
+                        <li><a href="#" data-currency="EUR"><span>Euro</span><span class="code">EUR</span></a></li>
+                        <li><a href="#" data-currency="USD"><span>Dollar US</span><span class="code">USD</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script>
+<script src="js/booking-bridge.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/landing-page.js" defer></script>
+</body>
+</html>
